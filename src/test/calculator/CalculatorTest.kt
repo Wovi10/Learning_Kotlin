@@ -15,6 +15,8 @@ internal class CalculatorTest {
 
     @Test
     internal fun divide2By2() {
-        TODO("Not yet implemented")
+        val calc = Calculator()
+        val result = calc.parse("2 / 2")
+        assertEquals(1, result)
     }
 }

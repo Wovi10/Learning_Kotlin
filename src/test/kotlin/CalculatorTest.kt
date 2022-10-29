@@ -1,4 +1,5 @@
 import Calculator.Calculator
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 internal class CalculatorTest {
@@ -14,5 +15,7 @@ internal class CalculatorTest {
     @Test
     fun testMultiply2By2(){
         val calc = Calculator()
+        val result = calc.parse("2 * 2")
+        assertEquals(4, result)
     }
 }

@@ -1,3 +1,4 @@
+import Calculator.Calculator
 import org.junit.jupiter.api.Test
 
 internal class CalculatorTest {
@@ -12,6 +13,6 @@ internal class CalculatorTest {
 
     @Test
     fun testMultiply2By2(){
-        TODO("Not yet implemented")
+        val calc = Calculator()
     }
 }

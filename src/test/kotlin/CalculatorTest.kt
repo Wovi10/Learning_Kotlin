@@ -1,0 +1,17 @@
+import org.junit.jupiter.api.Test
+
+internal class CalculatorTest {
+
+    @org.junit.jupiter.api.BeforeEach
+    fun setUp() {
+    }
+
+    @org.junit.jupiter.api.AfterEach
+    fun tearDown() {
+    }
+
+    @Test
+    fun testMultiply2By2(){
+        TODO("Not yet implemented")
+    }
+}

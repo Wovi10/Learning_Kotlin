@@ -17,14 +17,6 @@ object BinarySearch: SearchType() {
         printSearchInfo(numRun)
     }
 
-    override fun printSearchInfo(numRun: Int) {
-        val averageTries = cumulativeTries / numRun
-        println("Ran Binary search $numRun times.")
-        println("Highest number of tries is $highestNumTries (Number was $numOnHighestTries).")
-        println("Lowest number of tries is $lowestNumTries (Number was $numOnLowestTries).")
-        println("Average number of tries is $averageTries.")
-    }
-
     private fun runBinarySearch(lowerBound: Int, upperBound: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
         numTries = 0

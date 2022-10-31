@@ -7,6 +7,5 @@ fun main(args: Array<String>) {
 //    println("Hello, $name")
 
     BinarySearch.search(0, 100, 1000)
-    BinarySearch.search(0, 100, 1000)
     LinearSearch.search(0, 100, 1000)
 }

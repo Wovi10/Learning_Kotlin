@@ -1,5 +1,7 @@
 package algorithms.searches
 
+import java.time.LocalDateTime
+
 object LinearSearch : SearchType() {
     override var highestNumTries = 0
     override var numOnHighestTries = 0
@@ -7,6 +9,7 @@ object LinearSearch : SearchType() {
     override var numOnLowestTries = 0
     override var cumulativeTries = 0
     override var numTries = 0
+    override var startTime: LocalDateTime = LocalDateTime.now()
 
     override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
         resetVariables()

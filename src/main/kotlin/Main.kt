@@ -1,15 +1,10 @@
-import Algroythms.Algorythms
+import algorithms.Algorithms
 
 fun main(args: Array<String>) {
-//    println("What is you name?")
+//    println("What is your name?")
 //    val name = readln()
 //    println("Hello, $name")
 
-    var numTries = 0
-    val numRuns = 1000
-    for (x in 0..(numRuns+1)) {
-        numTries += Algorythms.binarySearch(0, 100)
-    }
-    println(numTries/numRuns)
+    Algorithms.binarySearch(0, 100, 1000)
 
 }

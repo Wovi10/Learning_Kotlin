@@ -27,4 +27,23 @@ abstract class SortType: Algorithm() {
         println(timeString)
         println()
     }
+
+    open fun printArray(arrayToPrint: IntArray) {
+        var stringToPrint = ""
+        for (i in arrayToPrint.indices) {
+            val indexToPrint = arrayToPrint[i]
+            if (stringToPrint.isNotEmpty()){
+                stringToPrint += ", $indexToPrint"
+            }else{
+                stringToPrint = indexToPrint.toString()
+            }
+        }
+        println(stringToPrint)
+    }
+
+    open fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {
+        arrayToSort[i] = arrayToSort[i] xor arrayToSort[smallestIndex]
+        arrayToSort[smallestIndex] = arrayToSort[i] xor arrayToSort[smallestIndex]
+        arrayToSort[i] = arrayToSort[i] xor arrayToSort[smallestIndex]
+    }
 }

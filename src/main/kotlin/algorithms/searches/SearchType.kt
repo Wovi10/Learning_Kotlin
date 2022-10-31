@@ -25,4 +25,15 @@ abstract class SearchType {
         return Random.nextInt(lowerBound, upperBound)
     }
 
+    open fun updateSearchData(numToFind: Int) {
+        if (numTries > highestNumTries) {
+            highestNumTries = numTries
+            numOnHighestTries = numToFind
+        } else if (numTries < lowestNumTries) {
+            lowestNumTries = numTries
+            numOnLowestTries = numToFind
+        }
+        cumulativeTries += numTries
+    }
+
 }

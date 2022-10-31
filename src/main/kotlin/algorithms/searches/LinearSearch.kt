@@ -22,20 +22,15 @@ object LinearSearch: SearchType() {
         updateSearchData(numToFind)
     }
 
-
-    private fun updateSearchData(numToFind: Int) {
-        if (numTries > highestNumTries) {
-            highestNumTries = numTries
-            numOnHighestTries = numToFind
-        } else if (numTries < lowestNumTries) {
-            lowestNumTries = numTries
-            numOnLowestTries = numToFind
+    override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
+        numTries++
+        val numTried = getNumTried(lowerBound)
+        if (numTried != numToFind){
+            return findNumber(numTried, upperBound, numToFind)
         }
-        cumulativeTries += numTries
     }
 
-    override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
-
-        TODO("Not yet implemented")
+    private fun getNumTried(lowerBound: Int): Int {
+        return lowerBound + 1
     }
 }

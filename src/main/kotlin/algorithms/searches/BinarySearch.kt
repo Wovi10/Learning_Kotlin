@@ -9,10 +9,20 @@ object BinarySearch: SearchType() {
     override var numTries = 0
 
     override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
+        resetVariables()
         for (x in 0..numRun) {
             runBinarySearch(lowerBound, upperBound)
         }
         printSearchInfo(numRun)
+    }
+
+    private fun resetVariables() {
+        highestNumTries = 0
+        numOnHighestTries = 0
+        lowestNumTries = 500
+        numOnLowestTries = 0
+        cumulativeTries = 0
+        numTries = 0
     }
 
     private fun runBinarySearch(lowerBound: Int, upperBound: Int) {
@@ -20,17 +30,6 @@ object BinarySearch: SearchType() {
         numTries = 0
         findNumber(lowerBound, upperBound, numToFind)
         updateSearchData(numToFind)
-    }
-
-    private fun updateSearchData(numToFind: Int) {
-        if (numTries > highestNumTries) {
-            highestNumTries = numTries
-            numOnHighestTries = numToFind
-        } else if (numTries < lowestNumTries) {
-            lowestNumTries = numTries
-            numOnLowestTries = numToFind
-        }
-        cumulativeTries += numTries
     }
 
     override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {

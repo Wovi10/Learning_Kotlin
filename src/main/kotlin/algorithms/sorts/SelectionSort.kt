@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 
 object SelectionSort: SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name = "Selection Sort"
+    override val name = "Selection sort"
 
     override fun sort(size: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         println("Started $numRun $name")

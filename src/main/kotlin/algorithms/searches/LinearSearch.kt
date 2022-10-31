@@ -22,6 +22,7 @@ object LinearSearch: SearchType() {
         updateSearchData(numToFind)
     }
 
+
     private fun updateSearchData(numToFind: Int) {
         if (numTries > highestNumTries) {
             highestNumTries = numTries
@@ -34,6 +35,7 @@ object LinearSearch: SearchType() {
     }
 
     override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
+
         TODO("Not yet implemented")
     }
 }

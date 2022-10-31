@@ -8,7 +8,7 @@ import kotlin.random.Random
 abstract class SortType: Algorithm() {
     protected abstract var startTime: LocalDateTime
     protected abstract val name: String
-    abstract fun sort(size: Int, lowerBound: Int, upperBound: Int, numRun: Int)
+    abstract fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int)
 
     open fun createInputArray(size: Int, lowerBound: Int, upperBound: Int): IntArray{
         val outputArray = IntArray(size)
@@ -42,8 +42,8 @@ abstract class SortType: Algorithm() {
     }
 
     open fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {
-        arrayToSort[i] = arrayToSort[i] xor arrayToSort[smallestIndex]
-        arrayToSort[smallestIndex] = arrayToSort[i] xor arrayToSort[smallestIndex]
-        arrayToSort[i] = arrayToSort[i] xor arrayToSort[smallestIndex]
+        val temp = arrayToSort[i]
+        arrayToSort[i] = arrayToSort[smallestIndex]
+        arrayToSort[smallestIndex] = temp
     }
 }

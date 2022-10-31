@@ -10,6 +10,6 @@ fun main(args: Array<String>) {
 
 //    BinarySearch.search(0, 100, 100)
 //    LinearSearch.search(0, 100, 100)
-//    SelectionSort.sort(100000, 0, 1000, 100)
+    SelectionSort.sort(20, 0, 1000, 1)
     QuickSort.sort(20, 0, 100, 1)
 }

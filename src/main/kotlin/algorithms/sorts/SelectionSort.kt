@@ -6,10 +6,10 @@ object SelectionSort: SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Selection sort"
 
-    override fun sort(size: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
+    override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         println("Started $numRun $name")
         for (x in 0 until numRun){
-            runSelectionSort(size, lowerBound, upperBound)
+            runSelectionSort(arraySize, lowerBound, upperBound)
         }
         printSortInfo(numRun, name)
     }

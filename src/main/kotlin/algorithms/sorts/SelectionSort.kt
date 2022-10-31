@@ -7,6 +7,7 @@ object SelectionSort: SortType() {
     override val name = "Selection Sort"
 
     override fun sort(size: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
+        println("Started $numRun $name")
         for (x in 0 until numRun){
             runSelectionSort(size, lowerBound, upperBound)
         }
@@ -15,7 +16,6 @@ object SelectionSort: SortType() {
 
     private fun runSelectionSort(size: Int, lowerBound: Int, upperBound: Int) {
         val arrayToSort = createInputArray(size, lowerBound, upperBound)
-//        printArray(arrayToSort)
         var smallestIndex: Int
         for (i in 0 .. arrayToSort.size) {
             smallestIndex = i
@@ -28,7 +28,6 @@ object SelectionSort: SortType() {
                 swapIndexes(arrayToSort, i, smallestIndex)
             }
         }
-//        printArray(arrayToSort)
         print("| ")
     }
 

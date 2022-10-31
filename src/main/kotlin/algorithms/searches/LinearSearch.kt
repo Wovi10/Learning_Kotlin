@@ -1,6 +1,6 @@
 package algorithms.searches
 
-object LinearSearch: SearchType() {
+object LinearSearch : SearchType() {
     override var highestNumTries = 0
     override var numOnHighestTries = 0
     override var lowestNumTries = 500
@@ -25,14 +25,13 @@ object LinearSearch: SearchType() {
 
     override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
         numTries++
-        val numTried = getNumTried(lowerBound)
-        if (numTried < numToFind){
+        val numTried = getNumToTry(lowerBound)
+        if (numTried < numToFind) {
             return findNumber(numTried, upperBound, numToFind)
         }
-        println(numToFind)
     }
 
-    private fun getNumTried(lowerBound: Int): Int {
+    private fun getNumToTry(lowerBound: Int): Int {
         return lowerBound + 1
     }
 }

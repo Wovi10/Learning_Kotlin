@@ -20,19 +20,27 @@ abstract class SortType {
 
     open fun printSortInfo(numRun: Int, sortType: SortType) {
         val stopTime: LocalDateTime = LocalDateTime.now()
-        var time = startTime.until(stopTime, ChronoUnit.SECONDS).toDouble()
-        if (time >= 60){
-            time /= 60
+        var time = startTime.until(stopTime, ChronoUnit.NANOS).toDouble()
+        val timeString: String
+        if (time >= 1000000000) {
+            time /= 1000000000
             if (time >= 60){
                 time /= 60
+                if (time >= 60){
+                    time /= 60
+                    timeString = "It took $time hours."
+                }else{
+                    timeString = "It took $time minutes."
+                }
             }else{
-                var timeString = "It took $time minutes."
+                timeString = "It took $time seconds."
             }
-        }else{
-            var timeString = "It took $time seconds."
+        } else {
+            
+            timeString = "It took $time nanos."
         }
         println("Ran ${sortType.name} $numRun times.")
-        println("It took $time seconds.")
+        println(timeString)
         println()
     }
 }

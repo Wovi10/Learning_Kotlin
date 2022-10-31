@@ -1,19 +1,20 @@
 package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOLS
+import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
 object SelectionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name = "Selection sort"
+    override val name = "Selection $SORT_TEXT"
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
             runSelectionSort(arraySize, lowerBound, upperBound)
         }
-        printSortInfo(numRun, name)
+        printEndText(numRun, name)
     }
 
     private fun runSelectionSort(size: Int, lowerBound: Int, upperBound: Int) {

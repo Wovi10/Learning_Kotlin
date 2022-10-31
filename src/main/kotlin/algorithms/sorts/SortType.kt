@@ -1,13 +1,11 @@
 package algorithms.sorts
 
 import algorithms.Algorithm
-import algorithms.utils.AlgorithmConstants.THOUSAND
 import java.time.LocalDateTime
-import java.time.temporal.ChronoUnit
 import kotlin.random.Random
 
 abstract class SortType : Algorithm() {
-    protected abstract var startTime: LocalDateTime
+    abstract override var startTime: LocalDateTime
     protected abstract val name: String
     abstract fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int)
 
@@ -20,12 +18,8 @@ abstract class SortType : Algorithm() {
         return outputArray
     }
 
-    open fun printSortInfo(numRun: Int, name: String) {
-        val stopTime: LocalDateTime = LocalDateTime.now()
-        val time = (startTime.until(stopTime, ChronoUnit.NANOS) / THOUSAND).toDouble()
-        val timeString = "It took " + getTimeString(time)
-        println("Ran $name $numRun times.")
-        println(timeString)
+    open fun printEndText(numRun: Int, name: String) {
+        printCommonSection(name, numRun)
         println()
     }
 

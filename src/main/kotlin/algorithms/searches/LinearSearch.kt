@@ -1,11 +1,12 @@
 package algorithms.searches
 
 import algorithms.utils.AlgorithmConstants.ONE
+import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
 object LinearSearch : SearchType() {
-    override val name = "Linear search"
+    override val name = "Linear $SEARCH_TEXT"
     override var highestNumTries = ZERO
     override var numOnHighestTries = ZERO
     override var lowestNumTries = Int.MAX_VALUE

@@ -1,19 +1,20 @@
 package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.ONE
+import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
 object QuickSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name = "Quick sort"
+    override val name = "Quick $SORT_TEXT"
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
             runQuickSort(arraySize, lowerBound, upperBound)
         }
-        printSortInfo(numRun, name)
+        printEndText(numRun, name)
     }
 
     private fun runQuickSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {

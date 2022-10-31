@@ -1,11 +1,12 @@
 package algorithms.searches
 
+import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
 import algorithms.utils.AlgorithmConstants.TWO
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
 object BinarySearch : SearchType() {
-    override val name = "Binary search"
+    override val name = "Binary $SEARCH_TEXT"
     override var highestNumTries = ZERO
     override var numOnHighestTries = ZERO
     override var lowestNumTries = Int.MAX_VALUE

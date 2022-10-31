@@ -1,9 +1,13 @@
 package algorithms
 
+import algorithms.utils.AlgorithmConstants
 import algorithms.utils.AlgorithmConstants.ONE_MILLION
 import algorithms.utils.AlgorithmConstants.SIXTY
+import java.time.LocalDateTime
+import java.time.temporal.ChronoUnit
 
 abstract class Algorithm {
+    protected abstract var startTime: LocalDateTime
     open fun getTimeString(_time: Double): String {
         var time = _time
         if (time < ONE_MILLION) {
@@ -23,5 +27,13 @@ abstract class Algorithm {
 
     open fun printStartText(numRun: Int, name: String) {
         println("Started $numRun run(s) of $name")
+    }
+
+    open fun printCommonSection(name: String, numRun: Int) {
+        val stopTime: LocalDateTime = LocalDateTime.now()
+        val time = (startTime.until(stopTime, ChronoUnit.NANOS) / AlgorithmConstants.THOUSAND).toDouble()
+        val timeString = "It took " + getTimeString(time)
+        println("Ran $name $numRun times.")
+        println(timeString)
     }
 }

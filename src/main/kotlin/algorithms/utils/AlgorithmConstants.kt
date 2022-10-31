@@ -9,4 +9,6 @@ object AlgorithmConstants {
     const val ONE_MILLION = 1000000
 
     const val LOADING_SYMBOLS = "|"
+    const val SORT_TEXT = "sort"
+    const val SEARCH_TEXT = "search"
 }

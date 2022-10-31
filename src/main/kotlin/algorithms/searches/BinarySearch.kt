@@ -2,17 +2,22 @@ package algorithms.searches
 
 import kotlin.random.Random
 
-object BinarySearch {
-    private var highestNumTries = 1
-    private var numOnHighestTries = 0
-    private var lowestNumTries = 500
-    private var numOnLowestTries = 0
-    private var cumulativeTries = 0
-    private var numTries = 0
-    fun binarySearch(lowerBound: Int, upperBound: Int, numRun: Int) {
+object BinarySearch: SearchType() {
+    override var highestNumTries = 0
+    override var numOnHighestTries = 0
+    override var lowestNumTries = 500
+    override var numOnLowestTries = 0
+    override var cumulativeTries = 0
+    override var numTries = 0
+
+    override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
         for (x in 0..numRun) {
             runBinarySearch(lowerBound, upperBound)
         }
+        printSearchInfo(numRun)
+    }
+
+    override fun printSearchInfo(numRun: Int) {
         val averageTries = cumulativeTries / numRun
         println("Ran Binary search $numRun times.")
         println("Highest number of tries is $highestNumTries (Number was $numOnHighestTries).")

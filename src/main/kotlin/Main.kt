@@ -5,6 +5,7 @@ fun main(args: Array<String>) {
 //    val name = readln()
 //    println("Hello, $name")
 
-    BinarySearch.binarySearch(0, 100, 1000)
+//    BinarySearch.binarySearch(0, 100, 1000)
+    BinarySearch.search(0, 100, 1000)
 
 }

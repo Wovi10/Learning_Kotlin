@@ -18,4 +18,6 @@ abstract class Algorithm {
         time /= 60
         return "It took $time hours."
     }
+
+    abstract fun printStartText(numRun: Int, name: String)
 }

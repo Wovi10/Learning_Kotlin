@@ -2,7 +2,7 @@ package algorithms.searches
 
 import java.time.LocalDateTime
 
-object BinarySearch: SearchType() {
+object BinarySearch : SearchType() {
     override val name = "Binary search"
     override var highestNumTries = 0
     override var numOnHighestTries = 0
@@ -17,7 +17,7 @@ object BinarySearch: SearchType() {
         for (x in 0 until numRun) {
             runBinarySearch(lowerBound, upperBound)
         }
-        printSearchInfo(numRun, BinarySearch)
+        printSearchInfo(numRun, name)
     }
 
     private fun runBinarySearch(lowerBound: Int, upperBound: Int) {
@@ -35,6 +35,10 @@ object BinarySearch: SearchType() {
         } else if (numToFind > middleNumber) {
             return findNumber(middleNumber, upperBound, numToFind)
         }
+    }
+
+    override fun printStartText(numRun: Int, name: String) {
+        println("Started $numRun runs of $name")
     }
 
     private fun getMiddleNum(lowerBound: Int, upperBound: Int): Int {

@@ -14,6 +14,10 @@ object SelectionSort: SortType() {
         printSortInfo(numRun, SelectionSort)
     }
 
+    override fun printStartText(numRun: Int, name: String) {
+        println("Started $numRun runs of $name")
+    }
+
     private fun runSelectionSort(size: Int, lowerBound: Int, upperBound: Int) {
         val arrayToSort = createInputArray(size, lowerBound, upperBound)
         var smallestIndex: Int

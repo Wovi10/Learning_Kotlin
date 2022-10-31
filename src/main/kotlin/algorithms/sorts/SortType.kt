@@ -19,11 +19,11 @@ abstract class SortType: Algorithm() {
         return outputArray
     }
 
-    open fun printSortInfo(numRun: Int, sortType: SortType) {
+    open fun printSortInfo(numRun: Int, name: String) {
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS)/1000000).toDouble()
         val timeString = getTimeString(time)
-        println("Ran ${sortType.name} $numRun times.")
+        println("Ran $name $numRun times.")
         println(timeString)
         println()
     }

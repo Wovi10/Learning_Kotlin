@@ -19,12 +19,12 @@ abstract class SearchType: Algorithm() {
 
     abstract fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int)
 
-    open fun printSearchInfo(numRun: Int, searchType: SearchType){
+    open fun printSearchInfo(numRun: Int, name: String){
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS)/1000000).toDouble()
         val timeString = getTimeString(time)
         val averageTries = cumulativeTries / numRun
-        println("Ran ${searchType.name} $numRun times.")
+        println("Ran $name $numRun times.")
         println("Highest number of tries is $highestNumTries (Number was $numOnHighestTries).")
         println("Lowest number of tries is $lowestNumTries (Number was $numOnLowestTries).")
         println("Average number of tries is $averageTries.")

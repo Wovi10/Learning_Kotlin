@@ -17,7 +17,7 @@ object LinearSearch : SearchType() {
         for (x in 0 until numRun) {
             runLinearSearch(lowerBound, upperBound)
         }
-        printSearchInfo(numRun, LinearSearch)
+        printSearchInfo(numRun, name)
     }
 
     private fun runLinearSearch(lowerBound: Int, upperBound: Int) {
@@ -33,6 +33,10 @@ object LinearSearch : SearchType() {
         if (numTried < numToFind) {
             return findNumber(numTried, upperBound, numToFind)
         }
+    }
+
+    override fun printStartText(numRun: Int, name: String) {
+        println("Started $numRun runs of $name")
     }
 
     private fun getNumToTry(lowerBound: Int): Int {

@@ -43,13 +43,10 @@ object BinarySearch: SearchType() {
         numTries++
         val middleNumber = getMiddleNum(lowerBound, upperBound)
         if (numToFind < middleNumber) {
-//            println("$middleNumber is too high!")
             return findNumber(lowerBound, middleNumber, numToFind)
         } else if (numToFind > middleNumber) {
-//            println("$middleNumber is too low!")
             return findNumber(middleNumber, upperBound, numToFind)
         }
-//        println("Found the number in $numTries times! Number was $numToFind")
     }
 
     private fun getMiddleNum(lowerBound: Int, upperBound: Int): Int {

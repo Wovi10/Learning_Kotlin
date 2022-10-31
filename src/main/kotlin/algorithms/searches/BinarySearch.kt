@@ -1,8 +1,8 @@
-package algorithms
+package algorithms.searches
 
 import kotlin.random.Random
 
-object Algorithms {
+object BinarySearch {
     private var highestNumTries = 1
     private var numOnHighestTries = 0
     private var lowestNumTries = 500

@@ -1,10 +1,10 @@
-import algorithms.Algorithms
+import algorithms.searches.BinarySearch
 
 fun main(args: Array<String>) {
 //    println("What is your name?")
 //    val name = readln()
 //    println("Hello, $name")
 
-    Algorithms.binarySearch(0, 100, 1000)
+    BinarySearch.binarySearch(0, 100, 1000)
 
 }

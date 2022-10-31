@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
 //    val name = readln()
 //    println("Hello, $name")
 
-//    BinarySearch.search(0, 100, 1000)
-//    LinearSearch.search(0, 100, 1000)
-    SelectionSort.sort(20, 0, 100, 5)
+    BinarySearch.search(0, 100, 100)
+    LinearSearch.search(0, 100, 100)
+    SelectionSort.sort(100, 0, 100, 100)
 }

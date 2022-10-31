@@ -15,7 +15,7 @@ object SelectionSort: SortType() {
 
     private fun runSelectionSort(size: Int, lowerBound: Int, upperBound: Int) {
         val arrayToSort = createInputArray(size, lowerBound, upperBound)
-        printArray(arrayToSort)
+//        printArray(arrayToSort)
         var smallestIndex: Int
         for (i in 0 .. arrayToSort.size) {
             smallestIndex = i
@@ -28,8 +28,8 @@ object SelectionSort: SortType() {
                 swapIndexes(arrayToSort, i, smallestIndex)
             }
         }
-        printArray(arrayToSort)
-        println()
+//        printArray(arrayToSort)
+//        println()
     }
 
     private fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {
@@ -48,6 +48,6 @@ object SelectionSort: SortType() {
                 stringToPrint = indexToPrint.toString()
             }
         }
-        println(stringToPrint)
+        print(stringToPrint)
     }
 }

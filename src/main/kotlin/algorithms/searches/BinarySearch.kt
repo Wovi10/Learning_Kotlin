@@ -16,15 +16,6 @@ object BinarySearch: SearchType() {
         printSearchInfo(numRun)
     }
 
-    private fun resetVariables() {
-        highestNumTries = 0
-        numOnHighestTries = 0
-        lowestNumTries = 500
-        numOnLowestTries = 0
-        cumulativeTries = 0
-        numTries = 0
-    }
-
     private fun runBinarySearch(lowerBound: Int, upperBound: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
         numTries = 0

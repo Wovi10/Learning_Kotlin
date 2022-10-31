@@ -9,6 +9,7 @@ object LinearSearch: SearchType() {
     override var numTries = 0
 
     override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
+        resetVariables()
         for (x in 0..numRun) {
             runLinearSearch(lowerBound, upperBound)
         }

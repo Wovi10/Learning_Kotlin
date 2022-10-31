@@ -36,4 +36,12 @@ abstract class SearchType {
         cumulativeTries += numTries
     }
 
+    open fun resetVariables() {
+        highestNumTries = 0
+        numOnHighestTries = 0
+        lowestNumTries = 500
+        numOnLowestTries = 0
+        cumulativeTries = 0
+        numTries = 0
+    }
 }

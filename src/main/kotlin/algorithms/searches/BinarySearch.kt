@@ -3,6 +3,7 @@ package algorithms.searches
 import java.time.LocalDateTime
 
 object BinarySearch: SearchType() {
+    override val name = "Binary search"
     override var highestNumTries = 0
     override var numOnHighestTries = 0
     override var lowestNumTries = 500
@@ -16,7 +17,7 @@ object BinarySearch: SearchType() {
         for (x in 0 until numRun) {
             runBinarySearch(lowerBound, upperBound)
         }
-        printSearchInfo(numRun)
+        printSearchInfo(numRun, BinarySearch)
     }
 
     private fun runBinarySearch(lowerBound: Int, upperBound: Int) {

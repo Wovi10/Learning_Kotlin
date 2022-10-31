@@ -3,6 +3,7 @@ package algorithms.searches
 import java.time.LocalDateTime
 
 object LinearSearch : SearchType() {
+    override val name = "Linear search"
     override var highestNumTries = 0
     override var numOnHighestTries = 0
     override var lowestNumTries = 500
@@ -16,7 +17,7 @@ object LinearSearch : SearchType() {
         for (x in 0 until numRun) {
             runLinearSearch(lowerBound, upperBound)
         }
-        printSearchInfo(numRun)
+        printSearchInfo(numRun, LinearSearch)
     }
 
     private fun runLinearSearch(lowerBound: Int, upperBound: Int) {

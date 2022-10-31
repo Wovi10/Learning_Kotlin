@@ -5,6 +5,7 @@ import java.time.temporal.ChronoUnit
 import kotlin.random.Random
 
 abstract class SearchType {
+    protected abstract val name: String
     protected abstract var highestNumTries: Int
     protected abstract var numOnHighestTries: Int
     protected abstract var lowestNumTries: Int
@@ -17,11 +18,11 @@ abstract class SearchType {
 
     abstract fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int)
 
-    open fun printSearchInfo(numRun: Int){
+    open fun printSearchInfo(numRun: Int, searchType: SearchType){
         val stopTime: LocalDateTime = LocalDateTime.now()
         val seconds = startTime.until(stopTime, ChronoUnit.SECONDS).toDouble()
         val averageTries = cumulativeTries / numRun
-        println("Ran Binary search $numRun times.")
+        println("Ran ${searchType.name} $numRun times.")
         println("Highest number of tries is $highestNumTries (Number was $numOnHighestTries).")
         println("Lowest number of tries is $lowestNumTries (Number was $numOnLowestTries).")
         println("Average number of tries is $averageTries.")

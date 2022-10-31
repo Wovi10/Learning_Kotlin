@@ -4,16 +4,18 @@ import java.time.LocalDateTime
 
 object SelectionSort: SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
+    override val name = "Selection Sort"
 
     override fun sort(size: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         for (x in 0 until numRun){
             runSelectionSort(size, lowerBound, upperBound)
         }
+        printSortInfo(numRun, SelectionSort)
     }
 
     private fun runSelectionSort(size: Int, lowerBound: Int, upperBound: Int) {
         val arrayToSort = createInputArray(size, lowerBound, upperBound)
-//        printArray(arrayToSort)
+        printArray(arrayToSort)
         var smallestIndex: Int
         for (i in 0 .. arrayToSort.size) {
             smallestIndex = i
@@ -26,8 +28,8 @@ object SelectionSort: SortType() {
                 swapIndexes(arrayToSort, i, smallestIndex)
             }
         }
-//        printArray(arrayToSort)
-
+        printArray(arrayToSort)
+        println()
     }
 
     private fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {
@@ -36,11 +38,16 @@ object SelectionSort: SortType() {
         arrayToSort[i] = arrayToSort[i] xor arrayToSort[smallestIndex]
     }
 
-    private fun printArray(arrayToSort: IntArray) {
-        for (i in arrayToSort.indices) {
-            val indexToPrint = arrayToSort[i]
-            print("$indexToPrint, ")
+    private fun printArray(arrayToPrint: IntArray) {
+        var stringToPrint = ""
+        for (i in arrayToPrint.indices) {
+            val indexToPrint = arrayToPrint[i]
+            if (stringToPrint.isNotEmpty()){
+                stringToPrint += ", $indexToPrint"
+            }else{
+                stringToPrint = indexToPrint.toString()
+            }
         }
-        println()
+        println(stringToPrint)
     }
 }

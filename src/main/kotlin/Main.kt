@@ -9,5 +9,5 @@ fun main(args: Array<String>) {
 
 //    BinarySearch.search(0, 100, 1000)
 //    LinearSearch.search(0, 100, 1000)
-    SelectionSort.sort(20, 0, 20, 1)
+    SelectionSort.sort(20, 0, 100, 5)
 }

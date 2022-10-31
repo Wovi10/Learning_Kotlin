@@ -26,9 +26,10 @@ object LinearSearch: SearchType() {
     override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
         numTries++
         val numTried = getNumTried(lowerBound)
-        if (numTried != numToFind){
+        if (numTried < numToFind){
             return findNumber(numTried, upperBound, numToFind)
         }
+        println(numToFind)
     }
 
     private fun getNumTried(lowerBound: Int): Int {

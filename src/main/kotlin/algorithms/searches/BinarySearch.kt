@@ -1,20 +1,22 @@
 package algorithms.searches
 
+import algorithms.utils.AlgorithmConstants.TWO
+import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
 object BinarySearch : SearchType() {
     override val name = "Binary search"
-    override var highestNumTries = 0
-    override var numOnHighestTries = 0
-    override var lowestNumTries = 500
-    override var numOnLowestTries = 0
-    override var cumulativeTries = 0
-    override var numTries = 0
+    override var highestNumTries = ZERO
+    override var numOnHighestTries = ZERO
+    override var lowestNumTries = Int.MAX_VALUE
+    override var numOnLowestTries = ZERO
+    override var cumulativeTries = ZERO
+    override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()
 
     override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
         resetVariables()
-        for (x in 0 until numRun) {
+        for (x in ZERO until numRun) {
             runBinarySearch(lowerBound, upperBound)
         }
         printSearchInfo(numRun, name)
@@ -22,7 +24,7 @@ object BinarySearch : SearchType() {
 
     private fun runBinarySearch(lowerBound: Int, upperBound: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
-        numTries = 0
+        numTries = ZERO
         findNumber(lowerBound, upperBound, numToFind)
         updateSearchData(numToFind)
     }
@@ -37,13 +39,9 @@ object BinarySearch : SearchType() {
         }
     }
 
-    override fun printStartText(numRun: Int, name: String) {
-        println("Started $numRun runs of $name")
-    }
-
     private fun getMiddleNum(lowerBound: Int, upperBound: Int): Int {
         val difference = upperBound - lowerBound
-        val half = difference / 2
+        val half = difference / TWO
         return lowerBound + half
     }
 

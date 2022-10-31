@@ -1,6 +1,7 @@
 package algorithms.sorts
 
 import algorithms.Algorithm
+import algorithms.utils.AlgorithmConstants.THOUSAND
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 import kotlin.random.Random
@@ -21,7 +22,7 @@ abstract class SortType: Algorithm() {
 
     open fun printSortInfo(numRun: Int, name: String) {
         val stopTime: LocalDateTime = LocalDateTime.now()
-        val time = (startTime.until(stopTime, ChronoUnit.NANOS)/1000000).toDouble()
+        val time = (startTime.until(stopTime, ChronoUnit.NANOS)/THOUSAND).toDouble()
         val timeString = getTimeString(time)
         println("Ran $name $numRun times.")
         println(timeString)
@@ -29,16 +30,16 @@ abstract class SortType: Algorithm() {
     }
 
     open fun printArray(arrayToPrint: IntArray) {
-        var stringToPrint = ""
-        for (i in arrayToPrint.indices) {
-            val indexToPrint = arrayToPrint[i]
-            if (stringToPrint.isNotEmpty()){
-                stringToPrint += ", $indexToPrint"
-            }else{
-                stringToPrint = indexToPrint.toString()
-            }
-        }
-        println(stringToPrint)
+//        var stringToPrint = ""
+//        for (i in arrayToPrint.indices) {
+//            val indexToPrint = arrayToPrint[i]
+//            if (stringToPrint.isNotEmpty()){
+//                stringToPrint += ", $indexToPrint"
+//            }else{
+//                stringToPrint = indexToPrint.toString()
+//            }
+//        }
+//        println(stringToPrint)
     }
 
     open fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {

@@ -1,23 +1,27 @@
 package algorithms
 
+import algorithms.utils.AlgorithmConstants.ONE_MILLION
+import algorithms.utils.AlgorithmConstants.SIXTY
+
 abstract class Algorithm {
     open fun getTimeString(_time: Double): String{
         var time = _time
-        if (time < 1000){
-            return "It took $time nanos."
-
+        if (time < ONE_MILLION){
+            return "It took $time thousand nanos."
         }
-        time /= 1000
-        if (time < 60){
+        time /= ONE_MILLION
+        if (time < SIXTY){
             return "It took $time seconds."
         }
-        time /= 60
-        if (time < 60){
+        time /= SIXTY
+        if (time < SIXTY){
             return "It took $time minutes."
         }
-        time /= 60
+        time /= SIXTY
         return "It took $time hours."
     }
 
-    abstract fun printStartText(numRun: Int, name: String)
+    open fun printStartText(numRun: Int, name: String){
+        println("Started $numRun run(s) of $name")
+    }
 }

@@ -1,6 +1,9 @@
 package algorithms.searches
 
 import algorithms.Algorithm
+import algorithms.utils.AlgorithmConstants.ONE_MILLION
+import algorithms.utils.AlgorithmConstants.THOUSAND
+import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 import kotlin.random.Random
@@ -21,7 +24,7 @@ abstract class SearchType: Algorithm() {
 
     open fun printSearchInfo(numRun: Int, name: String){
         val stopTime: LocalDateTime = LocalDateTime.now()
-        val time = (startTime.until(stopTime, ChronoUnit.NANOS)/1000000).toDouble()
+        val time = (startTime.until(stopTime, ChronoUnit.NANOS)/ THOUSAND).toDouble()
         val timeString = getTimeString(time)
         val averageTries = cumulativeTries / numRun
         println("Ran $name $numRun times.")
@@ -47,12 +50,12 @@ abstract class SearchType: Algorithm() {
     }
 
     open fun resetVariables() {
-        highestNumTries = 0
-        numOnHighestTries = 0
-        lowestNumTries = 500
-        numOnLowestTries = 0
-        cumulativeTries = 0
-        numTries = 0
+        highestNumTries = ZERO
+        numOnHighestTries = ZERO
+        lowestNumTries = Int.MAX_VALUE
+        numOnLowestTries = ZERO
+        cumulativeTries = ZERO
+        numTries = ZERO
         startTime = LocalDateTime.now()
     }
 }

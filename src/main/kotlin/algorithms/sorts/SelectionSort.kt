@@ -1,5 +1,7 @@
 package algorithms.sorts
 
+import algorithms.utils.AlgorithmConstants.LOADING_SYMBOLS
+import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
 object SelectionSort: SortType() {
@@ -7,21 +9,17 @@ object SelectionSort: SortType() {
     override val name = "Selection sort"
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
-        println("Started $numRun $name")
-        for (x in 0 until numRun){
+        printStartText(numRun, name)
+        for (x in ZERO until numRun){
             runSelectionSort(arraySize, lowerBound, upperBound)
         }
         printSortInfo(numRun, name)
     }
 
-    override fun printStartText(numRun: Int, name: String) {
-        println("Started $numRun runs of $name")
-    }
-
     private fun runSelectionSort(size: Int, lowerBound: Int, upperBound: Int) {
         val arrayToSort = createInputArray(size, lowerBound, upperBound)
         var smallestIndex: Int
-        for (i in 0 .. arrayToSort.size) {
+        for (i in ZERO .. arrayToSort.size) {
             smallestIndex = i
             for (j in i until arrayToSort.size) {
                 if (arrayToSort[j] < arrayToSort[smallestIndex]){
@@ -32,6 +30,6 @@ object SelectionSort: SortType() {
                 swapIndexes(arrayToSort, i, smallestIndex)
             }
         }
-        print("| ")
+        print(LOADING_SYMBOLS)
     }
 }

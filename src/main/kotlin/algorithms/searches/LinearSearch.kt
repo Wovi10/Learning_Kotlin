@@ -1,20 +1,22 @@
 package algorithms.searches
 
+import algorithms.utils.AlgorithmConstants.ONE
+import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
 object LinearSearch : SearchType() {
     override val name = "Linear search"
-    override var highestNumTries = 0
-    override var numOnHighestTries = 0
-    override var lowestNumTries = 500
-    override var numOnLowestTries = 0
-    override var cumulativeTries = 0
-    override var numTries = 0
+    override var highestNumTries = ZERO
+    override var numOnHighestTries = ZERO
+    override var lowestNumTries = Int.MAX_VALUE
+    override var numOnLowestTries = ZERO
+    override var cumulativeTries = ZERO
+    override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()
 
     override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
         resetVariables()
-        for (x in 0 until numRun) {
+        for (x in ZERO until numRun) {
             runLinearSearch(lowerBound, upperBound)
         }
         printSearchInfo(numRun, name)
@@ -22,7 +24,7 @@ object LinearSearch : SearchType() {
 
     private fun runLinearSearch(lowerBound: Int, upperBound: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
-        numTries = 0
+        numTries = ZERO
         findNumber(lowerBound, upperBound, numToFind)
         updateSearchData(numToFind)
     }
@@ -35,11 +37,7 @@ object LinearSearch : SearchType() {
         }
     }
 
-    override fun printStartText(numRun: Int, name: String) {
-        println("Started $numRun runs of $name")
-    }
-
     private fun getNumToTry(lowerBound: Int): Int {
-        return lowerBound + 1
+        return lowerBound + ONE
     }
 }

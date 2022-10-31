@@ -29,7 +29,7 @@ object SelectionSort: SortType() {
             }
         }
 //        printArray(arrayToSort)
-//        println()
+        print("| ")
     }
 
     private fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {

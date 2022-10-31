@@ -1,14 +1,13 @@
 package algorithms.searches
 
 import algorithms.Algorithm
-import algorithms.utils.AlgorithmConstants.ONE_MILLION
 import algorithms.utils.AlgorithmConstants.THOUSAND
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 import kotlin.random.Random
 
-abstract class SearchType: Algorithm() {
+abstract class SearchType : Algorithm() {
     protected abstract val name: String
     protected abstract var highestNumTries: Int
     protected abstract var numOnHighestTries: Int
@@ -22,9 +21,9 @@ abstract class SearchType: Algorithm() {
 
     abstract fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int)
 
-    open fun printSearchInfo(numRun: Int, name: String){
+    open fun printSearchInfo(numRun: Int, name: String) {
         val stopTime: LocalDateTime = LocalDateTime.now()
-        val time = (startTime.until(stopTime, ChronoUnit.NANOS)/ THOUSAND).toDouble()
+        val time = (startTime.until(stopTime, ChronoUnit.NANOS) / THOUSAND).toDouble()
         val timeString = getTimeString(time)
         val averageTries = cumulativeTries / numRun
         println("Ran $name $numRun times.")
@@ -34,6 +33,7 @@ abstract class SearchType: Algorithm() {
         println(timeString)
         println()
     }
+
     open fun createNumToFind(lowerBound: Int, upperBound: Int): Int {
         return Random.nextInt(lowerBound, upperBound)
     }

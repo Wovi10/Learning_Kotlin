@@ -4,13 +4,13 @@ import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
-object QuickSort: SortType() {
+object QuickSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Quick sort"
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         printStartText(numRun, name)
-        for (x in ZERO until numRun){
+        for (x in ZERO until numRun) {
             runQuickSort(arraySize, lowerBound, upperBound)
         }
         printSortInfo(numRun, name)
@@ -36,8 +36,8 @@ object QuickSort: SortType() {
         val pivot = arrayToSort[lastIndex]
 
         var i = firstIndex - ONE
-        for (j in firstIndex .. lastIndex){
-            if (arrayToSort[j] < pivot){
+        for (j in firstIndex..lastIndex) {
+            if (arrayToSort[j] < pivot) {
                 i++
                 swapIndexes(arrayToSort, i, j)
             }

@@ -6,15 +6,15 @@ import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 import kotlin.random.Random
 
-abstract class SortType: Algorithm() {
+abstract class SortType : Algorithm() {
     protected abstract var startTime: LocalDateTime
     protected abstract val name: String
     abstract fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int)
 
-    open fun createInputArray(size: Int, lowerBound: Int, upperBound: Int): IntArray{
+    open fun createInputArray(size: Int, lowerBound: Int, upperBound: Int): IntArray {
         val outputArray = IntArray(size)
-        for (x in 0 until size){
-            val randomNumber = Random.nextInt(lowerBound, upperBound+1)
+        for (x in 0 until size) {
+            val randomNumber = Random.nextInt(lowerBound, upperBound + 1)
             outputArray[x] = randomNumber
         }
         return outputArray
@@ -22,7 +22,7 @@ abstract class SortType: Algorithm() {
 
     open fun printSortInfo(numRun: Int, name: String) {
         val stopTime: LocalDateTime = LocalDateTime.now()
-        val time = (startTime.until(stopTime, ChronoUnit.NANOS)/THOUSAND).toDouble()
+        val time = (startTime.until(stopTime, ChronoUnit.NANOS) / THOUSAND).toDouble()
         val timeString = getTimeString(time)
         println("Ran $name $numRun times.")
         println(timeString)

@@ -3,8 +3,20 @@ package Algroythms
 import kotlin.random.Random
 
 object Algorythms {
-    private var numTries = 1
-    fun binarySearch(lowerBound: Int, upperBound: Int) {
+    private var highestNumTries = 1
+    private var lowestNumTries = 1
+    private var cummulativeTries = 0
+    fun binarySearch(lowerBound: Int, upperBound: Int, numRun: Int) {
+        for (x in 0 .. numRun){
+            cummulativeTries += runBinarySearch(lowerBound, upperBound)
+        }
+        val averageTries = cummulativeTries/numRun
+        println("Highest number of tries is $highestNumTries")
+        println("Lowest number of tries is $lowestNumTries")
+        println("Average number of tries is $averageTries")
+    }
+
+    private fun runBinarySearch(lowerBound: Int, upperBound: Int): Int {
         val numToFind = createNumToFind(lowerBound, upperBound)
         findNumber(lowerBound, upperBound, numToFind)
     }

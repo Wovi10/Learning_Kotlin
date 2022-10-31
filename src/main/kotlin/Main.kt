@@ -5,5 +5,11 @@ fun main(args: Array<String>) {
 //    val name = readln()
 //    println("Hello, $name")
 
-    Algorythms.binarySearch(0, 100)
+    var numTries = 0
+    val numRuns = 1000
+    for (x in 0..(numRuns+1)) {
+        numTries += Algorythms.binarySearch(0, 100)
+    }
+    println(numTries/numRuns)
+
 }

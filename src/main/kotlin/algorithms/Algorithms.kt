@@ -4,7 +4,9 @@ import kotlin.random.Random
 
 object Algorithms {
     private var highestNumTries = 1
+    private var numOnHighestTries = 0
     private var lowestNumTries = 500
+    private var numOnLowestTries = 0
     private var cumulativeTries = 0
     private var numTries = 0
     fun binarySearch(lowerBound: Int, upperBound: Int, numRun: Int) {
@@ -12,9 +14,10 @@ object Algorithms {
             runBinarySearch(lowerBound, upperBound)
         }
         val averageTries = cumulativeTries / numRun
-        println("Highest number of tries is $highestNumTries")
-        println("Lowest number of tries is $lowestNumTries")
-        println("Average number of tries is $averageTries")
+        println("Ran Binary search $numRun times.")
+        println("Highest number of tries is $highestNumTries (Number was $numOnHighestTries).")
+        println("Lowest number of tries is $lowestNumTries (Number was $numOnLowestTries).")
+        println("Average number of tries is $averageTries.")
     }
 
     private fun runBinarySearch(lowerBound: Int, upperBound: Int) {
@@ -23,9 +26,10 @@ object Algorithms {
         findNumber(lowerBound, upperBound, numToFind)
         if (numTries > highestNumTries){
             highestNumTries = numTries
-            println("New highest number $highestNumTries")
+            numOnHighestTries = numToFind
         }else if (numTries < lowestNumTries){
             lowestNumTries = numTries
+            numOnLowestTries = numToFind
         }
         cumulativeTries += numTries
     }
@@ -34,13 +38,13 @@ object Algorithms {
         numTries++
         val middleNumber = getMiddleNum(lowerBound, upperBound)
         if (numToFind < middleNumber) {
-            println("$middleNumber is too high!")
+//            println("$middleNumber is too high!")
             return findNumber(lowerBound, middleNumber, numToFind)
         } else if (numToFind > middleNumber) {
-            println("$middleNumber is too low!")
+//            println("$middleNumber is too low!")
             return findNumber(middleNumber, upperBound, numToFind)
         }
-        println("Found the number in $numTries times! Number was $numToFind")
+//        println("Found the number in $numTries times! Number was $numToFind")
     }
 
     private fun getMiddleNum(lowerBound: Int, upperBound: Int): Int {

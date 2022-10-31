@@ -5,5 +5,5 @@ fun main(args: Array<String>) {
     val name = readln()
     println("Hello, $name")
 
-    Algorythms.binarySearch()
+    Algorythms.binarySearch(0, 100)
 }

@@ -3,18 +3,31 @@ package Algroythms
 import kotlin.random.Random
 
 object Algorythms {
-    fun binarySearch() {
-        val lowerBound = 0
-        val upperBound = 100
-        val numToFind = createNumberToFind(lowerBound, upperBound)
+    var numTries = 0
+    fun binarySearch(lowerBound: Int, upperBound: Int) {
+        val numToFind = createNumToFind(lowerBound, upperBound)
         findNumber(lowerBound, upperBound, numToFind)
     }
 
     private fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
-        TODO("Not yet implemented")
+        val middleNumber = getMiddleNum(lowerBound, upperBound)
+        if (numToFind < middleNumber) {
+            println("$middleNumber is too high!")
+            findNumber(lowerBound, middleNumber, numToFind)
+        } else {
+            println("$middleNumber is too low!")
+            findNumber(middleNumber, upperBound, numToFind)
+        }
+        println("Found the number in $numTries times! Number was $numToFind")
     }
 
-    private fun createNumberToFind(lowerBound: Int, upperBound: Int): Int {
+    private fun getMiddleNum(lowerBound: Int, upperBound: Int): Int {
+        val difference = upperBound - lowerBound
+        val half = difference / 2
+        return lowerBound + half
+    }
+
+    private fun createNumToFind(lowerBound: Int, upperBound: Int): Int {
         return Random.nextInt(lowerBound, upperBound)
     }
 

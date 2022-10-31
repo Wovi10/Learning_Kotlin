@@ -1,10 +1,12 @@
 package Algroythms
 
+import kotlin.random.Random
+
 object Algorythms {
     fun binarySearch() {
         val lowerBound = 0
         val upperBound = 100
-        val numToFind  = createNumberToFind(lowerBound, upperBound)
+        val numToFind = createNumberToFind(lowerBound, upperBound)
         findNumber(lowerBound, upperBound, numToFind)
     }
 
@@ -13,7 +15,7 @@ object Algorythms {
     }
 
     private fun createNumberToFind(lowerBound: Int, upperBound: Int): Int {
-        TODO("Not yet implemented")
+        return Random.nextInt(lowerBound, upperBound)
     }
 
 }

@@ -7,5 +7,6 @@ fun main(args: Array<String>) {
 
 //    BinarySearch.binarySearch(0, 100, 1000)
     BinarySearch.search(0, 100, 1000)
+    BinarySearch.search(0, 100, 1000)
 
 }

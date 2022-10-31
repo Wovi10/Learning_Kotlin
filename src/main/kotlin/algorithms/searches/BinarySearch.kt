@@ -1,7 +1,5 @@
 package algorithms.searches
 
-import kotlin.random.Random
-
 object BinarySearch: SearchType() {
     override var highestNumTries = 0
     override var numOnHighestTries = 0
@@ -21,17 +19,21 @@ object BinarySearch: SearchType() {
         val numToFind = createNumToFind(lowerBound, upperBound)
         numTries = 0
         findNumber(lowerBound, upperBound, numToFind)
-        if (numTries > highestNumTries){
+        updateSearchData(numToFind)
+    }
+
+    private fun updateSearchData(numToFind: Int) {
+        if (numTries > highestNumTries) {
             highestNumTries = numTries
             numOnHighestTries = numToFind
-        }else if (numTries < lowestNumTries){
+        } else if (numTries < lowestNumTries) {
             lowestNumTries = numTries
             numOnLowestTries = numToFind
         }
         cumulativeTries += numTries
     }
 
-    private fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
+    override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
         numTries++
         val middleNumber = getMiddleNum(lowerBound, upperBound)
         if (numToFind < middleNumber) {
@@ -45,10 +47,6 @@ object BinarySearch: SearchType() {
         val difference = upperBound - lowerBound
         val half = difference / 2
         return lowerBound + half
-    }
-
-    private fun createNumToFind(lowerBound: Int, upperBound: Int): Int {
-        return Random.nextInt(lowerBound, upperBound)
     }
 
 }

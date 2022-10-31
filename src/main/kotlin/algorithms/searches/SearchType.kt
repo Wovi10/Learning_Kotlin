@@ -24,7 +24,7 @@ abstract class SearchType : Algorithm() {
     open fun printSearchInfo(numRun: Int, name: String) {
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS) / THOUSAND).toDouble()
-        val timeString = getTimeString(time)
+        val timeString = "It took " + getTimeString(time)
         val averageTries = cumulativeTries / numRun
         println("Ran $name $numRun times.")
         println("Highest number of tries is $highestNumTries (Number was $numOnHighestTries).")

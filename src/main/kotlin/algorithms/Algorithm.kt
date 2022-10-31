@@ -7,18 +7,18 @@ abstract class Algorithm {
     open fun getTimeString(_time: Double): String {
         var time = _time
         if (time < ONE_MILLION) {
-            return "It took $time thousand nanos."
+            return "$time thousand nanos."
         }
         time /= ONE_MILLION
         if (time < SIXTY) {
-            return "It took $time seconds."
+            return "$time seconds."
         }
         time /= SIXTY
         if (time < SIXTY) {
-            return "It took $time minutes."
+            return "$time minutes."
         }
         time /= SIXTY
-        return "It took $time hours."
+        return "$time hours."
     }
 
     open fun printStartText(numRun: Int, name: String) {

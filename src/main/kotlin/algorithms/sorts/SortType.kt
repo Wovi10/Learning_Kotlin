@@ -23,7 +23,7 @@ abstract class SortType : Algorithm() {
     open fun printSortInfo(numRun: Int, name: String) {
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS) / THOUSAND).toDouble()
-        val timeString = getTimeString(time)
+        val timeString = "It took " + getTimeString(time)
         println("Ran $name $numRun times.")
         println(timeString)
         println()

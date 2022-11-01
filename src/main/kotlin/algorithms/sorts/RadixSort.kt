@@ -1,5 +1,8 @@
 package algorithms.sorts
 
+import algorithms.utils.AlgorithmConstants.NUMBER_BASE
+import algorithms.utils.AlgorithmConstants.ONE
+import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
 object RadixSort: SortType() {
@@ -17,17 +20,28 @@ object RadixSort: SortType() {
 
     private fun runRadixSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {
         val arrayToSort = createInputArray(arraySize_, lowerBound_, upperBound_)
-        radixSort()
+        radixSort(arrayToSort, arraySize_)
         TODO("Not yet implemented")
     }
 
     private fun radixSort(arrayToSort_: IntArray, arraySize_: Int) {
         var max = getMax(arrayToSort_, arraySize_)
-
+        var numOfDigits = getNumDigits(max)
+        // right most exponent
 //        for (exp = 1; max/exp > 0; exp *= 10){
 //
 //        }
         TODO("Not yet implemented")
+    }
+
+    fun getNumDigits(max_: Int): Int {
+        var max = max_
+        var numOfDigits = ZERO
+        while (max > ZERO){
+            numOfDigits += ONE
+            max /= NUMBER_BASE
+        }
+        return numOfDigits
     }
 
     private fun getMax(arrayToSort_: IntArray, arraySize_: Int): Int {

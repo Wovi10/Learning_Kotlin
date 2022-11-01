@@ -15,8 +15,18 @@ object RadixSort: SortType() {
         printEndText(numRun, name)
     }
 
-    private fun runRadixSort(arraySize: Int, lowerBound: Int, upperBound: Int) {
-        
+    private fun runRadixSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {
+        val arrayToSort = createInputArray(arraySize_, lowerBound_, upperBound_)
+        radixSort()
+        TODO("Not yet implemented")
+    }
+
+    private fun radixSort(arrayToSort_: IntArray, arraySize_: Int) {
+        var max = getMax(arrayToSort_, arraySize_)
+        TODO("Not yet implemented")
+    }
+
+    private fun getMax(arrayToSort_: IntArray, arraySize_: Int): Int {
         TODO("Not yet implemented")
     }
 }

@@ -21,9 +21,7 @@ object QuickSort : SortType() {
     private fun runQuickSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {
         val arrayToSort = createInputArray(arraySize_, lowerBound_, upperBound_)
         val arrayLength = arrayToSort.size
-        printArray(arrayToSort)
         quickSort(arrayToSort, ZERO, arrayLength - ONE)
-        printArray(arrayToSort)
     }
 
     private fun quickSort(arrayToSort_: IntArray, startIndex_: Int, numOfIndexes_: Int) {

@@ -13,6 +13,7 @@ object RadixSort: SortType() {
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         resetVariables()
+        printStartText(numRun, name)
         for (i in ZERO until numRun){
             runRadixSort(arraySize, lowerBound, upperBound)
         }
@@ -28,13 +29,10 @@ object RadixSort: SortType() {
         val max = getMax(arrayToSort_, arraySize_)
         var numOfDigits = getNumDigits(max)
         var placeValue = ONE
-        println("Starting sort")
-        printArray(arrayToSort_)
         while (numOfDigits-- > ZERO){
             countSort(arrayToSort_, placeValue)
             placeValue *= NUMBER_BASE
         }
-        printArray(arrayToSort_)
     }
 
     private fun countSort(arrayToSort_: IntArray, placeValue: Int){

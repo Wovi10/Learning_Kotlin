@@ -27,6 +27,12 @@ object RadixSort: SortType() {
     }
 
     private fun getMax(arrayToSort_: IntArray, arraySize_: Int): Int {
-        TODO("Not yet implemented")
+        var max = arrayToSort_[0]
+        for (i in 1.. arraySize_) {
+            if (arrayToSort_[i] > max){
+                max = arrayToSort_[i]
+            }
+        }
+        return max
     }
 }

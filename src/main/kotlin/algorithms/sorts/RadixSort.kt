@@ -25,12 +25,18 @@ object RadixSort: SortType() {
     }
 
     private fun radixSort(arrayToSort_: IntArray, arraySize_: Int) {
-        var max = getMax(arrayToSort_, arraySize_)
+        val max = getMax(arrayToSort_, arraySize_)
         var numOfDigits = getNumDigits(max)
-        // right most exponent
-//        for (exp = 1; max/exp > 0; exp *= 10){
-//
-//        }
+        var placeValue = 1
+        while (numOfDigits-- > 0){
+            countSort(arrayToSort_, placeValue)
+            placeValue *= NUMBER_BASE
+        }
+    }
+
+    private fun countSort(arrayToSort_: IntArray, placeValue: Int) {
+        
+
         TODO("Not yet implemented")
     }
 

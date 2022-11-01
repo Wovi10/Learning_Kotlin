@@ -23,6 +23,10 @@ object RadixSort: SortType() {
 
     private fun radixSort(arrayToSort_: IntArray, arraySize_: Int) {
         var max = getMax(arrayToSort_, arraySize_)
+
+//        for (exp = 1; max/exp > 0; exp *= 10){
+//
+//        }
         TODO("Not yet implemented")
     }
 

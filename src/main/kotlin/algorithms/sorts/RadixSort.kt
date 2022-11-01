@@ -2,14 +2,14 @@ package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.NUMBER_BASE
 import algorithms.utils.AlgorithmConstants.ONE
+import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 import java.util.Collections.copy
 
 object RadixSort: SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name: String
-        get() = TODO("Not yet implemented")
+    override val name = "Radix $SORT_TEXT"
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         resetVariables()
@@ -22,44 +22,53 @@ object RadixSort: SortType() {
     private fun runRadixSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {
         val arrayToSort = createInputArray(arraySize_, lowerBound_, upperBound_)
         radixSort(arrayToSort, arraySize_)
-        TODO("Not yet implemented")
     }
 
     private fun radixSort(arrayToSort_: IntArray, arraySize_: Int) {
         val max = getMax(arrayToSort_, arraySize_)
         var numOfDigits = getNumDigits(max)
         var placeValue = 1
-        var arrayToSort = arrayToSort_
         printArray(arrayToSort_)
+        println("Starting sort")
         while (numOfDigits-- > 0){
-            arrayToSort = countSort(arrayToSort, placeValue)
+            countSort(arrayToSort_, placeValue)
             placeValue *= NUMBER_BASE
+            printArray(arrayToSort_)
         }
-        printArray(arrayToSort)
+//        printArray(arrayToSort_)
     }
 
-    private fun countSort(arrayToSort_: IntArray, placeValue: Int): IntArray {
+    private fun countSort(arrayToSort_: IntArray, placeValue: Int){
+        val output = IntArray(arrayToSort_.size)
         val frequency = IntArray(NUMBER_BASE)
+        frequency.fill(0)
+
         // Calculate frequency of digits
         for (i in arrayToSort_.indices){
-            val digit = (arrayToSort_[i] / placeValue) % NUMBER_BASE
-            frequency[digit]++
+            frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]++
         }
+        println("Printing frequency")
+        printArray(frequency)
 
         // Put numbers at right index
-        for (i in ONE .. NUMBER_BASE){
-            frequency[i] = frequency[i - ONE]
-        }
+//        for (i in ONE until NUMBER_BASE){
+//            frequency[i] = frequency[i - ONE]
+//        }
+//        println("Putting numbers at right index")
+//        printArray(frequency)
 
-        val sortedValues = IntArray(frequency.size)
-
+        // Build output array
         for (i in (arrayToSort_.size - ONE) .. 0){
-            val digit = (arrayToSort_[i] / placeValue) % NUMBER_BASE
-            sortedValues[frequency[digit] - 1] = arrayToSort_[i]
-            frequency[digit]--
+            output[frequency[(arrayToSort_.size/placeValue) % NUMBER_BASE] - ONE] = arrayToSort_[i]
+            frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]--
         }
+        println("Printing output")
+        printArray(output)
 
-        return sortedValues
+        // Copy output into arrayToSort
+        for (i in arrayToSort_.indices){
+            arrayToSort_[i] = output[i]
+        }
     }
 
     fun getNumDigits(max_: Int): Int {
@@ -74,7 +83,7 @@ object RadixSort: SortType() {
 
     private fun getMax(arrayToSort_: IntArray, arraySize_: Int): Int {
         var max = arrayToSort_[0]
-        for (i in 1.. arraySize_) {
+        for (i in ONE until arraySize_) {
             if (arrayToSort_[i] > max){
                 max = arrayToSort_[i]
             }

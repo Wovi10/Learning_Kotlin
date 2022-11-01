@@ -24,16 +24,16 @@ abstract class SortType : Algorithm() {
     }
 
     open fun printArray(arrayToPrint: IntArray) {
-//        var stringToPrint = ""
-//        for (i in arrayToPrint.indices) {
-//            val indexToPrint = arrayToPrint[i]
-//            if (stringToPrint.isNotEmpty()){
-//                stringToPrint += ", $indexToPrint"
-//            }else{
-//                stringToPrint = indexToPrint.toString()
-//            }
-//        }
-//        println(stringToPrint)
+        var stringToPrint = ""
+        for (i in arrayToPrint.indices) {
+            val indexToPrint = arrayToPrint[i]
+            if (stringToPrint.isNotEmpty()){
+                stringToPrint += ", $indexToPrint"
+            }else{
+                stringToPrint = indexToPrint.toString()
+            }
+        }
+        println(stringToPrint)
     }
 
     open fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {

@@ -1,5 +1,3 @@
-import algorithms.searches.BinarySearch
-import algorithms.searches.LinearSearch
 import algorithms.sorts.QuickSort
 import algorithms.sorts.RadixSort
 import algorithms.sorts.SelectionSort
@@ -9,9 +7,12 @@ fun main(args: Array<String>) {
 //    val name = readln()
 //    println("Hello, $name")
 
+    val arraySize = 100000; val lowestVal = 0; val highestVal = 1000; val numRun = 100
+
 //    BinarySearch.search(0, 100, 100)
 //    LinearSearch.search(0, 100, 100)
-//    SelectionSort.sort(100000, 0, 1000, 1)
-//    QuickSort.sort(100000, 0, 1000, 1)
-    RadixSort.sort(20, 0, 100, 1)
+
+    QuickSort.sort(arraySize, lowestVal, highestVal, numRun)
+    RadixSort.sort(arraySize, lowestVal, highestVal, numRun)
+//    SelectionSort.sort(arraySize, lowestVal, highestVal, numRun)
 }

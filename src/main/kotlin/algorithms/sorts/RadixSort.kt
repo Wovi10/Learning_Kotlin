@@ -5,17 +5,16 @@ import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
-import java.util.Collections.copy
 
 object RadixSort: SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Radix $SORT_TEXT"
 
-    override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
+    override fun sort(arraySize: Int, lowestValue: Int, highestValue: Int, numRun: Int) {
         resetVariables()
         printStartText(numRun, name)
         for (i in ZERO until numRun){
-            runRadixSort(arraySize, lowerBound, upperBound)
+            runRadixSort(arraySize, lowestValue, highestValue)
         }
         printEndText(numRun, name)
     }

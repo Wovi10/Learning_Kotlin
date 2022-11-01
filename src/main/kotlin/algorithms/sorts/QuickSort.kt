@@ -9,11 +9,11 @@ object QuickSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Quick $SORT_TEXT"
 
-    override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
+    override fun sort(arraySize: Int, lowestValue: Int, highestValue: Int, numRun: Int) {
         resetVariables()
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
-            runQuickSort(arraySize, lowerBound, upperBound)
+            runQuickSort(arraySize, lowestValue, highestValue)
         }
         printEndText(numRun, name)
     }

@@ -7,7 +7,7 @@ import kotlin.random.Random
 abstract class SortType : Algorithm() {
     abstract override var startTime: LocalDateTime
     protected abstract val name: String
-    abstract fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int)
+    abstract fun sort(arraySize: Int, lowestValue: Int, highestValue: Int, numRun: Int)
 
     open fun createInputArray(size: Int, lowerBound: Int, upperBound: Int): IntArray {
         val outputArray = IntArray(size)

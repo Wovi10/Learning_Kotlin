@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 import kotlin.random.Random
 
 abstract class SortType : Algorithm() {
-    abstract override val startTime: LocalDateTime
+    abstract override var startTime: LocalDateTime
     protected abstract val name: String
     abstract fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int)
 

@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
 abstract class Algorithm {
-    protected abstract val startTime: LocalDateTime
+    protected abstract var startTime: LocalDateTime
     open fun getTimeString(_time: Double): String {
         var time = _time
         if (time < ONE_MILLION) {

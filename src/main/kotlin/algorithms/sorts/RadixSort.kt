@@ -9,6 +9,14 @@ object RadixSort: SortType() {
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         resetVariables()
+        for (i in 0 until numRun){
+            runRadixSort(arraySize, lowerBound, upperBound)
+        }
+        printEndText(numRun, name)
+    }
+
+    private fun runRadixSort(arraySize: Int, lowerBound: Int, upperBound: Int) {
+        
         TODO("Not yet implemented")
     }
 }

@@ -36,4 +36,6 @@ abstract class Algorithm {
         println("Ran $name $numRun times.")
         println(timeString)
     }
+
+    abstract fun resetVariables()
 }

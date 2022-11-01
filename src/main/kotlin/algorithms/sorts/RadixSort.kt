@@ -8,6 +8,7 @@ object RadixSort: SortType() {
         get() = TODO("Not yet implemented")
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
+        resetVariables()
         TODO("Not yet implemented")
     }
 }

@@ -43,7 +43,7 @@ abstract class SearchType : Algorithm() {
         cumulativeTries += numTries
     }
 
-    open fun resetVariables() {
+    override fun resetVariables() {
         highestNumTries = ZERO
         numOnHighestTries = ZERO
         lowestNumTries = Int.MAX_VALUE

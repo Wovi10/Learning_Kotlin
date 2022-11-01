@@ -41,4 +41,8 @@ abstract class SortType : Algorithm() {
         arrayToSort[i] = arrayToSort[smallestIndex]
         arrayToSort[smallestIndex] = temp
     }
+
+    override fun resetVariables() {
+        startTime = LocalDateTime.now()
+    }
 }

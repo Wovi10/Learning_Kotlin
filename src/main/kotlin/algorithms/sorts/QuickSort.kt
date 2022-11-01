@@ -10,6 +10,7 @@ object QuickSort : SortType() {
     override val name = "Quick $SORT_TEXT"
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
+        resetVariables()
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
             runQuickSort(arraySize, lowerBound, upperBound)

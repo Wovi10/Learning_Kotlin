@@ -10,6 +10,7 @@ object SelectionSort : SortType() {
     override val name = "Selection $SORT_TEXT"
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
+        resetVariables()
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
             runSelectionSort(arraySize, lowerBound, upperBound)

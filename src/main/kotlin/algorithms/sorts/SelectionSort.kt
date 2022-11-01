@@ -1,6 +1,7 @@
 package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
+import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
@@ -16,7 +17,7 @@ object SelectionSort : SortType() {
             runSelectionSort(arraySize, lowestValue, highestValue)
             print(LOADING_SYMBOL)
         }
-        print("\n")
+        print(NEWLINE)
         printEndText(numRun, name)
     }
 

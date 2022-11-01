@@ -1,5 +1,8 @@
 package algorithms.sorts
 
+import algorithms.utils.AlgorithmConstants
+import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
+import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
@@ -14,7 +17,9 @@ object QuickSort : SortType() {
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
             runQuickSort(arraySize, lowestValue, highestValue)
+            print(LOADING_SYMBOL)
         }
+        print(NEWLINE)
         printEndText(numRun, name)
     }
 

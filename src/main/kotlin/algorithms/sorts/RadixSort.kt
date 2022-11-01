@@ -1,5 +1,8 @@
 package algorithms.sorts
 
+import algorithms.utils.AlgorithmConstants
+import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
+import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.NUMBER_BASE
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
@@ -15,7 +18,9 @@ object RadixSort: SortType() {
         printStartText(numRun, name)
         for (i in ZERO until numRun){
             runRadixSort(arraySize, lowestValue, highestValue)
+            print(LOADING_SYMBOL)
         }
+        print(NEWLINE)
         printEndText(numRun, name)
     }
 

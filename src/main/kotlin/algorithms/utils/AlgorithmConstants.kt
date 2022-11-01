@@ -11,6 +11,7 @@ object AlgorithmConstants {
     const val NUMBER_BASE = 10
 
     const val LOADING_SYMBOL = "|"
+    const val NEWLINE = "\n"
     const val SORT_TEXT = "sort"
     const val SEARCH_TEXT = "search"
 }

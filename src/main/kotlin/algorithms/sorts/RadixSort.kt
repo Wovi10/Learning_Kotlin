@@ -13,7 +13,7 @@ object RadixSort: SortType() {
 
     override fun sort(arraySize: Int, lowerBound: Int, upperBound: Int, numRun: Int) {
         resetVariables()
-        for (i in 0 until numRun){
+        for (i in ZERO until numRun){
             runRadixSort(arraySize, lowerBound, upperBound)
         }
         printEndText(numRun, name)
@@ -27,15 +27,14 @@ object RadixSort: SortType() {
     private fun radixSort(arrayToSort_: IntArray, arraySize_: Int) {
         val max = getMax(arrayToSort_, arraySize_)
         var numOfDigits = getNumDigits(max)
-        var placeValue = 1
-        printArray(arrayToSort_)
+        var placeValue = ONE
         println("Starting sort")
-        while (numOfDigits-- > 0){
+        printArray(arrayToSort_)
+        while (numOfDigits-- > ZERO){
             countSort(arrayToSort_, placeValue)
             placeValue *= NUMBER_BASE
-            printArray(arrayToSort_)
         }
-//        printArray(arrayToSort_)
+        printArray(arrayToSort_)
     }
 
     private fun countSort(arrayToSort_: IntArray, placeValue: Int){
@@ -47,23 +46,16 @@ object RadixSort: SortType() {
         for (i in arrayToSort_.indices){
             frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]++
         }
-        println("Printing frequency")
-        printArray(frequency)
-
         // Put numbers at right index
-//        for (i in ONE until NUMBER_BASE){
-//            frequency[i] = frequency[i - ONE]
-//        }
-//        println("Putting numbers at right index")
-//        printArray(frequency)
-
+        for (i in ONE until NUMBER_BASE){
+            frequency[i] += frequency[i - ONE]
+        }
         // Build output array
-        for (i in (arrayToSort_.size - ONE) .. 0){
-            output[frequency[(arrayToSort_.size/placeValue) % NUMBER_BASE] - ONE] = arrayToSort_[i]
+        for (i in (arrayToSort_.size - ONE) downTo  0){
+            val freqNumToWrite = frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]
+            output[freqNumToWrite - ONE] = arrayToSort_[i]
             frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]--
         }
-        println("Printing output")
-        printArray(output)
 
         // Copy output into arrayToSort
         for (i in arrayToSort_.indices){

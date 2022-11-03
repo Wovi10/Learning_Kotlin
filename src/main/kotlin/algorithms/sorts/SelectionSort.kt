@@ -32,9 +32,10 @@ object SelectionSort : SortType() {
 
     private fun selectionSort(arrayToSort_: IntArray) {
         var smallestIndex: Int
-        for (i in ZERO..arrayToSort_.size) {
+        val arraySize = arrayToSort_.size
+        for (i in ZERO..arraySize) {
             smallestIndex = i
-            for (j in i until arrayToSort_.size) {
+            for (j in i until arraySize) {
                 if (arrayToSort_[j] < arrayToSort_[smallestIndex]) {
                     smallestIndex = j
                 }

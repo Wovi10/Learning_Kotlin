@@ -1,5 +1,7 @@
 package algorithms.searches
 
+import algorithms.searches.utils.GuessOnTries
+import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
 import algorithms.utils.AlgorithmConstants.TWO
 import algorithms.utils.AlgorithmConstants.ZERO
@@ -7,10 +9,8 @@ import java.time.LocalDateTime
 
 object BinarySearch : SearchType() {
     override val name = "Binary $SEARCH_TEXT"
-    override var highestNumTries = ZERO
-    override var numOnHighestTries = ZERO
-    override var lowestNumTries = Int.MAX_VALUE
-    override var numOnLowestTries = ZERO
+    override var guessOnTries: GuessOnTries
+    override var numOfTries: NumOfTries
     override var cumulativeTries = ZERO
     override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()

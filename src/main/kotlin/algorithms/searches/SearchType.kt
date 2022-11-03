@@ -1,6 +1,7 @@
 package algorithms.searches
 
 import algorithms.Algorithm
+import algorithms.searches.BinarySearch.numOfTries
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.ZERO

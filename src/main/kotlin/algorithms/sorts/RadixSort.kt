@@ -50,7 +50,7 @@ object RadixSort: SortType() {
 
         calcFreqOfDigits(inputArray_, digitFrequency, placeValue)
         putNumRightIndex(digitFrequency)
-        buildSortedArray(arraySize, inputArray_, sortedArray, digitFrequency, placeValue)
+        fillSortedArray(arraySize, inputArray_, sortedArray, digitFrequency, placeValue)
         copyArray(inputArray_, sortedArray)
     }
 
@@ -60,7 +60,7 @@ object RadixSort: SortType() {
         }
     }
 
-    private fun buildSortedArray(
+    private fun fillSortedArray(
         arraySize: Int,
         inputArray: IntArray,
         sortedArray: IntArray,

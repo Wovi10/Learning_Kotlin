@@ -3,11 +3,11 @@ package algorithms.searches.utils
 import algorithms.utils.AlgorithmConstants.ZERO
 
 abstract class NumOfTries {
-    var highestNumTries: Int = ZERO
-    var lowestNumTries: Int = Int.MAX_VALUE
+    var highest: Int = ZERO
+    var lowest: Int = Int.MAX_VALUE
 
     fun resetVariables() {
-        highestNumTries = ZERO
-        lowestNumTries = Int.MAX_VALUE
+        highest = ZERO
+        lowest = Int.MAX_VALUE
     }
 }

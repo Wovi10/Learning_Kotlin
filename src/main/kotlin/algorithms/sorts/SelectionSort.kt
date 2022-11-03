@@ -15,7 +15,8 @@ object SelectionSort : SortType() {
         resetVariables()
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
-            runSelectionSort(arraySize_, lowestValue, highestValue)
+            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue, highestValue)
+            selectionSort(arrayToSort)
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
@@ -23,21 +24,23 @@ object SelectionSort : SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray) {
-        TODO("Not yet implemented")
+        resetVariables()
+        printStartText(arrayToSort_, name)
+        selectionSort(arrayToSort_)
+        printEndText(arrayToSort_)
     }
 
-    private fun runSelectionSort(size: Int, lowerBound: Int, upperBound: Int) {
-        val arrayToSort = Utils.createInputArray(size, lowerBound, upperBound)
+    private fun selectionSort(arrayToSort_: IntArray) {
         var smallestIndex: Int
-        for (i in ZERO..arrayToSort.size) {
+        for (i in ZERO..arrayToSort_.size) {
             smallestIndex = i
-            for (j in i until arrayToSort.size) {
-                if (arrayToSort[j] < arrayToSort[smallestIndex]) {
+            for (j in i until arrayToSort_.size) {
+                if (arrayToSort_[j] < arrayToSort_[smallestIndex]) {
                     smallestIndex = j
                 }
             }
             if (smallestIndex != i) {
-                swapIndexes(arrayToSort, i, smallestIndex)
+                swapIndexes(arrayToSort_, i, smallestIndex)
             }
         }
     }

@@ -1,6 +1,7 @@
 package algorithms
 
 import algorithms.utils.AlgorithmConstants
+import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE_MILLION
 import algorithms.utils.AlgorithmConstants.SIXTY
 import java.time.LocalDateTime
@@ -30,8 +31,8 @@ abstract class Algorithm {
     }
 
     open fun printStartText(arrayToPrint: IntArray, name: String){
-        println("Sorting following array with $name:")
-        printArray(arrayToPrint)
+        println(name)
+//        printArray(arrayToPrint)
     }
 
     open fun printArray(arrayToPrint: IntArray) {
@@ -47,16 +48,14 @@ abstract class Algorithm {
         println(stringToPrint)
     }
 
-    open fun printCommonSection(name: String, numRun: Int) {
-        println("Ran $name $numRun times.")
-        printDuration()
+    open fun getCommonSection(name: String, numRun: Int): String {
+        return "Ran $name $numRun times. $NEWLINE" + getDuration()
     }
 
-    open fun printDuration() {
+    open fun getDuration(): String {
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS) / AlgorithmConstants.THOUSAND).toDouble()
-        val timeString = "It took " + getTimeString(time)
-        println(timeString)
+        return "It took " + getTimeString(time)
     }
 
     abstract fun resetVariables()

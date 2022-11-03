@@ -28,7 +28,7 @@ object QuickSort : SortType() {
         resetVariables()
         printStartText(arrayToSort_, name)
         quickSort(arrayToSort_, ZERO, (arrayToSort_.size - ONE))
-        printEndText(arrayToSort_, name)
+        printEndText(arrayToSort_)
     }
 
     private fun quickSort(arrayToSort_: IntArray, startIndex_: Int, numOfIndexes_: Int) {

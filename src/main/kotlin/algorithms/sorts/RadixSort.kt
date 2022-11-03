@@ -29,7 +29,7 @@ object RadixSort: SortType() {
         resetVariables()
         printStartText(arrayToSort_, name)
         radixSort(arrayToSort_)
-        printEndText(arrayToSort_, name)
+        printEndText(arrayToSort_)
     }
 
     private fun radixSort(arrayToSort_: IntArray) {

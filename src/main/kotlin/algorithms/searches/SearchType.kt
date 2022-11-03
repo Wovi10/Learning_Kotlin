@@ -20,7 +20,7 @@ abstract class SearchType : Algorithm() {
     abstract fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int)
 
     open fun printSearchInfo(numRun: Int, name: String) {
-        printCommonSection(name, numRun)
+        println(getCommonSection(name, numRun))
         val averageTries = cumulativeTries / numRun
         println("Highest number of tries is $highestNumTries (Number was $numOnHighestTries).")
         println("Lowest number of tries is $lowestNumTries (Number was $numOnLowestTries).")

@@ -1,6 +1,7 @@
 package algorithms.sorts
 
 import algorithms.Algorithm
+import algorithms.utils.AlgorithmConstants.NEWLINE
 import java.time.LocalDateTime
 
 abstract class SortType : Algorithm() {
@@ -10,15 +11,11 @@ abstract class SortType : Algorithm() {
     abstract fun sort(arrayToSort_: IntArray)
 
     open fun printEndText(numRun: Int, name: String) {
-        printCommonSection(name, numRun)
-        println()
+        println(getCommonSection(name, numRun) + NEWLINE)
     }
 
-    open fun printEndText(arrayToSort_: IntArray, name: String) {
-        println("Result:")
-        printArray(arrayToSort_)
-        printDuration()
-        println()
+    open fun printEndText(arrayToSort_: IntArray) {
+        println(getDuration() + NEWLINE)
     }
 
     open fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {

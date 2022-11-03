@@ -17,7 +17,7 @@ object BinarySearch : SearchType() {
 
     override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
         resetVariables()
-        for (x in ZERO until numRun) {
+        for (x in ZERO until numRun) { // Until because start from ZERO
             runBinarySearch(lowerBound, upperBound)
         }
         printSearchInfo(numRun, name)

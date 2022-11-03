@@ -7,6 +7,7 @@ import algorithms.utils.AlgorithmConstants.NUMBER_BASE
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
+import algorithms.utils.Utils
 import java.time.LocalDateTime
 
 object RadixSort: SortType() {
@@ -25,7 +26,7 @@ object RadixSort: SortType() {
     }
 
     private fun runRadixSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {
-        val arrayToSort = createInputArray(arraySize_, lowerBound_, upperBound_)
+        val arrayToSort = Utils.createInputArray(arraySize_, lowerBound_, upperBound_)
         radixSort(arrayToSort, arraySize_)
     }
 

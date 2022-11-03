@@ -4,6 +4,7 @@ import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
+import algorithms.utils.Utils
 import java.time.LocalDateTime
 
 object SelectionSort : SortType() {
@@ -22,7 +23,7 @@ object SelectionSort : SortType() {
     }
 
     private fun runSelectionSort(size: Int, lowerBound: Int, upperBound: Int) {
-        val arrayToSort = createInputArray(size, lowerBound, upperBound)
+        val arrayToSort = Utils.createInputArray(size, lowerBound, upperBound)
         var smallestIndex: Int
         for (i in ZERO..arrayToSort.size) {
             smallestIndex = i

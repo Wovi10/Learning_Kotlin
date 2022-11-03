@@ -2,7 +2,6 @@ package algorithms.sorts
 
 import algorithms.Algorithm
 import java.time.LocalDateTime
-import kotlin.random.Random
 
 abstract class SortType : Algorithm() {
     abstract override var startTime: LocalDateTime
@@ -10,31 +9,16 @@ abstract class SortType : Algorithm() {
     abstract fun sort(arraySize_: Int, lowestValue: Int, highestValue: Int, numRun: Int)
     abstract fun sort(arrayToSort_: IntArray)
 
-    open fun createInputArray(size: Int, lowerBound: Int, upperBound: Int): IntArray {
-        val outputArray = IntArray(size)
-        for (x in 0 until size) {
-            val randomNumber = Random.nextInt(lowerBound, upperBound + 1)
-            outputArray[x] = randomNumber
-        }
-        return outputArray
-    }
-
     open fun printEndText(numRun: Int, name: String) {
         printCommonSection(name, numRun)
         println()
     }
 
-    open fun printArray(arrayToPrint: IntArray) {
-        var stringToPrint = ""
-        for (i in arrayToPrint.indices) {
-            val indexToPrint = arrayToPrint[i]
-            if (stringToPrint.isNotEmpty()){
-                stringToPrint += ", $indexToPrint"
-            }else{
-                stringToPrint = indexToPrint.toString()
-            }
-        }
-        println(stringToPrint)
+    open fun printEndText(arrayToSort_: IntArray, name: String) {
+        println("Result:")
+        printArray(arrayToSort_)
+        printDuration()
+        println()
     }
 
     open fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {

@@ -5,6 +5,7 @@ import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
+import algorithms.utils.Utils
 import java.time.LocalDateTime
 
 object QuickSort : SortType() {
@@ -15,7 +16,7 @@ object QuickSort : SortType() {
         resetVariables()
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
-            val arrayToSort = createInputArray(arraySize_, lowestValue, highestValue)
+            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue, highestValue)
             quickSort(arrayToSort, lowestValue, highestValue)
             print(LOADING_SYMBOL)
         }
@@ -25,8 +26,8 @@ object QuickSort : SortType() {
 
     override fun sort(arrayToSort_: IntArray) {
         resetVariables()
-        printStartText(ONE, name)
-        quickSort(arrayToSort_, 0, arrayToSort_.size)
+        printStartText(arrayToSort_, name)
+        quickSort(arrayToSort_, ZERO, arrayToSort_.size)
         printEndText(ONE, name)
     }
 

@@ -19,10 +19,10 @@ fun main() {
 //    RadixSort.sort(arraySize, lowestVal, highestVal, numRun)
 //    SelectionSort.sort(arraySize, lowestVal, highestVal, numRun)
 
-//    val quickArrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
-//    QuickSort.sort(quickArrayToSort)
-    val radixArrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
-    RadixSort.sort(radixArrayToSort)
+    val quickArrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
+    QuickSort.sort(quickArrayToSort)
+//    val radixArrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
+//    RadixSort.sort(radixArrayToSort)
 //    val selectionArrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
 //    SelectionSort.sort(selectionArrayToSort)
 

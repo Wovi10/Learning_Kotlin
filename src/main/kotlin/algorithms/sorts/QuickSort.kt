@@ -12,16 +12,16 @@ object QuickSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Quick $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue: Int, highestValue: Int, numRun: Int) {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         resetVariables()
-        printStartText(numRun, name)
-        for (x in ZERO until numRun) {
-            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue, highestValue)
+        printStartText(numRun_, name)
+        repeat(numRun_){
+            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
             quickSort(arrayToSort, ZERO, arraySize_ - ONE)
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        printEndText(numRun, name)
+        printEndText(numRun_, name)
     }
 
     override fun sort(arrayToSort_: IntArray) {
@@ -39,17 +39,18 @@ object QuickSort : SortType() {
         }
     }
 
-    private fun partition(arrayToSort: IntArray, firstIndex: Int, lastIndex: Int): Int {
-        val pivot = arrayToSort[lastIndex]
+    private fun partition(arrayToSort_: IntArray, firstIndex_: Int, lastIndex_: Int): Int {
+        val pivot = arrayToSort_[lastIndex_]
 
-        var i = firstIndex - ONE
-        for (j in firstIndex..lastIndex) {
-            if (arrayToSort[j] < pivot) {
+        var i = firstIndex_ - ONE
+        for (j in firstIndex_..lastIndex_) {
+            if (arrayToSort_[j] < pivot) {
                 i++
-                swapIndexes(arrayToSort, i, j)
+                swapIndexes(arrayToSort_, i, j)
             }
         }
-        swapIndexes(arrayToSort, i + ONE, lastIndex)
-        return i + ONE
+        i += ONE
+        swapIndexes(arrayToSort_, i, lastIndex_)
+        return i
     }
 }

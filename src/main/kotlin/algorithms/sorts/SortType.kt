@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 abstract class SortType : Algorithm() {
     abstract override var startTime: LocalDateTime
     protected abstract val name: String
-    abstract fun sort(arraySize_: Int, lowestValue: Int, highestValue: Int, numRun: Int)
+    abstract fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int)
     abstract fun sort(arrayToSort_: IntArray)
 
     override fun resetVariables() {

@@ -33,9 +33,10 @@ abstract class Algorithm {
 
     protected fun printStartText(arrayToPrint: IntArray, name: String) {
         println(name)
+        printArray(arrayToPrint)
     }
 
-    private fun printArray(arrayToPrint: IntArray) {
+    protected fun printArray(arrayToPrint: IntArray) {
         var stringToPrint = ""
         for (i in arrayToPrint.indices) {
             val indexToPrint = arrayToPrint[i]

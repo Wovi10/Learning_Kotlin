@@ -29,6 +29,7 @@ object RadixSort: SortType() {
         resetVariables()
         printStartText(arrayToSort_, name)
         radixSort(arrayToSort_)
+        printArray(arrayToSort_)
         printEndText()
     }
 
@@ -46,17 +47,19 @@ object RadixSort: SortType() {
         val arraySize = inputArray_.size
         val sortedArray = IntArray(arraySize)
         val digitFrequency = IntArray(NUMBER_BASE)
-        digitFrequency.fill(0)
+        digitFrequency.fill(ZERO)
 
         calcFreqOfDigits(inputArray_, digitFrequency, placeValue)
         putNumRightIndex(digitFrequency)
         fillSortedArray(arraySize, inputArray_, sortedArray, digitFrequency, placeValue)
-        copyArray(inputArray_, sortedArray)
+        copyArray(sortedArray, inputArray_)
     }
 
-    private fun copyArray(to: IntArray, from: IntArray) {
-        for (i in to.indices) {
-            to[i] = from[i]
+    private fun copyArray(from: IntArray, to: IntArray) {
+        if (from.size == to.size) {
+            for (i in from.indices) {
+                to[i] = from[i]
+            }
         }
     }
 
@@ -81,8 +84,8 @@ object RadixSort: SortType() {
     }
 
     private fun calcFreqOfDigits(inputArray: IntArray, digitFrequency: IntArray, placeValue: Int) {
-        for (i in inputArray.indices) {
-            digitFrequency[(inputArray[i] / placeValue) % NUMBER_BASE]++
+        for (i in inputArray) {
+            digitFrequency[(i / placeValue) % NUMBER_BASE]++
         }
     }
 

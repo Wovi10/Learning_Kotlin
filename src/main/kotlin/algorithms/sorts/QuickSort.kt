@@ -1,6 +1,5 @@
 package algorithms.sorts
 
-import algorithms.utils.AlgorithmConstants
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE
@@ -12,21 +11,23 @@ object QuickSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Quick $SORT_TEXT"
 
-    override fun sort(arraySize: Int, lowestValue: Int, highestValue: Int, numRun: Int) {
+    override fun sort(arraySize_: Int, lowestValue: Int, highestValue: Int, numRun: Int) {
         resetVariables()
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
-            runQuickSort(arraySize, lowestValue, highestValue)
+            val arrayToSort = createInputArray(arraySize_, lowestValue, highestValue)
+            quickSort(arrayToSort, lowestValue, highestValue)
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
         printEndText(numRun, name)
     }
 
-    private fun runQuickSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {
-        val arrayToSort = createInputArray(arraySize_, lowerBound_, upperBound_)
-        val arrayLength = arrayToSort.size
-        quickSort(arrayToSort, ZERO, arrayLength - ONE)
+    override fun sort(arrayToSort_: IntArray) {
+        resetVariables()
+        printStartText(ONE, name)
+        quickSort(arrayToSort_, 0, arrayToSort_.size)
+        printEndText(ONE, name)
     }
 
     private fun quickSort(arrayToSort_: IntArray, startIndex_: Int, numOfIndexes_: Int) {

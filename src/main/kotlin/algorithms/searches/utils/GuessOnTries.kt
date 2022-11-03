@@ -2,9 +2,9 @@ package algorithms.searches.utils
 
 import algorithms.utils.AlgorithmConstants.ZERO
 
-abstract class GuessOnTries(onHighest: Int = ZERO, onLowest: Int) {
-    onHighest = ZERO
-    var onLowest: Int = ZERO
+abstract class GuessOnTries() {
+    open var onHighest = ZERO
+    open var onLowest: Int = ZERO
 
     fun resetVariables() {
         onHighest = ZERO

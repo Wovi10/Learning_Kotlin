@@ -28,13 +28,14 @@ abstract class Algorithm {
 
     protected fun printStartText(numRun: Int, name: String) {
         println("Started $numRun run(s) of $name")
+
     }
 
     protected fun printStartText(arrayToPrint: IntArray, name: String) {
         println(name)
     }
 
-    protected fun printArray(arrayToPrint: IntArray) {
+    private fun printArray(arrayToPrint: IntArray) {
         var stringToPrint = ""
         for (i in arrayToPrint.indices) {
             val indexToPrint = arrayToPrint[i]

@@ -98,9 +98,9 @@ object RadixSort: SortType() {
 
     private fun getMax(arrayToSort_: IntArray): Int {
         var max = arrayToSort_[0]
-        for (i in ONE until arrayToSort_.size) {
-            if (arrayToSort_[i] > max){
-                max = arrayToSort_[i]
+        for (i in arrayToSort_) {
+            if (i > max){
+                max = i
             }
         }
         return max

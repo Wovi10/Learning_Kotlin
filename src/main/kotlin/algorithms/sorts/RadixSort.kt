@@ -29,7 +29,7 @@ object RadixSort: SortType() {
         resetVariables()
         printStartText(arrayToSort_, name)
         radixSort(arrayToSort_)
-        printEndText(arrayToSort_)
+        printEndText()
     }
 
     private fun radixSort(arrayToSort_: IntArray) {
@@ -42,34 +42,51 @@ object RadixSort: SortType() {
         }
     }
 
-    private fun countSort(arrayToSort_: IntArray, placeValue: Int){
-        val arraySize = arrayToSort_.size
-        val output = IntArray(arraySize)
-        val frequency = IntArray(NUMBER_BASE)
-        frequency.fill(0)
+    private fun countSort(inputArray_: IntArray, placeValue: Int){
+        val arraySize = inputArray_.size
+        val sortedArray = IntArray(arraySize)
+        val digitFrequency = IntArray(NUMBER_BASE)
+        digitFrequency.fill(0)
 
-        // Calculate frequency of digits
-        for (i in arrayToSort_.indices){
-            frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]++
-        }
-        // Put numbers at right index
-        for (i in ONE until NUMBER_BASE){
-            frequency[i] += frequency[i - ONE]
-        }
-        // Build output array
-        for (i in (arraySize - ONE) downTo  0){
-            val freqNumToWrite = frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]
-            output[freqNumToWrite - ONE] = arrayToSort_[i]
-            frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]--
-        }
+        calcFreqOfDigits(inputArray_, digitFrequency, placeValue)
+        putNumRightIndex(digitFrequency)
+        buildSortedArray(arraySize, inputArray_, sortedArray, digitFrequency, placeValue)
+        copyArray(inputArray_, sortedArray)
+    }
 
-        // Copy output into arrayToSort
-        for (i in arrayToSort_.indices){
-            arrayToSort_[i] = output[i]
+    private fun copyArray(to: IntArray, from: IntArray) {
+        for (i in to.indices) {
+            to[i] = from[i]
         }
     }
 
-    fun getNumDigits(max_: Int): Int {
+    private fun buildSortedArray(
+        arraySize: Int,
+        inputArray: IntArray,
+        sortedArray: IntArray,
+        digitFrequency: IntArray,
+        placeValue: Int
+    ) {
+        for (i in (arraySize - ONE) downTo 0) {
+            val freqNumToWrite = digitFrequency[(inputArray[i] / placeValue) % NUMBER_BASE]
+            sortedArray[freqNumToWrite - ONE] = inputArray[i]
+            digitFrequency[(inputArray[i] / placeValue) % NUMBER_BASE]--
+        }
+    }
+
+    private fun putNumRightIndex(digitFrequency: IntArray) {
+        for (i in ONE until NUMBER_BASE) {
+            digitFrequency[i] += digitFrequency[i - ONE]
+        }
+    }
+
+    private fun calcFreqOfDigits(inputArray: IntArray, digitFrequency: IntArray, placeValue: Int) {
+        for (i in inputArray.indices) {
+            digitFrequency[(inputArray[i] / placeValue) % NUMBER_BASE]++
+        }
+    }
+
+    private fun getNumDigits(max_: Int): Int {
         var max = max_
         var numOfDigits = ZERO
         while (max > ZERO){

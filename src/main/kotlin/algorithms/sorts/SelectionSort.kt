@@ -27,7 +27,7 @@ object SelectionSort : SortType() {
         resetVariables()
         printStartText(arrayToSort_, name)
         selectionSort(arrayToSort_)
-        printEndText(arrayToSort_)
+        printEndText()
     }
 
     private fun selectionSort(arrayToSort_: IntArray) {

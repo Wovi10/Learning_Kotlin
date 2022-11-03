@@ -2,7 +2,7 @@ package algorithms.searches.utils
 
 import algorithms.utils.AlgorithmConstants.ZERO
 
-abstract class NumOfTries {
+class NumOfTries {
     var highest: Int = ZERO
     var lowest: Int = Int.MAX_VALUE
 

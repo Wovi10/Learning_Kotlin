@@ -7,10 +7,8 @@ import algorithms.utils.AlgorithmConstants.TWO
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
-object BinarySearch : SearchType() {
+object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
     override val name = "Binary $SEARCH_TEXT"
-    override var guessOnTries: GuessOnTries
-    override var numOfTries: NumOfTries
     override var cumulativeTries = ZERO
     override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()

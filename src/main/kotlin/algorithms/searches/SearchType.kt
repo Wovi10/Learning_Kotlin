@@ -1,17 +1,19 @@
 package algorithms.searches
 
 import algorithms.Algorithm
-import algorithms.searches.BinarySearch.numOfTries
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 import kotlin.random.Random
 
-abstract class SearchType : Algorithm() {
+abstract class SearchType(private var guessOnTries: GuessOnTries, private var numOfTries: NumOfTries) : Algorithm() {
+    constructor() : this(
+        guessOnTries = GuessOnTries(),
+        numOfTries = NumOfTries()
+    )
+
     protected abstract val name: String
-    protected abstract var guessOnTries: GuessOnTries
-    protected abstract var numOfTries: NumOfTries
     protected abstract var cumulativeTries: Int
     protected abstract var numTries: Int
     abstract override var startTime: LocalDateTime

@@ -1,16 +1,14 @@
 package algorithms.searches
 
+import algorithms.searches.utils.GuessOnTries
+import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 
-object LinearSearch : SearchType() {
+object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
     override val name = "Linear $SEARCH_TEXT"
-    override var highestNumTries = ZERO
-    override var numOnHighestTries = ZERO
-    override var lowestNumTries = Int.MAX_VALUE
-    override var numOnLowestTries = ZERO
     override var cumulativeTries = ZERO
     override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()

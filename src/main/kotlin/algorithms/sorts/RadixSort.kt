@@ -1,6 +1,5 @@
 package algorithms.sorts
 
-import algorithms.utils.AlgorithmConstants
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.NUMBER_BASE
@@ -14,15 +13,19 @@ object RadixSort: SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Radix $SORT_TEXT"
 
-    override fun sort(arraySize: Int, lowestValue: Int, highestValue: Int, numRun: Int) {
+    override fun sort(arraySize_: Int, lowestValue: Int, highestValue: Int, numRun: Int) {
         resetVariables()
         printStartText(numRun, name)
         for (i in ZERO until numRun){
-            runRadixSort(arraySize, lowestValue, highestValue)
+            runRadixSort(arraySize_, lowestValue, highestValue)
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
         printEndText(numRun, name)
+    }
+
+    override fun sort(arrayToSort_: IntArray) {
+        TODO("Not yet implemented")
     }
 
     private fun runRadixSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {

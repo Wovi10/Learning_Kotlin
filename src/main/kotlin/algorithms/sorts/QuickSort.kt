@@ -17,7 +17,7 @@ object QuickSort : SortType() {
         printStartText(numRun, name)
         for (x in ZERO until numRun) {
             val arrayToSort = Utils.createInputArray(arraySize_, lowestValue, highestValue)
-            quickSort(arrayToSort, lowestValue, highestValue)
+            quickSort(arrayToSort, ZERO, arraySize_ - ONE)
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
@@ -27,15 +27,15 @@ object QuickSort : SortType() {
     override fun sort(arrayToSort_: IntArray) {
         resetVariables()
         printStartText(arrayToSort_, name)
-        quickSort(arrayToSort_, ZERO, arrayToSort_.size)
-        printEndText(ONE, name)
+        quickSort(arrayToSort_, ZERO, (arrayToSort_.size - ONE))
+        printEndText(arrayToSort_, name)
     }
 
     private fun quickSort(arrayToSort_: IntArray, startIndex_: Int, numOfIndexes_: Int) {
         if (startIndex_ < numOfIndexes_) {
             val parIndex = partition(arrayToSort_, startIndex_, numOfIndexes_)
-            quickSort(arrayToSort_, startIndex_, parIndex - ONE);
-            quickSort(arrayToSort_, parIndex + ONE, numOfIndexes_);
+            quickSort(arrayToSort_, startIndex_, parIndex - ONE)
+            quickSort(arrayToSort_, parIndex + ONE, numOfIndexes_)
         }
     }
 

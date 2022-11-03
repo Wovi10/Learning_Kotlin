@@ -1,12 +1,13 @@
+
 import algorithms.sorts.QuickSort
 import algorithms.utils.Utils
 
-fun main(args: Array<String>) {
+fun main() {
 //    println("What is your name?")
 //    val name = readln()
 //    println("Hello, $name")
 
-    val arraySize = 1000; val lowestVal = 0; val highestVal = 1000; val numRun = 100
+    val arraySize = 1000; val lowestVal = 0; val highestVal = 1000; val numRun = 1
 
 //    BinarySearch.search(0, 100, 100)
 //    LinearSearch.search(0, 100, 100)

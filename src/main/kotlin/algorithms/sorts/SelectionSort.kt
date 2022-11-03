@@ -11,16 +11,16 @@ object SelectionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Selection $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue: Int, highestValue: Int, numRun: Int) {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         resetVariables()
-        printStartText(numRun, name)
-        for (x in ZERO until numRun) {
-            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue, highestValue)
+        printStartText(numRun_, name)
+        repeat(numRun_){
+            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
             selectionSort(arrayToSort)
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        printEndText(numRun, name)
+        printEndText(numRun_, name)
     }
 
     override fun sort(arrayToSort_: IntArray) {

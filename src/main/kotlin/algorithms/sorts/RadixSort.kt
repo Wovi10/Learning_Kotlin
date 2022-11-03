@@ -17,7 +17,8 @@ object RadixSort: SortType() {
         resetVariables()
         printStartText(numRun, name)
         for (i in ZERO until numRun){
-            runRadixSort(arraySize_, lowestValue, highestValue)
+            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue, highestValue)
+            radixSort(arrayToSort)
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
@@ -25,16 +26,14 @@ object RadixSort: SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray) {
-        TODO("Not yet implemented")
+        resetVariables()
+        printStartText(arrayToSort_, name)
+        radixSort(arrayToSort_)
+        printEndText(arrayToSort_, name)
     }
 
-    private fun runRadixSort(arraySize_: Int, lowerBound_: Int, upperBound_: Int) {
-        val arrayToSort = Utils.createInputArray(arraySize_, lowerBound_, upperBound_)
-        radixSort(arrayToSort, arraySize_)
-    }
-
-    private fun radixSort(arrayToSort_: IntArray, arraySize_: Int) {
-        val max = getMax(arrayToSort_, arraySize_)
+    private fun radixSort(arrayToSort_: IntArray) {
+        val max = getMax(arrayToSort_)
         var numOfDigits = getNumDigits(max)
         var placeValue = ONE
         while (numOfDigits-- > ZERO){
@@ -44,7 +43,8 @@ object RadixSort: SortType() {
     }
 
     private fun countSort(arrayToSort_: IntArray, placeValue: Int){
-        val output = IntArray(arrayToSort_.size)
+        val arraySize = arrayToSort_.size
+        val output = IntArray(arraySize)
         val frequency = IntArray(NUMBER_BASE)
         frequency.fill(0)
 
@@ -57,7 +57,7 @@ object RadixSort: SortType() {
             frequency[i] += frequency[i - ONE]
         }
         // Build output array
-        for (i in (arrayToSort_.size - ONE) downTo  0){
+        for (i in (arraySize - ONE) downTo  0){
             val freqNumToWrite = frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]
             output[freqNumToWrite - ONE] = arrayToSort_[i]
             frequency[(arrayToSort_[i] / placeValue) % NUMBER_BASE]--
@@ -79,9 +79,9 @@ object RadixSort: SortType() {
         return numOfDigits
     }
 
-    private fun getMax(arrayToSort_: IntArray, arraySize_: Int): Int {
+    private fun getMax(arrayToSort_: IntArray): Int {
         var max = arrayToSort_[0]
-        for (i in ONE until arraySize_) {
+        for (i in ONE until arrayToSort_.size) {
             if (arrayToSort_[i] > max){
                 max = arrayToSort_[i]
             }

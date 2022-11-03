@@ -13,4 +13,13 @@ object Utils {
         }
         return outputArray
     }
+
+    fun copyArray(arrayToCopy: IntArray): IntArray {
+        val size = arrayToCopy.size
+        val outputArray = IntArray(size)
+        for (i in ZERO until size){
+            outputArray[i] = arrayToCopy[i]
+        }
+        return outputArray
+    }
 }

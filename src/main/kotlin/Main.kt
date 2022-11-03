@@ -1,5 +1,6 @@
 
 import algorithms.sorts.QuickSort
+import algorithms.sorts.RadixSort
 import algorithms.utils.Utils
 
 fun main() {
@@ -16,6 +17,8 @@ fun main() {
 //    RadixSort.sort(arraySize, lowestVal, highestVal, numRun)
 //    SelectionSort.sort(arraySize, lowestVal, highestVal, numRun)
 
-    val arrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
-    QuickSort.sort(arrayToSort)
+    val quickArrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
+    val radixArrayToSort = Utils.copyArray(quickArrayToSort)
+    QuickSort.sort(quickArrayToSort)
+    RadixSort.sort(radixArrayToSort)
 }

@@ -2,7 +2,7 @@ package algorithms.searches.utils
 
 import algorithms.utils.AlgorithmConstants.ZERO
 
-abstract class GuessOnTries() {
+abstract class GuessOnTries constructor(onHighest_: Int = ZERO) {
     open var onHighest = ZERO
     open var onLowest: Int = ZERO
 

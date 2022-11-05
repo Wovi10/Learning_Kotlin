@@ -9,17 +9,17 @@ import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
 import java.time.LocalDateTime
 
-object RadixSort: SortType() {
+object RadixSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Radix $SORT_TEXT"
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         var printFreq = printFreq_
-        if (printFreq_ > numRun_){
+        if (printFreq_ > numRun_) {
             printFreq = 10
         }
         startup(numRun_, name, this)
-        repeat(numRun_){
+        repeat(numRun_) {
             defaultRadixSort(arraySize_, lowestValue_, highestValue_)
             if (it % printFreq == ZERO) print(LOADING_SYMBOL)
         }
@@ -42,13 +42,13 @@ object RadixSort: SortType() {
         val max = getMax(arrayToSort_)
         var numOfDigits = getNumDigits(max)
         var placeValue = ONE
-        while (numOfDigits-- > ZERO){
+        while (numOfDigits-- > ZERO) {
             countSort(arrayToSort_, placeValue)
             placeValue *= NUMBER_BASE
         }
     }
 
-    private fun countSort(inputArray_: IntArray, placeValue: Int){
+    private fun countSort(inputArray_: IntArray, placeValue: Int) {
         val arraySize = inputArray_.size
         val sortedArray = IntArray(arraySize)
         val digitFrequency = IntArray(NUMBER_BASE)
@@ -97,7 +97,7 @@ object RadixSort: SortType() {
     private fun getNumDigits(max_: Int): Int {
         var max = max_
         var numOfDigits = ZERO
-        while (max > ZERO){
+        while (max > ZERO) {
             numOfDigits += ONE
             max /= NUMBER_BASE
         }
@@ -107,7 +107,7 @@ object RadixSort: SortType() {
     private fun getMax(arrayToSort_: IntArray): Int {
         var max = arrayToSort_[0]
         for (i in arrayToSort_) {
-            if (i > max){
+            if (i > max) {
                 max = i
             }
         }

@@ -16,7 +16,7 @@ abstract class Algorithm {
 
     private fun printStartText(name_: String, numRun_: Int = 1, arrayToPrint_: IntArray? = null) {
         var startText = ""
-        if (numRun_ != ONE){
+        if (numRun_ != ONE) {
             startText = "Started $numRun_ runs of "
         }
         println(startText + name_)
@@ -46,9 +46,9 @@ abstract class Algorithm {
     protected fun getCommonSection(name_: String, numRun_: Int): String {
         var commonSection = "$name_ $NEWLINE"
         commonSection += TAB
-        commonSection += if (numRun_ == ONE){
+        commonSection += if (numRun_ == ONE) {
             "Ran once. $NEWLINE"
-        }else{
+        } else {
             "Ran $numRun_ times. $NEWLINE"
         }
         commonSection += TAB + getDuration()

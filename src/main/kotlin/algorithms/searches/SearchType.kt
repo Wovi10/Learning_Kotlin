@@ -27,7 +27,7 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
 
     open fun getSearchInfo(numRun_: Int, name_: String): String {
         var searchInfo: String = getCommonSection(name_, numRun_) + NEWLINE
-        if (numRun_ == ONE){
+        if (numRun_ == ONE) {
             return searchInfo
         }
         val averageTries = cumulativeTries / numRun_
@@ -43,10 +43,10 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
     }
 
     open fun updateSearchData(numToFind_: Int, numRun_: Int) {
-        if (numRun_ == ONE){
+        if (numRun_ == ONE) {
             numOfTries.setBoth(numTries)
             guessOnTries.setBoth(numToFind_)
-        }else{
+        } else {
             if (numTries > numOfTries.highest) {
                 numOfTries.highest = numTries
                 guessOnTries.onHighest = numToFind_

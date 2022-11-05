@@ -11,7 +11,7 @@ class GuessOnTries {
         onLowest = ZERO
     }
 
-    fun setBoth(value: Int){
+    fun setBoth(value: Int) {
         onHighest = value
         onLowest = value
     }

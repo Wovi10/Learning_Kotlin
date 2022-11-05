@@ -8,17 +8,17 @@ import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
 import java.time.LocalDateTime
 
-object InsertionSort: SortType() {
+object InsertionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = "Insertion $SORT_TEXT"
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         var printFreq = printFreq_
-        if (printFreq_ > numRun_){
+        if (printFreq_ > numRun_) {
             printFreq = 10
         }
         startup(numRun_, name, this)
-        repeat(numRun_){
+        repeat(numRun_) {
             defaultInsertionSort(arraySize_, lowestValue_, highestValue_)
             if (it % printFreq == ZERO) print(LOADING_SYMBOL)
         }
@@ -38,10 +38,10 @@ object InsertionSort: SortType() {
     }
 
     private fun insertionSort(arrayToSort_: IntArray) {
-        for (i in ONE until arrayToSort_.size){
+        for (i in ONE until arrayToSort_.size) {
             val numberChecking = arrayToSort_[i]
             var j = i - 1
-            while (j >= ZERO && arrayToSort_[j] > numberChecking){
+            while (j >= ZERO && arrayToSort_[j] > numberChecking) {
                 arrayToSort_[j + ONE] = arrayToSort_[j]
                 j -= ONE
             }

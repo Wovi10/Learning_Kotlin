@@ -14,11 +14,11 @@ object SelectionSort : SortType() {
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         var printFreq = printFreq_
-        if (printFreq_ > numRun_){
+        if (printFreq_ > numRun_) {
             printFreq = 10
         }
         startup(numRun_, name, this)
-        repeat(numRun_){
+        repeat(numRun_) {
             defaultSelectionSort(arraySize_, lowestValue_, highestValue_)
             if (it % printFreq == ZERO) print(LOADING_SYMBOL)
         }

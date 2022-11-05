@@ -1,11 +1,9 @@
 package algorithms.sorts
 
-import algorithms.utils.AlgorithmConstants.HUNDRED
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
-import algorithms.utils.AlgorithmConstants.THOUSAND
 import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
 import java.time.LocalDateTime
@@ -16,7 +14,7 @@ object BubbleSort : SortType() {
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         var printFreq = printFreq_
-        if (printFreq_ > numRun_){
+        if (printFreq_ > numRun_) {
             printFreq = 10
         }
         startup(numRun_, name, this)

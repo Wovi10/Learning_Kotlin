@@ -9,7 +9,7 @@ import searchList
 import skipSearchList
 
 object Searches {
-    fun runSearchesMultipleTimes(): String{
+    fun runSearchesMultipleTimes(): String {
         var resultInfo = "Searches multiple times: $NEWLINE"
         for (searchType in searchList) {
             if (skipSearchList.contains(searchType)) continue

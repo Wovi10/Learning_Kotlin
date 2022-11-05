@@ -22,9 +22,9 @@ abstract class SortType : Algorithm() {
         println(getDuration() + NEWLINE)
     }
 
-    protected fun swapIndexes(arrayToSort: IntArray, i: Int, smallestIndex: Int) {
-        val temp = arrayToSort[i]
-        arrayToSort[i] = arrayToSort[smallestIndex]
-        arrayToSort[smallestIndex] = temp
+    protected fun swapIndexes(arrayToSort: IntArray, indexOne: Int, indexTwo: Int) {
+        val temp = arrayToSort[indexOne]
+        arrayToSort[indexOne] = arrayToSort[indexTwo]
+        arrayToSort[indexTwo] = temp
     }
 }

@@ -2,7 +2,9 @@ package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
+import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
 import java.time.LocalDateTime
 
@@ -30,9 +32,14 @@ object InsertionSort: SortType() {
     }
 
     private fun insertionSort(arrayToSort_: IntArray) {
-        
-
-
-        TODO("Not yet implemented")
+        for (i in ONE until arrayToSort_.size){
+            val numberChecking = arrayToSort_[i]
+            var j = i - 1
+            while (j >= ZERO && arrayToSort_[j] > numberChecking){
+                arrayToSort_[j + ONE] = arrayToSort_[j]
+                j -= ONE
+            }
+            arrayToSort_[j + ONE] = numberChecking
+        }
     }
 }

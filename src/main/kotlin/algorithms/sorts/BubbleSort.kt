@@ -2,6 +2,7 @@ package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.Utils
 import java.time.LocalDateTime
@@ -25,11 +26,19 @@ object BubbleSort: SortType() {
     override fun sort(arrayToSort_: IntArray) {
         resetVariables()
         printStartText(arrayToSort_, name)
+        printArray(arrayToSort_)
         bubbleSort(arrayToSort_)
+        printArray(arrayToSort_)
         printEndText()
     }
 
-    private fun bubbleSort(arrayToSort: IntArray) {
+    private fun bubbleSort(arrayToSort_: IntArray) {
+        for (i in arrayToSort_.indices){
+            if (arrayToSort_[i] > arrayToSort_[i + ONE]){
+                swapIndexes(arrayToSort_, i , i + ONE)
+            }
+        }
+
         TODO("Not yet implemented")
     }
 }

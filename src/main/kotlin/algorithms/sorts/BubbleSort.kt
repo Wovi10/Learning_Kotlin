@@ -27,9 +27,7 @@ object BubbleSort: SortType() {
     override fun sort(arrayToSort_: IntArray) {
         resetVariables()
         printStartText(arrayToSort_, name)
-        printArray(arrayToSort_)
         bubbleSort(arrayToSort_)
-        printArray(arrayToSort_)
         printEndText()
     }
 

@@ -4,6 +4,7 @@ import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
+import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
 import java.time.LocalDateTime
 
@@ -33,12 +34,14 @@ object BubbleSort: SortType() {
     }
 
     private fun bubbleSort(arrayToSort_: IntArray) {
-        for (i in arrayToSort_.indices){
-            if (arrayToSort_[i] > arrayToSort_[i + ONE]){
-                swapIndexes(arrayToSort_, i , i + ONE)
+        var counter = 0
+        while (counter < arrayToSort_.size){
+            for (i in ZERO until arrayToSort_.size - ONE){
+                if (arrayToSort_[i] > arrayToSort_[i + ONE]){
+                    swapIndexes(arrayToSort_, i, i + ONE)
+                }
             }
+            counter++
         }
-
-        TODO("Not yet implemented")
     }
 }

@@ -1,9 +1,6 @@
 import algorithms.searches.BinarySearch
 import algorithms.searches.LinearSearch
-import algorithms.sorts.InsertionSort
-import algorithms.sorts.QuickSort
-import algorithms.sorts.RadixSort
-import algorithms.sorts.SelectionSort
+import algorithms.sorts.*
 import algorithms.utils.Utils
 
 fun main() {
@@ -11,7 +8,7 @@ fun main() {
 //    val name = readln()
 //    println("Hello, $name")
 
-    val arraySize = 20; val lowestVal = 0; val highestVal = 1000; val numRun = 100
+    val arraySize = 20; val lowestVal = 0; val highestVal = 99; val numRun = 100
 
 //    BinarySearch.search(0, 100, 100)
 //    LinearSearch.search(0, 100, 100)
@@ -29,5 +26,7 @@ fun main() {
 //    SelectionSort.sort(selectionArrayToSort)
 //    val insertionArrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
 //    InsertionSort.sort(insertionArrayToSort)
+    val bubbleArrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
+    BubbleSort.sort(bubbleArrayToSort)
 
 }

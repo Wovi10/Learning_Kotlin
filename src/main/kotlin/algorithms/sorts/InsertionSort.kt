@@ -13,8 +13,7 @@ object InsertionSort: SortType() {
     override val name: String = "Insertion $SORT_TEXT"
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
-        resetVariables()
-        printStartText(numRun_, name)
+        startup(numRun_, name, this)
         repeat(numRun_){
             val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
             insertionSort(arrayToSort)
@@ -25,8 +24,7 @@ object InsertionSort: SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        resetVariables()
-        printStartText(name)
+        startup(ONE, name, this)
         insertionSort(arrayToSort_)
         return getSortInfo()
     }

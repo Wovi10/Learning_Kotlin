@@ -30,8 +30,17 @@ abstract class Algorithm {
         return "$time hours."
     }
 
-    protected fun printStartText(numRun_: Int, name_: String) {
-        println("Started $numRun_ run(s) of $name_")
+    private fun printStartText(numRun_: Int, name_: String) {
+        var startText = ""
+        if (numRun_ != ONE){
+            startText = "Started $numRun_ runs of "
+        }
+        println(startText + name_)
+    }
+
+    protected fun startup(numRun_: Int, name_: String, algorithm: Algorithm) {
+        algorithm.resetVariables()
+        printStartText(numRun_, name_)
     }
 
     protected fun printStartText(arrayToPrint_: IntArray, name_: String) {

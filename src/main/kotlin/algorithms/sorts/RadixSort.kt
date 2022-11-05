@@ -14,8 +14,7 @@ object RadixSort: SortType() {
     override val name = "Radix $SORT_TEXT"
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
-        resetVariables()
-        printStartText(numRun_, name)
+        startup(numRun_, name, this)
         repeat(numRun_){
             val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
             radixSort(arrayToSort)
@@ -26,8 +25,7 @@ object RadixSort: SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        resetVariables()
-        printStartText(name)
+        startup(ONE, name, this)
         radixSort(arrayToSort_)
         return getSortInfo()
     }

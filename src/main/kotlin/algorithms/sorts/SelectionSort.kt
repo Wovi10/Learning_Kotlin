@@ -2,6 +2,7 @@ package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
@@ -12,8 +13,7 @@ object SelectionSort : SortType() {
     override val name = "Selection $SORT_TEXT"
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
-        resetVariables()
-        printStartText(numRun_, name)
+        startup(numRun_, name, this)
         repeat(numRun_){
             val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
             selectionSort(arrayToSort)
@@ -24,8 +24,7 @@ object SelectionSort : SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        resetVariables()
-        printStartText(name)
+        startup(ONE, name, this)
         selectionSort(arrayToSort_)
         return getSortInfo()
     }

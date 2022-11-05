@@ -3,6 +3,7 @@ package algorithms.searches
 import algorithms.Algorithm
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
+import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 import kotlin.random.Random
@@ -18,30 +19,32 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
     protected abstract var numTries: Int
     abstract override var startTime: LocalDateTime
 
-    abstract fun search(lowerBound: Int, upperBound: Int, numRun: Int)
+    abstract fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String
 
-    abstract fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int)
+    abstract fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int)
 
-    open fun printSearchInfo(numRun: Int, name: String) {
-        println(getCommonSection(name, numRun))
-        val averageTries = cumulativeTries / numRun
-        println("Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}).")
-        println("Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}).")
-        println("Average number of tries is $averageTries.")
-        println()
+    open fun getSearchInfo(numRun_: Int, name_: String): String {
+        var searchInfo: String = getCommonSection(name_, numRun_)
+        searchInfo += ""
+        val averageTries = cumulativeTries / numRun_
+        searchInfo += "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}). $NEWLINE"
+        searchInfo += "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}). $NEWLINE"
+        searchInfo += "Average number of tries is $averageTries. $NEWLINE"
+
+        return searchInfo
     }
 
-    open fun createNumToFind(lowerBound: Int, upperBound: Int): Int {
-        return Random.nextInt(lowerBound, upperBound)
+    open fun createNumToFind(lowerBound_: Int, upperBound_: Int): Int {
+        return Random.nextInt(lowerBound_, upperBound_)
     }
 
-    open fun updateSearchData(numToFind: Int) {
+    open fun updateSearchData(numToFind_: Int) {
         if (numTries > numOfTries.highest) {
             numOfTries.highest = numTries
             guessOnTries.onHighest = numTries
         } else if (numTries < numOfTries.lowest) {
             numOfTries.lowest = numTries
-            guessOnTries.onLowest = numToFind
+            guessOnTries.onLowest = numToFind_
         }
         cumulativeTries += numTries
     }

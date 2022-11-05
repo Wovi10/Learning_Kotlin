@@ -1,5 +1,6 @@
 package algorithms.sorts
 
+import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.Utils
 import arraySize
 import highestVal
@@ -10,20 +11,23 @@ object Sorts {
     private val sortList = listOf(QuickSort, RadixSort, SelectionSort, InsertionSort, BubbleSort)
     private val skipSortList = listOf(SelectionSort, InsertionSort)
 
-    fun runAllSortsOnce() {
+    fun runAllSortsOnce(): String {
+        var resultInfo = "Running sorts once: $NEWLINE"
         for (sortType in sortList) {
-            if (skipSortList.contains(sortType)) continue
-
+//            if (skipSortList.contains(sortType)) continue
             val arrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
-            sortType.sort(arrayToSort)
+            resultInfo += sortType.sort(arrayToSort)
         }
+        return resultInfo
     }
 
-    fun runAllSortsMultipleTimes() {
+    fun runAllSortsMultipleTimes(): String {
+        var resultInfo = "Running sorts multiple times: $NEWLINE"
         for (sortType in sortList) {
-            if (skipSortList.contains(sortType)) continue
-            sortType.sort(arraySize, lowestVal, highestVal, numRun)
+//            if (skipSortList.contains(sortType)) continue
+            resultInfo += sortType.sort(arraySize, lowestVal, highestVal, numRun)
         }
+        return resultInfo
     }
 
 }

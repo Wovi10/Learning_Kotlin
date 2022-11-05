@@ -13,7 +13,7 @@ object RadixSort: SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Radix $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
         resetVariables()
         printStartText(numRun_, name)
         repeat(numRun_){
@@ -22,14 +22,14 @@ object RadixSort: SortType() {
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        printEndText(numRun_, name)
+        return getEndText(numRun_, name)
     }
 
-    override fun sort(arrayToSort_: IntArray) {
+    override fun sort(arrayToSort_: IntArray): String {
         resetVariables()
-        printStartText(arrayToSort_, name)
+        printStartText(name)
         radixSort(arrayToSort_)
-        printEndText()
+        return getEndText(name)
     }
 
     private fun radixSort(arrayToSort_: IntArray) {

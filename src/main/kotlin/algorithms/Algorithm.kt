@@ -9,6 +9,8 @@ import java.time.temporal.ChronoUnit
 
 abstract class Algorithm {
     protected abstract var startTime: LocalDateTime
+
+    abstract fun resetVariables()
     private fun getTimeString(_time: Double): String {
         var time = _time
         if (time < ONE_MILLION) {
@@ -26,19 +28,23 @@ abstract class Algorithm {
         return "$time hours."
     }
 
-    protected fun printStartText(numRun: Int, name: String) {
-        println("Started $numRun run(s) of $name")
-
+    protected fun printStartText(numRun_: Int, name_: String) {
+        println("Started $numRun_ run(s) of $name_")
     }
 
-    protected fun printStartText(arrayToPrint: IntArray, name: String) {
-        println(name)
+    protected fun printStartText(arrayToPrint_: IntArray, name_: String) {
+        printArray(arrayToPrint_)
+        println(name_)
     }
 
-    protected fun printArray(arrayToPrint: IntArray) {
+    protected fun printStartText(name_: String) {
+        println(name_)
+    }
+
+    private fun printArray(arrayToPrint_: IntArray) {
         var stringToPrint = ""
-        for (i in arrayToPrint.indices) {
-            val indexToPrint = arrayToPrint[i]
+        for (i in arrayToPrint_.indices) {
+            val indexToPrint = arrayToPrint_[i]
             if (stringToPrint.isNotEmpty()) {
                 stringToPrint += ", $indexToPrint"
             } else {
@@ -48,15 +54,21 @@ abstract class Algorithm {
         println(stringToPrint)
     }
 
-    protected fun getCommonSection(name: String, numRun: Int): String {
-        return "Ran $name $numRun times. $NEWLINE" + getDuration()
+    protected fun getEndText(numRun_: Int, name_: String): String {
+        return getCommonSection(name_, numRun_) + NEWLINE
     }
 
-    protected fun getDuration(): String {
+    protected fun getEndText(name_: String): String {
+        return "$name_: " + getDuration() + NEWLINE
+    }
+
+    protected fun getCommonSection(name_: String, numRun_: Int): String {
+        return "Ran $name_ $numRun_ times. $NEWLINE" + getDuration()
+    }
+
+    private fun getDuration(): String {
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS) / AlgorithmConstants.THOUSAND).toDouble()
         return "It took " + getTimeString(time)
     }
-
-    abstract fun resetVariables()
 }

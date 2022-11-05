@@ -13,12 +13,14 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
     override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()
 
-    override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
+    override fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String {
         resetVariables()
-        for (x in ZERO until numRun) {
-            runLinearSearch(lowerBound, upperBound)
+        printStartText(numRun_, name)
+        for (x in ZERO until numRun_) {
+            runLinearSearch(lowerBound_, upperBound_)
         }
-        printSearchInfo(numRun, name)
+        return getSearchInfo(numRun_, name)
+//        return getEndText(numRun_, name)
     }
 
     private fun runLinearSearch(lowerBound: Int, upperBound: Int) {
@@ -28,11 +30,11 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
         updateSearchData(numToFind)
     }
 
-    override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
+    override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int) {
         numTries++
-        val numTried = getNumToTry(lowerBound)
-        if (numTried < numToFind) {
-            return findNumber(numTried, upperBound, numToFind)
+        val numTried = getNumToTry(lowerBound_)
+        if (numTried < numToFind_) {
+            return findNumber(numTried, upperBound_, numToFind_)
         }
     }
 

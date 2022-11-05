@@ -13,12 +13,14 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
     override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()
 
-    override fun search(lowerBound: Int, upperBound: Int, numRun: Int) {
+    override fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String {
         resetVariables()
-        for (x in ZERO until numRun) { // Until because start from ZERO
-            runBinarySearch(lowerBound, upperBound)
+        printStartText(numRun_, name)
+        for (x in ZERO until numRun_) { // Until because start from ZERO
+            runBinarySearch(lowerBound_, upperBound_)
         }
-        printSearchInfo(numRun, name)
+        return getSearchInfo(numRun_, name)
+//        return getEndText(numRun_, name)
     }
 
     private fun runBinarySearch(lowerBound: Int, upperBound: Int) {
@@ -28,13 +30,13 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
         updateSearchData(numToFind)
     }
 
-    override fun findNumber(lowerBound: Int, upperBound: Int, numToFind: Int) {
+    override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int) {
         numTries++
-        val middleNumber = getMiddleNum(lowerBound, upperBound)
-        if (numToFind < middleNumber) {
-            return findNumber(lowerBound, middleNumber, numToFind)
-        } else if (numToFind > middleNumber) {
-            return findNumber(middleNumber, upperBound, numToFind)
+        val middleNumber = getMiddleNum(lowerBound_, upperBound_)
+        if (numToFind_ < middleNumber) {
+            return findNumber(lowerBound_, middleNumber, numToFind_)
+        } else if (numToFind_ > middleNumber) {
+            return findNumber(middleNumber, upperBound_, numToFind_)
         }
     }
 

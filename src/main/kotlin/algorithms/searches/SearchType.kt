@@ -4,6 +4,7 @@ import algorithms.Algorithm
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.TAB
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
@@ -25,8 +26,10 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
     abstract fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int)
 
     open fun getSearchInfo(numRun_: Int, name_: String): String {
-        var searchInfo: String = getCommonSection(name_, numRun_)
-        searchInfo += NEWLINE
+        var searchInfo: String = getCommonSection(name_, numRun_) + NEWLINE
+        if (numRun_ == ONE){
+            return searchInfo
+        }
         val averageTries = cumulativeTries / numRun_
         searchInfo += TAB + "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}). $NEWLINE"
         searchInfo += TAB + "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}). $NEWLINE"
@@ -39,13 +42,18 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
         return Random.nextInt(lowerBound_, upperBound_)
     }
 
-    open fun updateSearchData(numToFind_: Int) {
-        if (numTries > numOfTries.highest) {
-            numOfTries.highest = numTries
-            guessOnTries.onHighest = numTries
-        } else if (numTries < numOfTries.lowest) {
-            numOfTries.lowest = numTries
-            guessOnTries.onLowest = numToFind_
+    open fun updateSearchData(numToFind_: Int, numRun_: Int) {
+        if (numRun_ == ONE){
+            numOfTries.setBoth(numTries)
+            guessOnTries.setBoth(numToFind_)
+        }else{
+            if (numTries > numOfTries.highest) {
+                numOfTries.highest = numTries
+                guessOnTries.onHighest = numToFind_
+            } else if (numTries < numOfTries.lowest) {
+                numOfTries.lowest = numTries
+                guessOnTries.onLowest = numToFind_
+            }
         }
         cumulativeTries += numTries
     }

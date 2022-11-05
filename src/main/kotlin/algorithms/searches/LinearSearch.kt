@@ -17,17 +17,16 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
         resetVariables()
         printStartText(numRun_, name)
         for (x in ZERO until numRun_) {
-            runLinearSearch(lowerBound_, upperBound_)
+            runLinearSearch(lowerBound_, upperBound_, numRun_)
         }
         return getSearchInfo(numRun_, name)
-//        return getEndText(numRun_, name)
     }
 
-    private fun runLinearSearch(lowerBound: Int, upperBound: Int) {
+    private fun runLinearSearch(lowerBound: Int, upperBound: Int, numRun_: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
         numTries = ZERO
         findNumber(lowerBound, upperBound, numToFind)
-        updateSearchData(numToFind)
+        updateSearchData(numToFind, numRun_)
     }
 
     override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int) {

@@ -10,4 +10,9 @@ class NumOfTries {
         highest = ZERO
         lowest = Int.MAX_VALUE
     }
+
+    fun setBoth(value: Int){
+        highest = value
+        lowest = value
+    }
 }

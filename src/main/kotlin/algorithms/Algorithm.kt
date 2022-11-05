@@ -2,6 +2,7 @@ package algorithms
 
 import algorithms.utils.AlgorithmConstants
 import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.ONE_MILLION
 import algorithms.utils.AlgorithmConstants.SIXTY
 import algorithms.utils.AlgorithmConstants.TAB
@@ -65,7 +66,12 @@ abstract class Algorithm {
 
     protected fun getCommonSection(name_: String, numRun_: Int): String {
         var commonSection = "$name_ $NEWLINE"
-        commonSection += TAB + "Ran $numRun_ times. $NEWLINE"
+        commonSection += TAB
+        commonSection += if (numRun_ == ONE){
+            "Ran once. $NEWLINE"
+        }else{
+            "Ran $numRun_ times. $NEWLINE"
+        }
         commonSection += TAB + getDuration()
         return commonSection
     }

@@ -2,6 +2,7 @@ package algorithms.searches
 
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
+import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
 import algorithms.utils.AlgorithmConstants.TWO
 import algorithms.utils.AlgorithmConstants.ZERO
@@ -16,22 +17,21 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
     override fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String {
         resetVariables()
         printStartText(numRun_, name)
-        for (x in ZERO until numRun_) { // Until because start from ZERO
-            runBinarySearch(lowerBound_, upperBound_)
+        for (x in ZERO until numRun_) {
+            runBinarySearch(lowerBound_, upperBound_, numRun_)
         }
         return getSearchInfo(numRun_, name)
-//        return getEndText(numRun_, name)
     }
 
-    private fun runBinarySearch(lowerBound: Int, upperBound: Int) {
+    private fun runBinarySearch(lowerBound: Int, upperBound: Int, numRun_: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
         numTries = ZERO
         findNumber(lowerBound, upperBound, numToFind)
-        updateSearchData(numToFind)
+        updateSearchData(numToFind, numRun_)
     }
 
     override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int) {
-        numTries++
+        numTries += ONE
         val middleNumber = getMiddleNum(lowerBound_, upperBound_)
         if (numToFind_ < middleNumber) {
             return findNumber(lowerBound_, middleNumber, numToFind_)

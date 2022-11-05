@@ -17,7 +17,7 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
     override fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String {
         resetVariables()
         printStartText(numRun_, name)
-        for (x in ZERO until numRun_) {
+        repeat (numRun_) {
             runBinarySearch(lowerBound_, upperBound_, numRun_)
         }
         return getSearchInfo(numRun_, name)

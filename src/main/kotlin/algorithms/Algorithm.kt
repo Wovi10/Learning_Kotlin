@@ -13,43 +13,21 @@ abstract class Algorithm {
     protected abstract var startTime: LocalDateTime
 
     abstract fun resetVariables()
-    private fun getTimeString(_time: Double): String {
-        var time = _time
-        if (time < ONE_MILLION) {
-            return "$time thousand nanos."
-        }
-        time /= ONE_MILLION
-        if (time < SIXTY) {
-            return "$time seconds."
-        }
-        time /= SIXTY
-        if (time < SIXTY) {
-            return "$time minutes."
-        }
-        time /= SIXTY
-        return "$time hours."
-    }
 
-    private fun printStartText(numRun_: Int, name_: String) {
+    private fun printStartText(name_: String, numRun_: Int = 1, arrayToPrint_: IntArray? = null) {
         var startText = ""
         if (numRun_ != ONE){
             startText = "Started $numRun_ runs of "
         }
         println(startText + name_)
+        if (arrayToPrint_ != null) {
+            printArray(arrayToPrint_)
+        }
     }
 
     protected fun startup(numRun_: Int, name_: String, algorithm: Algorithm) {
         algorithm.resetVariables()
-        printStartText(numRun_, name_)
-    }
-
-    protected fun printStartText(arrayToPrint_: IntArray, name_: String) {
-        printArray(arrayToPrint_)
-        println(name_)
-    }
-
-    protected fun printStartText(name_: String) {
-        println(name_)
+        printStartText(name_, numRun_)
     }
 
     private fun printArray(arrayToPrint_: IntArray) {
@@ -63,14 +41,6 @@ abstract class Algorithm {
             }
         }
         println(stringToPrint)
-    }
-
-    protected fun getEndText(numRun_: Int, name_: String): String {
-        return getCommonSection(name_, numRun_) + NEWLINE
-    }
-
-    protected fun getEndText(name_: String): String {
-        return "$name_: " + getDuration() + NEWLINE
     }
 
     protected fun getCommonSection(name_: String, numRun_: Int): String {
@@ -89,5 +59,22 @@ abstract class Algorithm {
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS) / AlgorithmConstants.THOUSAND).toDouble()
         return "It took " + getTimeString(time)
+    }
+
+    private fun getTimeString(_time: Double): String {
+        var time = _time
+        if (time < ONE_MILLION) {
+            return "$time thousand nanos."
+        }
+        time /= ONE_MILLION
+        if (time < SIXTY) {
+            return "$time seconds."
+        }
+        time /= SIXTY
+        if (time < SIXTY) {
+            return "$time minutes."
+        }
+        time /= SIXTY
+        return "$time hours."
     }
 }

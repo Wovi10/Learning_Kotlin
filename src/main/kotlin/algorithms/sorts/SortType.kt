@@ -15,16 +15,14 @@ abstract class SortType : Algorithm() {
         startTime = LocalDateTime.now()
     }
 
-    protected fun getSortInfo(numRun_: Int): String {
+    protected fun getSortInfo(numRun_: Int = 1): String {
         var sortInfo = name + NEWLINE
-        sortInfo += TAB + "Ran $numRun_ times. $NEWLINE"
-        sortInfo += TAB + getDuration() + NEWLINE
-        return sortInfo
-    }
-
-    protected fun getSortInfo(): String {
-        var sortInfo = name + NEWLINE
-        sortInfo += TAB + "Ran once. $NEWLINE"
+        sortInfo += TAB
+        sortInfo += if (numRun_ != 1) {
+            "Ran $numRun_ times. $NEWLINE"
+        }else{
+            "Ran once. $NEWLINE"
+        }
         sortInfo += TAB + getDuration() + NEWLINE
         return sortInfo
     }

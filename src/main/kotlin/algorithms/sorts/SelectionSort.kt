@@ -19,7 +19,7 @@ object SelectionSort : SortType() {
             if (it % printFreq_ == ZERO) print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        return getSortInfo()
+        return getSortInfo(numRun_)
     }
 
     private fun defaultSelectionSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {

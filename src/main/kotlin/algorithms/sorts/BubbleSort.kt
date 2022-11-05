@@ -34,14 +34,12 @@ object BubbleSort: SortType() {
     }
 
     private fun bubbleSort(arrayToSort_: IntArray) {
-        var counter = 0
-        while (counter < arrayToSort_.size){
+        for (counter in arrayToSort_.indices){
             for (i in ZERO until arrayToSort_.size - ONE){
                 if (arrayToSort_[i] > arrayToSort_[i + ONE]){
                     swapIndexes(arrayToSort_, i, i + ONE)
                 }
             }
-            counter++
         }
     }
 }

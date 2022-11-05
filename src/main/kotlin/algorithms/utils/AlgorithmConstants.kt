@@ -5,6 +5,7 @@ object AlgorithmConstants {
     const val ONE = 1
     const val TWO = 2
     const val SIXTY = 60
+    const val HUNDRED = 100
     const val THOUSAND = 1000
     const val ONE_MILLION = 1000000
 

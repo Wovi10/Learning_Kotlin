@@ -12,15 +12,19 @@ object QuickSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Quick $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         startup(numRun_, name, this)
         repeat(numRun_){
-            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
-            quickSort(arrayToSort, ZERO, arraySize_ - ONE)
-            print(LOADING_SYMBOL)
+            defaultQuickSort(arraySize_, lowestValue_, highestValue_)
+            if (it % printFreq_ == ZERO) print(LOADING_SYMBOL)
         }
         print(NEWLINE)
         return getSortInfo(numRun_)
+    }
+
+    private fun defaultQuickSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
+        val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
+        quickSort(arrayToSort, ZERO, arraySize_ - ONE)
     }
 
     override fun sort(arrayToSort_: IntArray): String {

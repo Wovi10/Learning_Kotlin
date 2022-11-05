@@ -12,10 +12,10 @@ val skipSortList = listOf(SelectionSort, InsertionSort)
 val searchList = listOf(BinarySearch, LinearSearch)
 val skipSearchList = listOf(BinarySearch, LinearSearch)
 
-const val arraySize = 1000;
-const val lowestVal = 0;
-const val highestVal = 99;
-const val numRun = 1000
+const val arraySize = 10000
+const val lowestVal = 0
+const val highestVal = 99
+const val numRun = 150
 
 fun main() {
     val informationToShow = mutableListOf("Results of this run:")

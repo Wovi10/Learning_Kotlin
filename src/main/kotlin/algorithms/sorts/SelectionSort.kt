@@ -12,15 +12,19 @@ object SelectionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Selection $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         startup(numRun_, name, this)
         repeat(numRun_){
-            val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
-            selectionSort(arrayToSort)
-            print(LOADING_SYMBOL)
+            defaultSelectionSort(arraySize_, lowestValue_, highestValue_)
+            if (it % printFreq_ == ZERO) print(LOADING_SYMBOL)
         }
         print(NEWLINE)
         return getSortInfo()
+    }
+
+    private fun defaultSelectionSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
+        val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
+        selectionSort(arrayToSort)
     }
 
     override fun sort(arrayToSort_: IntArray): String {

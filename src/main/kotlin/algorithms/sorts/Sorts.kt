@@ -1,6 +1,7 @@
 package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.THOUSAND
 import algorithms.utils.Utils
 import arraySize
 import highestVal
@@ -24,7 +25,7 @@ object Sorts {
         var resultInfo = "Running sorts multiple times: $NEWLINE"
         for (sortType in sortList) {
             if (skipSortList.contains(sortType)) continue
-            resultInfo += sortType.sort(arraySize, lowestVal, highestVal, numRun)
+            resultInfo += sortType.sort(arraySize, lowestVal, highestVal, numRun, THOUSAND)
         }
         return resultInfo
     }

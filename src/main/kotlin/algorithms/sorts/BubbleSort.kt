@@ -21,14 +21,14 @@ object BubbleSort: SortType() {
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        return getEndText(numRun_, name)
+        return getSortInfo(numRun_)
     }
 
     override fun sort(arrayToSort_: IntArray): String {
         resetVariables()
         printStartText(name)
         bubbleSort(arrayToSort_)
-        return getEndText(name)
+        return getSortInfo()
     }
 
     private fun bubbleSort(arrayToSort_: IntArray) {

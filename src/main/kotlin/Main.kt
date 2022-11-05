@@ -26,6 +26,8 @@ fun main() {
 }
 
 fun printInformationToShow(informationToShow: MutableList<String>) {
+    println()
+    println()
     for (info in informationToShow) {
         println(info)
         println()

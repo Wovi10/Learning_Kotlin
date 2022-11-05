@@ -12,6 +12,7 @@ object AlgorithmConstants {
 
     const val LOADING_SYMBOL = "|"
     const val NEWLINE = "\n"
+    const val TAB = "\t"
     const val SORT_TEXT = "sort"
     const val SEARCH_TEXT = "search"
 }

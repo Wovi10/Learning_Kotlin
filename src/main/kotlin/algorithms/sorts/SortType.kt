@@ -1,6 +1,8 @@
 package algorithms.sorts
 
 import algorithms.Algorithm
+import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.TAB
 import java.time.LocalDateTime
 
 abstract class SortType : Algorithm() {
@@ -11,6 +13,20 @@ abstract class SortType : Algorithm() {
 
     override fun resetVariables() {
         startTime = LocalDateTime.now()
+    }
+
+    protected fun getSortInfo(numRun_: Int): String {
+        var sortInfo = name + NEWLINE
+        sortInfo += TAB + "Ran $numRun_ times. $NEWLINE"
+        sortInfo += TAB + getDuration() + NEWLINE
+        return sortInfo
+    }
+
+    protected fun getSortInfo(): String {
+        var sortInfo = name + NEWLINE
+        sortInfo += TAB + "Ran once. $NEWLINE"
+        sortInfo += TAB + getDuration() + NEWLINE
+        return sortInfo
     }
 
     protected fun swapIndexes(arrayToSort_: IntArray, indexOne_: Int, indexTwo_: Int) {

@@ -21,14 +21,14 @@ object QuickSort : SortType() {
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        return getEndText(numRun_, name)
+        return getSortInfo(numRun_)
     }
 
     override fun sort(arrayToSort_: IntArray): String {
         resetVariables()
         printStartText(name)
         quickSort(arrayToSort_, ZERO, (arrayToSort_.size - ONE))
-        return getEndText(name)
+        return getSortInfo()
     }
 
     private fun quickSort(arrayToSort_: IntArray, startIndex_: Int, numOfIndexes_: Int) {

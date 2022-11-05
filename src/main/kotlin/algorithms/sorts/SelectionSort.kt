@@ -20,14 +20,14 @@ object SelectionSort : SortType() {
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        return getEndText(numRun_, name)
+        return getSortInfo()
     }
 
     override fun sort(arrayToSort_: IntArray): String {
         resetVariables()
         printStartText(name)
         selectionSort(arrayToSort_)
-        return getEndText(name)
+        return getSortInfo()
     }
 
     private fun selectionSort(arrayToSort_: IntArray) {

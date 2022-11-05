@@ -4,6 +4,7 @@ import algorithms.Algorithm
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.TAB
 import algorithms.utils.AlgorithmConstants.ZERO
 import java.time.LocalDateTime
 import kotlin.random.Random
@@ -25,11 +26,11 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
 
     open fun getSearchInfo(numRun_: Int, name_: String): String {
         var searchInfo: String = getCommonSection(name_, numRun_)
-        searchInfo += ""
+        searchInfo += NEWLINE
         val averageTries = cumulativeTries / numRun_
-        searchInfo += "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}). $NEWLINE"
-        searchInfo += "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}). $NEWLINE"
-        searchInfo += "Average number of tries is $averageTries. $NEWLINE"
+        searchInfo += TAB + "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}). $NEWLINE"
+        searchInfo += TAB + "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}). $NEWLINE"
+        searchInfo += TAB + "Average number of tries is $averageTries. $NEWLINE"
 
         return searchInfo
     }

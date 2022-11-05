@@ -4,6 +4,7 @@ import algorithms.utils.AlgorithmConstants
 import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE_MILLION
 import algorithms.utils.AlgorithmConstants.SIXTY
+import algorithms.utils.AlgorithmConstants.TAB
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
@@ -63,10 +64,13 @@ abstract class Algorithm {
     }
 
     protected fun getCommonSection(name_: String, numRun_: Int): String {
-        return "Ran $name_ $numRun_ times. $NEWLINE" + getDuration()
+        var commonSection = "$name_ $NEWLINE"
+        commonSection += TAB + "Ran $numRun_ times. $NEWLINE"
+        commonSection += TAB + getDuration()
+        return commonSection
     }
 
-    private fun getDuration(): String {
+    protected fun getDuration(): String {
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS) / AlgorithmConstants.THOUSAND).toDouble()
         return "It took " + getTimeString(time)

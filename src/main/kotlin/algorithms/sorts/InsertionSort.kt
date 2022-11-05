@@ -21,14 +21,14 @@ object InsertionSort: SortType() {
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        return getEndText(numRun_, name)
+        return getSortInfo(numRun_)
     }
 
     override fun sort(arrayToSort_: IntArray): String {
         resetVariables()
         printStartText(name)
         insertionSort(arrayToSort_)
-        return getEndText(name)
+        return getSortInfo()
     }
 
     private fun insertionSort(arrayToSort_: IntArray) {

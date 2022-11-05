@@ -22,14 +22,14 @@ object RadixSort: SortType() {
             print(LOADING_SYMBOL)
         }
         print(NEWLINE)
-        return getEndText(numRun_, name)
+        return getSortInfo(numRun_)
     }
 
     override fun sort(arrayToSort_: IntArray): String {
         resetVariables()
         printStartText(name)
         radixSort(arrayToSort_)
-        return getEndText(name)
+        return getSortInfo()
     }
 
     private fun radixSort(arrayToSort_: IntArray) {

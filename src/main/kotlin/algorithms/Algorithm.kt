@@ -17,29 +17,23 @@ abstract class Algorithm {
 
     private fun printStartText(name_: String, numRun_: Int = 1, arrayToPrint_: IntArray? = null) {
         var startText = EMPTY_STRING
-        if (numRun_ != ONE) {
-            startText = "Started $numRun_ runs of "
-        }
+        if (numRun_ != ONE) startText = "Started $numRun_ runs of "
         println(startText + name_)
-        if (arrayToPrint_ != null) {
-            printArray(arrayToPrint_)
-        }
+        if (arrayToPrint_ != null) printArray(arrayToPrint_)
     }
 
-    protected fun startup(numRun_: Int, name_: String, algorithm: Algorithm) {
+    protected fun startup(numRun_: Int, name_: String, algorithm: Algorithm, arrayToPrint_: IntArray? = null) {
         algorithm.resetVariables()
-        printStartText(name_, numRun_)
+        printStartText(name_, numRun_, arrayToPrint_)
     }
 
     private fun printArray(arrayToPrint_: IntArray) {
         var stringToPrint = EMPTY_STRING
         for (i in arrayToPrint_.indices) {
             val indexToPrint = arrayToPrint_[i]
-            if (stringToPrint.isNotEmpty()) {
-                stringToPrint += ", $indexToPrint"
-            } else {
-                stringToPrint = indexToPrint.toString()
-            }
+
+            if (stringToPrint.isNotEmpty()) stringToPrint += ", "
+            stringToPrint += indexToPrint.toString()
         }
         println(stringToPrint)
     }

@@ -16,4 +16,5 @@ object AlgorithmConstants {
     const val TAB = "\t"
     const val SORT_TEXT = "sort"
     const val SEARCH_TEXT = "search"
+    const val EMPTY_STRING = ""
 }

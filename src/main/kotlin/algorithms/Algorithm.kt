@@ -1,6 +1,7 @@
 package algorithms
 
 import algorithms.utils.AlgorithmConstants
+import algorithms.utils.AlgorithmConstants.EMPTY_STRING
 import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.ONE_MILLION
@@ -15,7 +16,7 @@ abstract class Algorithm {
     abstract fun resetVariables()
 
     private fun printStartText(name_: String, numRun_: Int = 1, arrayToPrint_: IntArray? = null) {
-        var startText = ""
+        var startText = EMPTY_STRING
         if (numRun_ != ONE) {
             startText = "Started $numRun_ runs of "
         }
@@ -31,7 +32,7 @@ abstract class Algorithm {
     }
 
     private fun printArray(arrayToPrint_: IntArray) {
-        var stringToPrint = ""
+        var stringToPrint = EMPTY_STRING
         for (i in arrayToPrint_.indices) {
             val indexToPrint = arrayToPrint_[i]
             if (stringToPrint.isNotEmpty()) {

@@ -15,9 +15,7 @@ object InsertionSort : SortType() {
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         var printFreq = printFreq_
-        if (printFreq_ > numRun_) {
-            printFreq = TEN
-        }
+        if (printFreq_ > numRun_) printFreq = TEN
         startup(numRun_, name, this)
         repeat(numRun_) { runNum ->
             defaultInsertionSort(arraySize_, lowestValue_, highestValue_)
@@ -41,7 +39,7 @@ object InsertionSort : SortType() {
     private fun insertionSort(arrayToSort_: IntArray) {
         for (i in ONE until arrayToSort_.size) {
             val numberChecking = arrayToSort_[i]
-            var j = i - 1
+            var j = i - ONE
             while (j >= ZERO && arrayToSort_[j] > numberChecking) {
                 arrayToSort_[j + ONE] = arrayToSort_[j]
                 j -= ONE

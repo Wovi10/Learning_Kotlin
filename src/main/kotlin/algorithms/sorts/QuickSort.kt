@@ -15,9 +15,7 @@ object QuickSort : SortType() {
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         var printFreq = printFreq_
-        if (printFreq_ > numRun_) {
-            printFreq = TEN
-        }
+        if (printFreq_ > numRun_) printFreq = TEN
         startup(numRun_, name, this)
         repeat(numRun_) { runNum ->
             defaultQuickSort(arraySize_, lowestValue_, highestValue_)

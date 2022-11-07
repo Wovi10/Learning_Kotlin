@@ -106,7 +106,7 @@ object RadixSort : SortType() {
     }
 
     private fun getMax(arrayToSort_: IntArray): Int {
-        var max = arrayToSort_[0]
+        var max = arrayToSort_[ZERO]
         for (i in arrayToSort_) {
             if (i > max) max = i
         }

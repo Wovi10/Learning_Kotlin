@@ -27,9 +27,7 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
 
     open fun getSearchInfo(numRun_: Int, name_: String): String {
         var searchInfo: String = getCommonSection(name_, numRun_) + NEWLINE
-        if (numRun_ == ONE) {
-            return searchInfo
-        }
+        if (numRun_ == ONE) return searchInfo
         val averageTries = cumulativeTries / numRun_
         searchInfo += TAB + "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}). $NEWLINE"
         searchInfo += TAB + "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}). $NEWLINE"
@@ -43,19 +41,22 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
     }
 
     open fun updateSearchData(numToFind_: Int, numRun_: Int) {
+        cumulativeTries += numTries
         if (numRun_ == ONE) {
             numOfTries.setBoth(numTries)
             guessOnTries.setBoth(numToFind_)
-        } else {
-            if (numTries > numOfTries.highest) {
-                numOfTries.highest = numTries
-                guessOnTries.onHighest = numToFind_
-            } else if (numTries < numOfTries.lowest) {
-                numOfTries.lowest = numTries
-                guessOnTries.onLowest = numToFind_
-            }
+            return
         }
-        cumulativeTries += numTries
+        if (numTries > numOfTries.highest) {
+            numOfTries.highest = numTries
+            guessOnTries.onHighest = numToFind_
+            return
+        }
+        if (numTries < numOfTries.lowest) {
+            numOfTries.lowest = numTries
+            guessOnTries.onLowest = numToFind_
+            return
+        }
     }
 
     override fun resetVariables() {

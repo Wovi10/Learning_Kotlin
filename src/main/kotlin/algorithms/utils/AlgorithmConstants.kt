@@ -4,6 +4,7 @@ object AlgorithmConstants {
     const val ZERO = 0
     const val ONE = 1
     const val TWO = 2
+    const val TEN = 10
     const val SIXTY = 60
     const val HUNDRED = 100
     const val THOUSAND = 1000

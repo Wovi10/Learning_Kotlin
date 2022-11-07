@@ -2,7 +2,9 @@ package algorithms.sorts
 
 import algorithms.Algorithm
 import algorithms.utils.AlgorithmConstants.NEWLINE
+import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.TAB
+import algorithms.utils.AlgorithmConstants.TEN
 import java.time.LocalDateTime
 
 abstract class SortType : Algorithm() {
@@ -13,7 +15,7 @@ abstract class SortType : Algorithm() {
         lowestValue_: Int,
         highestValue_: Int,
         numRun_: Int,
-        printFreq_: Int = 10
+        printFreq_: Int = TEN
     ): String
 
     abstract fun sort(arrayToSort_: IntArray): String
@@ -22,10 +24,10 @@ abstract class SortType : Algorithm() {
         startTime = LocalDateTime.now()
     }
 
-    protected fun getSortInfo(numRun_: Int = 1): String {
+    protected fun getSortInfo(numRun_: Int = ONE): String {
         var sortInfo = name + NEWLINE
         sortInfo += TAB
-        sortInfo += if (numRun_ != 1) {
+        sortInfo += if (numRun_ != ONE) {
             "Ran $numRun_ times. $NEWLINE"
         } else {
             "Ran once. $NEWLINE"

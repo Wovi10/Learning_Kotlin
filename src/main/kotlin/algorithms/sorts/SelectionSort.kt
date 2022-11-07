@@ -4,6 +4,7 @@ import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
+import algorithms.utils.AlgorithmConstants.TEN
 import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
 import java.time.LocalDateTime
@@ -15,7 +16,7 @@ object SelectionSort : SortType() {
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         var printFreq = printFreq_
         if (printFreq_ > numRun_) {
-            printFreq = 10
+            printFreq = TEN
         }
         startup(numRun_, name, this)
         repeat(numRun_) { runNum ->
@@ -39,17 +40,13 @@ object SelectionSort : SortType() {
 
     private fun selectionSort(arrayToSort_: IntArray) {
         var smallestIndex: Int
-        val arraySize = arrayToSort_.size
+        val arraySize: Int = arrayToSort_.size
         for (i in ZERO..arraySize) {
             smallestIndex = i
             for (j in i until arraySize) {
-                if (arrayToSort_[j] < arrayToSort_[smallestIndex]) {
-                    smallestIndex = j
-                }
+                if (arrayToSort_[j] < arrayToSort_[smallestIndex]) smallestIndex = j
             }
-            if (smallestIndex != i) {
-                swapIndexes(arrayToSort_, i, smallestIndex)
-            }
+            if (smallestIndex != i) swapIndexes(arrayToSort_, i, smallestIndex)
         }
     }
 }

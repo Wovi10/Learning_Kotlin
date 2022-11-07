@@ -7,6 +7,7 @@ import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.TEN
 import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
+import algorithms.utils.Utils.swapIndexes
 import java.time.LocalDateTime
 
 object BubbleSort : SortType() {
@@ -39,8 +40,9 @@ object BubbleSort : SortType() {
     private fun bubbleSort(arrayToSort_: IntArray) {
         for (counter in arrayToSort_.indices) {
             for (i in ZERO until arrayToSort_.size - ONE) {
-                if (arrayToSort_[i] > arrayToSort_[i + ONE]) {
-                    swapIndexes(arrayToSort_, i, i + ONE)
+                val iPlusOne = i + ONE
+                if (arrayToSort_[i] > arrayToSort_[iPlusOne]) {
+                    swapIndexes(arrayToSort_, i, (iPlusOne))
                 }
             }
         }

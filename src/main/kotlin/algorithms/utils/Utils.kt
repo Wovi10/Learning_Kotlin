@@ -13,4 +13,9 @@ object Utils {
         }
         return outputArray
     }
+    fun swapIndexes(arrayToSort_: IntArray, indexOne_: Int, indexTwo_: Int) {
+        val temp = arrayToSort_[indexOne_]
+        arrayToSort_[indexOne_] = arrayToSort_[indexTwo_]
+        arrayToSort_[indexTwo_] = temp
+    }
 }

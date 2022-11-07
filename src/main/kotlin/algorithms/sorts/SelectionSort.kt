@@ -7,6 +7,7 @@ import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.TEN
 import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
+import algorithms.utils.Utils.swapIndexes
 import java.time.LocalDateTime
 
 object SelectionSort : SortType() {

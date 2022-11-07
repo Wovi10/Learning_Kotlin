@@ -18,9 +18,9 @@ object SelectionSort : SortType() {
             printFreq = 10
         }
         startup(numRun_, name, this)
-        repeat(numRun_) {
+        repeat(numRun_) { runNum ->
             defaultSelectionSort(arraySize_, lowestValue_, highestValue_)
-            if (it % printFreq == ZERO) print(LOADING_SYMBOL)
+            if (runNum % printFreq == ZERO) print(LOADING_SYMBOL)
         }
         print(NEWLINE)
         return getSortInfo(numRun_)

@@ -1,14 +1,10 @@
 package algorithms.sorts
 
-import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.TEN
 import algorithms.utils.Utils
 import algorithms.utils.Utils.swapIndexes
-import utils.Constants.NEWLINE
-import utils.Constants.ONE
 import utils.Constants.ZERO
-import utils.console.AsciiProgressBar
 import utils.console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
 
@@ -19,7 +15,7 @@ object SelectionSort : SortType() {
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
         var printFreq = printFreq_
         if (printFreq_ > numRun_) printFreq = TEN
-        startup(numRun_, name, this)
+        startup(name, this)
         repeat(numRun_) { runNum ->
             defaultSelectionSort(arraySize_, lowestValue_, highestValue_)
             updateProgressBar(runNum, numRun_)
@@ -33,7 +29,7 @@ object SelectionSort : SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        startup(ONE, name, this)
+        startup(name, this)
         selectionSort(arrayToSort_)
         return getSortInfo()
     }

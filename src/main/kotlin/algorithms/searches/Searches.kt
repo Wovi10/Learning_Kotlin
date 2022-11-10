@@ -10,7 +10,7 @@ import utils.Constants.ONE
 
 object Searches {
     fun runSearches(): String {
-        var output: String = if (search_numRun == ONE) {
+        var output = if (search_numRun == ONE) {
             println("Running each sort once.")
             "Ran searches once: $NEWLINE"
         } else {

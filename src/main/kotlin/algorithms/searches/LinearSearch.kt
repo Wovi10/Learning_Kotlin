@@ -15,7 +15,7 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
     override var startTime: LocalDateTime = LocalDateTime.now()
 
     override fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String {
-        startup(numRun_, name, this)
+        startup(name, this)
         repeat(numRun_) {runNum ->
             runLinearSearch(lowerBound_, upperBound_, numRun_)
             updateProgressBar(runNum, numRun_)

@@ -1,15 +1,16 @@
 import algorithms.searches.BinarySearch
+import algorithms.searches.EmptySearch
 import algorithms.searches.LinearSearch
 import algorithms.searches.Searches.runSearches
 import algorithms.sorts.*
-import algorithms.sorts.Sorts.runAllSortsMultipleTimes
+import algorithms.sorts.Sorts.runSorts
 import interactive_Projects.Quiz
 
 val sortList = listOf(QuickSort, RadixSort, SelectionSort, InsertionSort, BubbleSort)
-val skipSortList = listOf(QuickSort, RadixSort, SelectionSort, InsertionSort)
+val skipSortList = listOf(EmptySort)
 
 val searchList = listOf(BinarySearch, LinearSearch)
-val skipSearchList = listOf(BinarySearch, LinearSearch)
+val skipSearchList = listOf(EmptySearch)
 
 const val arraySize = 10000
 const val lowestVal = 0
@@ -34,10 +35,8 @@ fun quiz() {
 fun searchAndSorts() {
     val informationToShow = mutableListOf("Results of this run:")
 
+    informationToShow.add(runSorts())
     informationToShow.add(runSearches())
-
-    informationToShow.add(runAllSortsMultipleTimes())
-//    informationToShow.add(runAllSortsOnce())
 
     printInformationToShow(informationToShow)
 }

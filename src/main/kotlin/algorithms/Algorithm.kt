@@ -15,16 +15,14 @@ abstract class Algorithm {
 
     abstract fun resetVariables()
 
-    private fun printStartText(name_: String, numRun_: Int = ONE, arrayToPrint_: IntArray? = null) {
-        var startText = EMPTY_STRING
-        if (numRun_ != ONE) startText = "Started $numRun_ runs of "
-        println(startText + name_)
+    private fun printStartText(name_: String, arrayToPrint_: IntArray? = null) {
+        println(name_)
         if (arrayToPrint_ != null) printArray(arrayToPrint_)
     }
 
-    protected fun startup(numRun_: Int, name_: String, algorithm: Algorithm, arrayToPrint_: IntArray? = null) {
+    protected fun startup(name_: String, algorithm: Algorithm, arrayToPrint_: IntArray? = null) {
         algorithm.resetVariables()
-        printStartText(name_, numRun_, arrayToPrint_)
+        printStartText(name_, arrayToPrint_)
     }
 
     private fun printArray(arrayToPrint_: IntArray) {

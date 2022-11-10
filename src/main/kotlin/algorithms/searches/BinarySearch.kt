@@ -1,6 +1,6 @@
 package algorithms.searches
 
-import algorithms.searches.utils.Constants.BINARYSEARCH_TEXT
+import algorithms.searches.utils.Constants.BINARY_SEARCH_TEXT
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
 import consoleInteraction.AsciiProgressBar.updateProgressBar
@@ -10,8 +10,9 @@ import utils.Constants.ZERO
 import java.time.LocalDateTime
 
 private const val TWO = 2
+
 object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
-    override val name = BINARYSEARCH_TEXT
+    override val name = BINARY_SEARCH_TEXT
     override var cumulativeTries = ZERO
     override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()

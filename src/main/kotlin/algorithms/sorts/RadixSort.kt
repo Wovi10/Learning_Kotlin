@@ -1,6 +1,6 @@
 package algorithms.sorts
 
-import algorithms.sorts.utils.Constants.RADIXSORT_TEXT
+import algorithms.sorts.utils.Constants.RADIX_SORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
 import consoleInteraction.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
@@ -12,7 +12,7 @@ private const val NUMBER_BASE = 10
 
 object RadixSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name = RADIXSORT_TEXT
+    override val name = RADIX_SORT_TEXT
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)

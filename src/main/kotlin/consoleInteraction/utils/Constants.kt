@@ -4,6 +4,7 @@ object Constants {
 
     object Ansi {
         const val ANSI_ESCAPE = "\u001b["
+
         object RichText {
             private const val BLACK = 0
             private const val RED = 1

@@ -1,13 +1,13 @@
 package algorithms.searches
 
-import algorithms.searches.utils.Constants.EMPTYSEARCH_TEXT
+import algorithms.searches.utils.Constants.EMPTY_SEARCH_TEXT
 import utils.Constants.ZERO
 import java.time.LocalDateTime
 
 private const val EMPTY_SEARCH_TEXT = "This is an empty search"
 
-object EmptySearch: SearchType() {
-    override val name: String = EMPTYSEARCH_TEXT
+object EmptySearch : SearchType() {
+    override val name: String = EMPTY_SEARCH_TEXT
     override var cumulativeTries: Int = ZERO
     override var numTries: Int = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()

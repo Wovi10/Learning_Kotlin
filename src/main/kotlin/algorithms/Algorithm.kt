@@ -8,6 +8,7 @@ import java.time.temporal.ChronoUnit
 private const val SIXTY = 60
 private const val THOUSAND = 1000
 private const val ONE_MILLION = 1000000
+
 abstract class Algorithm {
     protected abstract var startTime: LocalDateTime
 

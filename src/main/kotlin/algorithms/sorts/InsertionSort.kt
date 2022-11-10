@@ -1,6 +1,6 @@
 package algorithms.sorts
 
-import algorithms.sorts.utils.Constants.INSERTIONSORT_TEXT
+import algorithms.sorts.utils.Constants.INSERTION_SORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
 import consoleInteraction.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
@@ -10,9 +10,9 @@ import java.time.LocalDateTime
 
 object InsertionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name: String = INSERTIONSORT_TEXT
+    override val name: String = INSERTION_SORT_TEXT
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int){
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultInsertionSort(arraySize_, lowestValue_, highestValue_)

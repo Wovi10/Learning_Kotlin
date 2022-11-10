@@ -20,8 +20,8 @@ class Quiz constructor(numQuestions: Int) {
         setQuestions()
     }
 
-    private fun setQuestions(){
-        repeat(numQuests){
+    private fun setQuestions() {
+        repeat(numQuests) {
             println("What is your question?")
             val question = readln()
             println("What is the answer?")
@@ -33,7 +33,7 @@ class Quiz constructor(numQuestions: Int) {
         clearScreen()
         println("Type start and press enter to start the quiz. (q to stop)")
         val startQuiz = lookForStart()
-        if (!startQuiz){
+        if (!startQuiz) {
             quitQuiz()
             return
         }
@@ -50,7 +50,7 @@ class Quiz constructor(numQuestions: Int) {
     private fun lookForStart(): Boolean {
         val answer = readln().lowercase()
         println(answer)
-        when (answer){
+        when (answer) {
             "start" -> return true
             "q" -> return false
             else -> {
@@ -66,7 +66,7 @@ class Quiz constructor(numQuestions: Int) {
         var points = ZERO
         for (pair in qAndA) {
             println(pair.first)
-            when(readln().lowercase()){
+            when (readln().lowercase()) {
                 pair.second -> points = correctAnswer(points)
                 else -> wrongAnswer(pair.second)
             }
@@ -92,7 +92,7 @@ class Quiz constructor(numQuestions: Int) {
     }
 
     private fun clearScreen() {
-        repeat(NUM_OF_REPEATS){
+        repeat(NUM_OF_REPEATS) {
             println()
         }
     }

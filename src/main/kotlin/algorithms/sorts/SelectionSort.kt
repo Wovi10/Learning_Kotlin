@@ -1,6 +1,6 @@
 package algorithms.sorts
 
-import algorithms.sorts.utils.Constants.SELECTIONSORT_TEXT
+import algorithms.sorts.utils.Constants.SELECTION_SORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
 import algorithms.sorts.utils.Functions.swapIndexes
 import consoleInteraction.AsciiProgressBar.updateProgressBar
@@ -11,7 +11,7 @@ import java.time.LocalDateTime
 
 object SelectionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name = SELECTIONSORT_TEXT
+    override val name = SELECTION_SORT_TEXT
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)

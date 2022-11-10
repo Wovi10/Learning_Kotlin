@@ -7,6 +7,7 @@ object Constants {
     const val NEWLINE = "\n"
     const val TAB = "\t"
     const val EMPTY_STRING = ""
+    const val ANSI_ESCAPE = "\u001b["
     object Colours {
         const val BLACK = 0
         const val RED = 1

@@ -1,22 +1,25 @@
 package utils.console
 
-import utils.console.colours.Colours.BLACK
-import utils.console.colours.Colours.BLUE
-import utils.console.colours.Colours.CYAN
-import utils.console.colours.Colours.GREEN
-import utils.console.colours.Colours.MAGENTA
-import utils.console.colours.Colours.RED
-import utils.console.colours.Colours.WHITE
-import utils.console.colours.Colours.YELLOW
+import utils.Constants.ANSI_ESCAPE
+import utils.Constants.Colours.BLACK
+import utils.Constants.Colours.BLUE
+import utils.Constants.Colours.CYAN
+import utils.Constants.Colours.GREEN
+import utils.Constants.Colours.MAGENTA
+import utils.Constants.Colours.RED
+import utils.Constants.Colours.WHITE
+import utils.Constants.Colours.YELLOW
 
 object RichText {
-    private const val ANSI_ESCAPE = "\u001b"
-    private const val COLOUR_START = "$ANSI_ESCAPE["
-    private const val FOREGROUND = COLOUR_START + "3"
-    private const val BACKGROUND = COLOUR_START + "4"
+    private const val FOREGROUND = ANSI_ESCAPE + "3"
+    private const val BACKGROUND = ANSI_ESCAPE + "4"
     private const val DEFAULT = "m"
     private const val BRIGHT = ";1$DEFAULT"
-    const val RESET = COLOUR_START + "0$DEFAULT"
+
+    const val RESET = ANSI_ESCAPE + "0$DEFAULT"
+    const val BOLD = ANSI_ESCAPE + "1$DEFAULT"
+    const val UNDERLINE = ANSI_ESCAPE + "4$DEFAULT"
+    const val REVERSED = ANSI_ESCAPE + "7$DEFAULT"
 
     const val FOREGROUND_BLACK = FOREGROUND + BLACK + DEFAULT
     const val FOREGROUND_RED = FOREGROUND + RED + DEFAULT

@@ -3,6 +3,7 @@ package utils.console
 import algorithms.utils.AlgorithmConstants.HUNDRED
 import utils.Constants.EMPTY_STRING
 import utils.Constants.HASHTAG
+import utils.Constants.NEWLINE
 import utils.Constants.ONE
 import utils.Constants.REVERT
 import utils.Constants.SPACE
@@ -19,7 +20,7 @@ object AsciiProgressBar {
         val contentToPrint: String
         val percentage = (index* HUNDRED)/total
         if (percentage + ONE == HUNDRED){
-            contentToPrint = FOREGROUND_GREEN_BRIGHT + DONE_MESSAGE + fillBarWithSpaces()
+            contentToPrint = FOREGROUND_GREEN_BRIGHT + DONE_MESSAGE + fillBarWithSpaces() + NEWLINE
         }else{
             val width = (percentage + ONE)/(HUNDRED/ MAX_NUM_HASHTAGS)
             var hashtags = EMPTY_STRING

@@ -23,7 +23,6 @@ object BubbleSort : SortType() {
             defaultBubbleSort(arraySize_, lowestValue_, highestValue_)
             updateProgressBar(runNum, numRun_)
         }
-        print(NEWLINE)
         return getSortInfo(numRun_)
     }
 

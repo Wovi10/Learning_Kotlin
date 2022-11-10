@@ -1,8 +1,8 @@
 package interactive_Projects
 
-import utils.Colours.FOREGROUND_GREEN
-import utils.Colours.FOREGROUND_RED
-import utils.Colours.FOREGROUND_RESET
+import utils.Console_Colours.FOREGROUND_GREEN
+import utils.Console_Colours.FOREGROUND_RED
+import utils.Console_Colours.FOREGROUND_RESET
 
 class Quiz constructor(numQuestions: Int) {
     private var numQuests: Int

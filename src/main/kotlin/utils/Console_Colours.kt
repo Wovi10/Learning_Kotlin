@@ -1,8 +1,9 @@
 package utils
 
-object Colours {
+object Console_Colours {
     private const val COLOUR_START = "\u001b["
     private const val FOREGROUND = COLOUR_START + "3"
+    private const val BACKGROUND = COLOUR_START + "4"
     const val FOREGROUND_RESET = COLOUR_START + "0m"
 
     const val FOREGROUND_BLACK = FOREGROUND + "0m"
@@ -23,23 +24,23 @@ object Colours {
     const val FOREGROUND_CYAN_BRIGHT = FOREGROUND + "6;1m"
     const val FOREGROUND_WHITE_BRIGHT = FOREGROUND + "7;1m"
 
-    const val BACKGROUND_BLACK = COLOUR_START + "40m"
-    const val BACKGROUND_RED = COLOUR_START + "41m"
-    const val BACKGROUND_GREEN = COLOUR_START + "42m"
-    const val BACKGROUND_YELLOW = COLOUR_START + "43m"
-    const val BACKGROUND_BLUE = COLOUR_START + "44m"
-    const val BACKGROUND_MAGENTA = COLOUR_START + "45m"
-    const val BACKGROUND_CYAN = COLOUR_START + "46m"
-    const val BACKGROUND_WHITE = COLOUR_START + "47m"
+    const val BACKGROUND_BLACK = BACKGROUND + "0m"
+    const val BACKGROUND_RED = BACKGROUND + "1m"
+    const val BACKGROUND_GREEN = BACKGROUND + "2m"
+    const val BACKGROUND_YELLOW = BACKGROUND + "3m"
+    const val BACKGROUND_BLUE = BACKGROUND + "4m"
+    const val BACKGROUND_MAGENTA = BACKGROUND + "5m"
+    const val BACKGROUND_CYAN = BACKGROUND + "6m"
+    const val BACKGROUND_WHITE = BACKGROUND + "7m"
 
-    const val BACKGROUND_BLACK_BRIGHT = COLOUR_START + "40;1m"
-    const val BACKGROUND_RED_BRIGHT = COLOUR_START + "41;1m"
-    const val BACKGROUND_GREEN_BRIGHT = COLOUR_START + "42;1m"
-    const val BACKGROUND_YELLOW_BRIGHT = COLOUR_START + "43;1m"
-    const val BACKGROUND_BLUE_BRIGHT = COLOUR_START + "44;1m"
-    const val BACKGROUND_MAGENTA_BRIGHT = COLOUR_START + "45;1m"
-    const val BACKGROUND_CYAN_BRIGHT = COLOUR_START + "46;1m"
-    const val BACKGROUND_WHITE_BRIGHT = COLOUR_START + "47;1m"
+    const val BACKGROUND_BLACK_BRIGHT = BACKGROUND + "0;1m"
+    const val BACKGROUND_RED_BRIGHT = BACKGROUND + "1;1m"
+    const val BACKGROUND_GREEN_BRIGHT = BACKGROUND + "2;1m"
+    const val BACKGROUND_YELLOW_BRIGHT = BACKGROUND + "3;1m"
+    const val BACKGROUND_BLUE_BRIGHT = BACKGROUND + "4;1m"
+    const val BACKGROUND_MAGENTA_BRIGHT = BACKGROUND + "5;1m"
+    const val BACKGROUND_CYAN_BRIGHT = BACKGROUND + "6;1m"
+    const val BACKGROUND_WHITE_BRIGHT = BACKGROUND + "7;1m"
 
 
 }

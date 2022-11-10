@@ -1,14 +1,14 @@
 package utils.console
 
 import utils.Constants.ANSI_ESCAPE
-import utils.Constants.Colours.BLACK
-import utils.Constants.Colours.BLUE
-import utils.Constants.Colours.CYAN
-import utils.Constants.Colours.GREEN
-import utils.Constants.Colours.MAGENTA
-import utils.Constants.Colours.RED
-import utils.Constants.Colours.WHITE
-import utils.Constants.Colours.YELLOW
+import utils.Constants.AnsiColours.BLACK
+import utils.Constants.AnsiColours.BLUE
+import utils.Constants.AnsiColours.CYAN
+import utils.Constants.AnsiColours.GREEN
+import utils.Constants.AnsiColours.MAGENTA
+import utils.Constants.AnsiColours.RED
+import utils.Constants.AnsiColours.WHITE
+import utils.Constants.AnsiColours.YELLOW
 
 object RichText {
     private const val FOREGROUND = ANSI_ESCAPE + "3"

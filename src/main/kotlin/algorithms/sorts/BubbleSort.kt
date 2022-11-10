@@ -8,6 +8,7 @@ import algorithms.utils.Utils.swapIndexes
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
 import utils.Constants.ZERO
+import utils.console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
 
 object BubbleSort : SortType() {
@@ -20,7 +21,7 @@ object BubbleSort : SortType() {
         startup(numRun_, name, this)
         repeat(numRun_) { runNum ->
             defaultBubbleSort(arraySize_, lowestValue_, highestValue_)
-            if (runNum % printFreq == ZERO) print(LOADING_SYMBOL)
+            if (runNum % printFreq == ZERO) updateProgressBar(runNum / printFreq)
         }
         print(NEWLINE)
         return getSortInfo(numRun_)

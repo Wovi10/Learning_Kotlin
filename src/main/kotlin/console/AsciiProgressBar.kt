@@ -1,11 +1,11 @@
 package console
 
 import utils.Constants.Algorithm.HUNDRED
+import utils.Constants.Console.ProgressBar.HASHTAG
+import utils.Constants.Console.ProgressBar.REVERT
 import utils.Constants.EMPTY_STRING
-import utils.Constants.HASHTAG
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
-import utils.Constants.REVERT
 import utils.Constants.RichText.FOREGROUND_BLUE
 import utils.Constants.RichText.FOREGROUND_GREEN_BRIGHT
 import utils.Constants.RichText.TEXT_STYLE_RESET

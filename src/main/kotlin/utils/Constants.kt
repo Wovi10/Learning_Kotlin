@@ -1,17 +1,28 @@
 package utils
 
+import utils.Constants.Console.ANSI_ESCAPE
+
 object Constants {
     const val ZERO = 0
     const val ONE = 1
-    const val TEN = 10
 
     const val NEWLINE = "\n"
     const val TAB = "\t"
-    const val REVERT = "\r"
     const val EMPTY_STRING = ""
     const val SPACE = " "
-    const val HASHTAG = "#"
-    const val ANSI_ESCAPE = "\u001b["
+
+    object InteractiveProjects{
+        const val TEN = 10
+    }
+
+    object Console{
+        const val ANSI_ESCAPE = "\u001b["
+
+        object ProgressBar{
+            const val HASHTAG = "#"
+            const val REVERT = "\r"
+        }
+    }
 
     object AnsiColours {
         const val BLACK = 0

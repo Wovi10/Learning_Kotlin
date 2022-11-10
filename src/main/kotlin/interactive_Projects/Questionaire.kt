@@ -1,14 +1,15 @@
 package interactive_Projects
 
+import utils.Constants.InteractiveProjects.TEN
 import utils.Constants.RichText.FOREGROUND_GREEN
 import utils.Constants.RichText.FOREGROUND_RED
 import utils.Constants.RichText.TEXT_STYLE_RESET
-import utils.Constants.TEN
+import utils.Constants.ZERO
 
 class Quiz constructor(numQuestions: Int) {
     private var numQuests: Int
     private var qAndA: ArrayList<Pair<String, String>>
-//    private var points: Int = ZERO
+    private var points: Int = ZERO
 
     init {
         numQuests = numQuestions
@@ -62,7 +63,7 @@ class Quiz constructor(numQuestions: Int) {
     }
 
     private fun startQuiz(): Int {
-        var points = 0
+        var points = ZERO
         for (pair in qAndA) {
             println(pair.first)
             when(readln().lowercase()){

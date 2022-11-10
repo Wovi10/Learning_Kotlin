@@ -1,10 +1,10 @@
 package console
 
-import utils.Constants.ANSI_ESCAPE
 import utils.Constants.AnsiDirections.DOWN
 import utils.Constants.AnsiDirections.LEFT
 import utils.Constants.AnsiDirections.RIGHT
 import utils.Constants.AnsiDirections.UP
+import utils.Constants.Console.ANSI_ESCAPE
 
 object CursorNavigation {
 

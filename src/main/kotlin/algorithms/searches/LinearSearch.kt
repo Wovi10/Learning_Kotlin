@@ -29,18 +29,18 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
 
     private fun runLinearSearch(lowerBound: Int, upperBound: Int, numRun_: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
-        val thingy = 1
+        val thingy = 0
         numTries = ZERO
-        findNumber(lowerBound, upperBound, thingy)
-        updateSearchData(thingy, numRun_)
+        findNumber(lowerBound, upperBound, numToFind, ZERO)
+        updateSearchData(numToFind, numRun_)
     }
 
-    override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int) {
-        numTries += ONE
-        val numTried = getNumToTry(lowerBound_)
-        if (numTried < numToFind_) {
-            return findNumber(numTried, upperBound_, numToFind_)
+    override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int, numToTry: Int) {
+        if (numToTry != numToFind_) {
+            val numTried = getNumToTry(lowerBound_)
+            findNumber(numToTry, upperBound_, numToFind_, numTried)
         }
+        numTries += ONE
     }
 
     private fun getNumToTry(lowerBound: Int): Int {

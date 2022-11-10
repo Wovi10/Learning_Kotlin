@@ -17,6 +17,7 @@ object EmptySearch: SearchType() {
         return EMPTY_SEARCH_TEXT
     }
 
-    override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int) {
+    override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int, numToTry: Int) {
+        return
     }
 }

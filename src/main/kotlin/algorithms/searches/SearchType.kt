@@ -24,7 +24,7 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
 
     abstract fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String
 
-    abstract fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int)
+    abstract fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int, numToTry: Int)
 
     open fun getSearchInfo(numRun_: Int, name_: String): String {
         var searchInfo = "$TAB$name_$NEWLINE"

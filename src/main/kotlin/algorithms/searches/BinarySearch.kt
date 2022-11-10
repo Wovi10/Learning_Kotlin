@@ -4,7 +4,6 @@ import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
 import algorithms.utils.AlgorithmConstants.TWO
-import utils.Constants
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
@@ -19,7 +18,7 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
 
     override fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String {
         startup(name, this)
-        repeat(numRun_) {runNum ->
+        repeat(numRun_) { runNum ->
             runBinarySearch(lowerBound_, upperBound_, numRun_)
             val durationText: String = if (runNum + ONE == numRun_) getDuration()
             else EMPTY_STRING
@@ -31,18 +30,20 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
     private fun runBinarySearch(lowerBound: Int, upperBound: Int, numRun_: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
         numTries = ZERO
-        findNumber(lowerBound, upperBound, numToFind)
+        val middleNumber = getMiddleNum(lowerBound, upperBound)
+        findNumber(lowerBound, upperBound, numToFind, middleNumber)
         updateSearchData(numToFind, numRun_)
     }
 
-    override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int) {
+    override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int, numToTry: Int) {
         numTries += ONE
-        val middleNumber = getMiddleNum(lowerBound_, upperBound_)
-        if (numToFind_ < middleNumber) {
-            return findNumber(lowerBound_, middleNumber, numToFind_)
+        if (numToFind_ < numToTry) {
+            val middleNumber = getMiddleNum(lowerBound_, upperBound_)
+            return findNumber(lowerBound_, middleNumber, numToFind_, middleNumber)
         }
-        if (numToFind_ > middleNumber) {
-            return findNumber(middleNumber, upperBound_, numToFind_)
+        if (numToFind_ > numToTry) {
+            val middleNumber = getMiddleNum(lowerBound_, upperBound_)
+            return findNumber(numToTry, upperBound_, numToFind_, numToTry)
         }
     }
 

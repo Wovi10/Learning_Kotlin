@@ -1,17 +1,19 @@
 package utils.console
 
-object Colours {
-    private const val COLOUR_START = "\u001b["
+import utils.console.colours.Colours.BLACK
+import utils.console.colours.Colours.BLUE
+import utils.console.colours.Colours.CYAN
+import utils.console.colours.Colours.GREEN
+import utils.console.colours.Colours.MAGENTA
+import utils.console.colours.Colours.RED
+import utils.console.colours.Colours.WHITE
+import utils.console.colours.Colours.YELLOW
+
+object RichText {
+    private const val ANSI_ESCAPE = "\u001b"
+    private const val COLOUR_START = "$ANSI_ESCAPE["
     private const val FOREGROUND = COLOUR_START + "3"
     private const val BACKGROUND = COLOUR_START + "4"
-    private const val BLACK = 0
-    private const val RED = 1
-    private const val GREEN = 2
-    private const val YELLOW = 3
-    private const val BLUE = 4
-    private const val MAGENTA = 5
-    private const val CYAN = 6
-    private const val WHITE = 7
     private const val DEFAULT = "m"
     private const val BRIGHT = ";1$DEFAULT"
     const val RESET = COLOUR_START + "0$DEFAULT"
@@ -51,6 +53,4 @@ object Colours {
     const val BACKGROUND_MAGENTA_BRIGHT = BACKGROUND + MAGENTA + BRIGHT
     const val BACKGROUND_CYAN_BRIGHT = BACKGROUND + CYAN + BRIGHT
     const val BACKGROUND_WHITE_BRIGHT = BACKGROUND + WHITE + BRIGHT
-
-
 }

@@ -11,13 +11,12 @@ object SelectionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Selection $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultSelectionSort(arraySize_, lowestValue_, highestValue_)
-            updateProgressBar(runNum, numRun_)
+            updateProgressBar(runNum, numRun_, getDuration())
         }
-        return getSortInfo(numRun_)
     }
 
     private fun defaultSelectionSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {

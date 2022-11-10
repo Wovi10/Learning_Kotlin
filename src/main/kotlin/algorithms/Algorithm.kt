@@ -48,26 +48,23 @@ abstract class Algorithm {
         return commonSection
     }
 
-    protected fun getDuration(): String {
+    fun getDuration(): String {
         val stopTime: LocalDateTime = LocalDateTime.now()
         val time = (startTime.until(stopTime, ChronoUnit.NANOS) / AlgorithmConstants.THOUSAND).toDouble()
-        return "It took " + getTimeString(time)
+        return getTimeString(time)
     }
 
     private fun getTimeString(_time: Double): String {
         var time = _time
-        if (time < ONE_MILLION) {
-            return "$time thousand nanos."
-        }
         time /= ONE_MILLION
         if (time < SIXTY) {
-            return "$time seconds."
+            return (time.toString() + "s")
         }
         time /= SIXTY
         if (time < SIXTY) {
-            return "$time minutes."
+            return (time.toString() + "m")
         }
         time /= SIXTY
-        return "$time hours."
+        return (time.toString() + "h")
     }
 }

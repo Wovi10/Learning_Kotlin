@@ -1,7 +1,6 @@
 package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
-import algorithms.utils.AlgorithmConstants.TEN
 import algorithms.utils.Utils
 import algorithms.utils.Utils.swapIndexes
 import utils.Constants.ONE
@@ -13,13 +12,14 @@ object BubbleSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = "Bubble $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultBubbleSort(arraySize_, lowestValue_, highestValue_)
-            updateProgressBar(runNum, numRun_)
+            val durationText: String = if (runNum + ONE == numRun_) getDuration()
+            else ""
+            updateProgressBar(runNum, numRun_, durationText)
         }
-        return getSortInfo(numRun_)
     }
 
     private fun defaultBubbleSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {

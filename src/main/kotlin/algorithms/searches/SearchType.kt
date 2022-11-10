@@ -3,6 +3,7 @@ package algorithms.searches
 import algorithms.Algorithm
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
+import algorithms.sorts.BubbleSort
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
 import utils.Constants.TAB

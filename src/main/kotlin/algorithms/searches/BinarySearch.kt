@@ -19,7 +19,7 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
         startup(name, this)
         repeat(numRun_) {runNum ->
             runBinarySearch(lowerBound_, upperBound_, numRun_)
-            updateProgressBar(runNum, numRun_)
+            updateProgressBar(runNum, numRun_, getDuration())
         }
         return getSearchInfo(numRun_, name)
     }

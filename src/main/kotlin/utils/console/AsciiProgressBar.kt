@@ -1,5 +1,6 @@
 package utils.console
 
+import algorithms.searches.BinarySearch.getDuration
 import algorithms.utils.AlgorithmConstants.HUNDRED
 import utils.Constants.EMPTY_STRING
 import utils.Constants.HASHTAG
@@ -7,6 +8,7 @@ import utils.Constants.NEWLINE
 import utils.Constants.ONE
 import utils.Constants.REVERT
 import utils.Constants.SPACE
+import utils.Constants.TAB
 import utils.console.RichText.FOREGROUND_BLUE
 import utils.console.RichText.FOREGROUND_GREEN_BRIGHT
 import utils.console.RichText.RESET
@@ -16,29 +18,33 @@ private const val MAX_NUM_HASHTAGS = 25
 private const val DONE_MESSAGE = "Done!"
 
 object AsciiProgressBar {
-    fun updateProgressBar(index: Int, total: Int){
+    fun updateProgressBar(index: Int, total: Int, durationText_: String) {
         val contentToPrint: String
-        val percentage = (index* HUNDRED)/total
-        if (percentage + ONE == HUNDRED){
-            contentToPrint = FOREGROUND_GREEN_BRIGHT + DONE_MESSAGE + fillBarWithSpaces() + NEWLINE
-        }else{
-            val width = (percentage + ONE)/(HUNDRED/ MAX_NUM_HASHTAGS)
+        val percentage = (index * HUNDRED) / total
+        if (percentage + ONE == HUNDRED) {
+            val durationText = TAB + durationText_
+            val spaces = fillBarWithSpaces(durationText.length)
+            contentToPrint =
+                FOREGROUND_GREEN_BRIGHT + DONE_MESSAGE + RESET + durationText + spaces + NEWLINE
+        } else {
+            val width = (percentage + ONE) / (HUNDRED / MAX_NUM_HASHTAGS)
             var hashtags = EMPTY_STRING
-            repeat(width){
+            repeat(width) {
                 hashtags += HASHTAG
             }
             var spaces = EMPTY_STRING
-            repeat(MAX_NUM_HASHTAGS - width){
+            repeat(MAX_NUM_HASHTAGS - width) {
                 spaces += SPACE
             }
-            contentToPrint = "$FOREGROUND_BLUE[$hashtags$spaces]"
+            contentToPrint = "$FOREGROUND_BLUE[$hashtags$spaces]$RESET"
         }
-        print(REVERT + contentToPrint + RESET)
+        print(REVERT + contentToPrint)
     }
 
-    private fun fillBarWithSpaces(): String {
+    private fun fillBarWithSpaces(durationText_Length_: Int): String {
         var output = ""
-        repeat(MAX_NUM_HASHTAGS - DONE_MESSAGE.length){
+        val times = MAX_NUM_HASHTAGS - DONE_MESSAGE.length - durationText_Length_
+        repeat(times) {
             output += SPACE
         }
         return output

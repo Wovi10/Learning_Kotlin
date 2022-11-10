@@ -8,12 +8,13 @@ import skipSortList
 import sortList
 import sort_numRun
 import utils.Constants
+import utils.Constants.EMPTY_STRING
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
 
 object Sorts {
     fun runSorts(): String {
-        if (skipSortList.size > sortList.size) return Constants.EMPTY_STRING
+        if (skipSortList.size > sortList.size) return EMPTY_STRING
         val output = if (sort_numRun == ONE) {
             runAllSortsOnce()
         } else {
@@ -24,12 +25,11 @@ object Sorts {
 
     private fun runAllSortsMultipleTimes(): String {
         println("Running each sort $sort_numRun times.")
-        var resultInfo = "Ran sorts multiple times: $NEWLINE"
         for (sortType in sortList) {
             if (skipSortList.contains(sortType)) continue
-            resultInfo += sortType.sort(arraySize, lowestVal, highestVal, sort_numRun)
+            sortType.sort(arraySize, lowestVal, highestVal, sort_numRun)
         }
-        return resultInfo
+        return EMPTY_STRING
     }
 
     private fun runAllSortsOnce(): String {

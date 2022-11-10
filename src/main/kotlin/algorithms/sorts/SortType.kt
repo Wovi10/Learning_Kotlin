@@ -15,7 +15,7 @@ abstract class SortType : Algorithm() {
         lowestValue_: Int,
         highestValue_: Int,
         numRun_: Int
-    ): String
+    )
 
     abstract fun sort(arrayToSort_: IntArray): String
 
@@ -23,14 +23,8 @@ abstract class SortType : Algorithm() {
         startTime = LocalDateTime.now()
     }
 
-    protected fun getSortInfo(numRun_: Int = ONE): String {
+    protected fun getSortInfo(): String {
         var sortInfo = name + NEWLINE
-        sortInfo += TAB
-        sortInfo += if (numRun_ != ONE) {
-            "Ran $numRun_ times. $NEWLINE"
-        } else {
-            "Ran once. $NEWLINE"
-        }
         sortInfo += TAB + getDuration() + NEWLINE
         return sortInfo
     }

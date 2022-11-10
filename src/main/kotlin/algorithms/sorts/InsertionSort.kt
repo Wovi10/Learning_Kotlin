@@ -1,7 +1,6 @@
 package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
-import algorithms.utils.AlgorithmConstants.TEN
 import algorithms.utils.Utils
 import utils.Constants.ONE
 import utils.Constants.ZERO
@@ -12,13 +11,12 @@ object InsertionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = "Insertion $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int){
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultInsertionSort(arraySize_, lowestValue_, highestValue_)
-            updateProgressBar(runNum, numRun_)
+            updateProgressBar(runNum, numRun_, getDuration())
         }
-        return getSortInfo(numRun_)
     }
 
     private fun defaultInsertionSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {

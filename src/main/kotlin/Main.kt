@@ -12,14 +12,14 @@ val skipSortList = listOf(EmptySort)
 val searchList = listOf(BinarySearch, LinearSearch)
 val skipSearchList = listOf(EmptySearch, BinarySearch, LinearSearch)
 
-const val arraySize = 10000
+const val arraySize = 100
 const val lowestVal = 0
 const val highestVal = 99
 const val sort_numRun = 100
 const val search_numRun = 100
 
 fun main() {
-//    searchAndSorts()
+    searchAndSorts()
 //    interActiveProjects()
 }
 
@@ -33,7 +33,7 @@ fun quiz() {
 }
 
 fun searchAndSorts() {
-    val informationToShow = mutableListOf("Results of this run:")
+    val informationToShow = mutableListOf("")
 
     informationToShow.add(runSorts())
     informationToShow.add(runSearches())

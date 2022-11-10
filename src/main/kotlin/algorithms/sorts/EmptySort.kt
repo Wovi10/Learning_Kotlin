@@ -9,9 +9,8 @@ object EmptySort: SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = "EMPTY $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         System.err.println(EMPTY_SORT_TEXT)
-        return EMPTY_SORT_TEXT
     }
 
     override fun sort(arrayToSort_: IntArray): String {

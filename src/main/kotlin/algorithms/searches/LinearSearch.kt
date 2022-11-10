@@ -2,16 +2,15 @@ package algorithms.searches
 
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
-import utils.Constants
+import utils.Constants.Algorithm.SearchTypes.LINEARSEARCH_TEXT
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import utils.console.AsciiProgressBar.updateProgressBar
+import console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
 
 object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
-    override val name = "Linear $SEARCH_TEXT"
+    override val name = LINEARSEARCH_TEXT
     override var cumulativeTries = ZERO
     override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()
@@ -22,14 +21,13 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
             runLinearSearch(lowerBound_, upperBound_, numRun_)
             val durationText: String = if (runNum + ONE == numRun_) getDuration()
             else EMPTY_STRING
-//            updateProgressBar(runNum, numRun_, durationText)
+            updateProgressBar(runNum, numRun_, durationText)
         }
         return getSearchInfo(numRun_, name)
     }
 
     private fun runLinearSearch(lowerBound: Int, upperBound: Int, numRun_: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
-        val thingy = 0
         numTries = ZERO
         findNumber(lowerBound, upperBound, numToFind, ZERO)
         updateSearchData(numToFind, numRun_)

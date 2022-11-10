@@ -1,17 +1,17 @@
 package algorithms.sorts
 
-import algorithms.utils.AlgorithmConstants.NUMBER_BASE
-import algorithms.utils.AlgorithmConstants.SORT_TEXT
-import algorithms.utils.Utils
+import utils.Utils
+import utils.Constants.Algorithm.NUMBER_BASE
+import utils.Constants.Algorithm.SortTypes.RADIXSORT_TEXT
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import utils.console.AsciiProgressBar.updateProgressBar
+import console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
 
 object RadixSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name = "Radix $SORT_TEXT"
+    override val name = RADIXSORT_TEXT
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)
@@ -71,7 +71,7 @@ object RadixSort : SortType() {
         digitFrequency: IntArray,
         placeValue: Int
     ) {
-        for (i in (arraySize - ONE) downTo 0) {
+        for (i in (arraySize - ONE) downTo ZERO) {
             val freqNumToWrite = digitFrequency[(inputArray[i] / placeValue) % NUMBER_BASE]
             sortedArray[freqNumToWrite - ONE] = inputArray[i]
             digitFrequency[(inputArray[i] / placeValue) % NUMBER_BASE]--

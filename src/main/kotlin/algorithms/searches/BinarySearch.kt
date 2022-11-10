@@ -2,16 +2,16 @@ package algorithms.searches
 
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
-import algorithms.utils.AlgorithmConstants.TWO
+import utils.Constants.Algorithm.SearchTypes.BINARYSEARCH_TEXT
+import utils.Constants.Algorithm.TWO
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import utils.console.AsciiProgressBar.updateProgressBar
+import console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
 
 object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
-    override val name = "Binary $SEARCH_TEXT"
+    override val name = BINARYSEARCH_TEXT
     override var cumulativeTries = ZERO
     override var numTries = ZERO
     override var startTime: LocalDateTime = LocalDateTime.now()
@@ -38,12 +38,9 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
     override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int, numToTry: Int) {
         numTries += ONE
         val middleNumber = getMiddleNum(lowerBound_, upperBound_)
-        if (numToTry > numToFind_) {
-            return findNumber(lowerBound_, numToTry, numToFind_, middleNumber)
-        }
-        if (numToTry < numToFind_) {
-            return findNumber(numToTry, upperBound_, numToFind_, middleNumber)
-        }
+        if (numToTry > numToFind_) return findNumber(lowerBound_, numToTry, numToFind_, middleNumber)
+
+        if (numToTry < numToFind_) return findNumber(numToTry, upperBound_, numToFind_, middleNumber)
     }
 
     private fun getMiddleNum(lowerBound: Int, upperBound: Int): Int {

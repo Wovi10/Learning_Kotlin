@@ -9,16 +9,23 @@ import utils.Constants.EMPTY_STRING
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
 
+private const val RUNNING_EACH_SEARCH = "Running each search"
+
 object Searches {
     fun runSearches(): String {
         if (skipSearchList.size > searchList.size) return EMPTY_STRING
-        var output = if (search_numRun == ONE) {
-            println("Running each search once.")
-            "Ran searches once: $NEWLINE"
+        var output = "Ran searches"
+
+        output += if (search_numRun == ONE) {
+            println("$RUNNING_EACH_SEARCH once.")
+            "once"
         } else {
-            println("Running each search $search_numRun times.")
-            "Ran searches multiple times: $NEWLINE"
+            println("$RUNNING_EACH_SEARCH $search_numRun times.")
+            "multiple times"
         }
+
+        output += ": $NEWLINE"
+
         for (searchType in searchList) {
             if (skipSearchList.contains(searchType)) continue
             output += searchType.search(lowestVal, highestVal, search_numRun)

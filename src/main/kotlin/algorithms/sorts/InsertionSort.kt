@@ -1,16 +1,16 @@
 package algorithms.sorts
 
-import algorithms.utils.AlgorithmConstants.SORT_TEXT
-import algorithms.utils.Utils
+import utils.Utils
+import utils.Constants.Algorithm.SortTypes.INSERTIONSORT_TEXT
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import utils.console.AsciiProgressBar.updateProgressBar
+import console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
 
 object InsertionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
-    override val name: String = "Insertion $SORT_TEXT"
+    override val name: String = INSERTIONSORT_TEXT
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int){
         startup(name, this)

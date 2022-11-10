@@ -1,4 +1,4 @@
-package utils.console
+package console
 
 import utils.Constants.ANSI_ESCAPE
 import utils.Constants.AnsiDirections.DOWN

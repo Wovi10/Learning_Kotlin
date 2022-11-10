@@ -3,13 +3,15 @@ package algorithms.searches
 import algorithms.Algorithm
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import algorithms.sorts.BubbleSort
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
 import utils.Constants.TAB
 import utils.Constants.ZERO
 import java.time.LocalDateTime
 import kotlin.random.Random
+
+private const val DOUBLE_TAB = TAB + TAB
+private const val NEWLINE_DOUBLE_TAB = NEWLINE + DOUBLE_TAB
 
 abstract class SearchType(private var guessOnTries: GuessOnTries, private var numOfTries: NumOfTries) : Algorithm() {
     constructor() : this(
@@ -27,12 +29,14 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
     abstract fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int, numToTry: Int)
 
     open fun getSearchInfo(numRun_: Int, name_: String): String {
-        var searchInfo = "$TAB$name_$NEWLINE"
+        var searchInfo = "$TAB$name_$NEWLINE_DOUBLE_TAB"
         if (numRun_ == ONE) return searchInfo
         val averageTries = cumulativeTries / numRun_
-        searchInfo += TAB + TAB + "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}). $NEWLINE"
-        searchInfo += TAB + TAB + "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}). $NEWLINE"
-        searchInfo += TAB + TAB + "Average number of tries is $averageTries. $NEWLINE"
+        searchInfo += "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest})."
+        searchInfo += NEWLINE_DOUBLE_TAB
+        searchInfo += "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest})."
+        searchInfo += NEWLINE_DOUBLE_TAB
+        searchInfo += "Average number of tries is $averageTries. $NEWLINE"
 
         return searchInfo
     }

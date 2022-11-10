@@ -1,16 +1,16 @@
-package utils.console
+package console
 
-import algorithms.utils.AlgorithmConstants.HUNDRED
+import utils.Constants.Algorithm.HUNDRED
 import utils.Constants.EMPTY_STRING
 import utils.Constants.HASHTAG
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
 import utils.Constants.REVERT
+import utils.Constants.RichText.FOREGROUND_BLUE
+import utils.Constants.RichText.FOREGROUND_GREEN_BRIGHT
+import utils.Constants.RichText.TEXT_STYLE_RESET
 import utils.Constants.SPACE
 import utils.Constants.TAB
-import utils.console.RichText.FOREGROUND_BLUE
-import utils.console.RichText.FOREGROUND_GREEN_BRIGHT
-import utils.console.RichText.TEXT_STYLE_RESET
 
 private const val MAX_NUM_HASHTAGS = 25
 
@@ -19,7 +19,7 @@ private const val DONE_MESSAGE = "Done!"
 object AsciiProgressBar {
     fun updateProgressBar(index: Int, total: Int, durationText_: String) {
         val contentToPrint: String
-        val percentage = (index*100 / total)
+        val percentage = (index*HUNDRED / total)
         if (index + ONE == total) {
             val durationText = TAB + durationText_
             val spaces = fillBarWithSpaces(durationText.length)
@@ -40,9 +40,9 @@ object AsciiProgressBar {
         print(REVERT + TAB + TAB + contentToPrint)
     }
 
-    private fun fillBarWithSpaces(durationText_Length_: Int): String {
-        var output = ""
-        val times = MAX_NUM_HASHTAGS - DONE_MESSAGE.length - durationText_Length_
+    private fun fillBarWithSpaces(duration_textLength_: Int): String {
+        var output = EMPTY_STRING
+        val times = MAX_NUM_HASHTAGS - DONE_MESSAGE.length - duration_textLength_
         repeat(times) {
             output += SPACE
         }

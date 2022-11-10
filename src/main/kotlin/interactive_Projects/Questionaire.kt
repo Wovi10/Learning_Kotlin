@@ -1,8 +1,9 @@
 package interactive_Projects
 
-import utils.console.RichText.FOREGROUND_GREEN
-import utils.console.RichText.FOREGROUND_RED
-import utils.console.RichText.TEXT_STYLE_RESET
+import utils.Constants.RichText.FOREGROUND_GREEN
+import utils.Constants.RichText.FOREGROUND_RED
+import utils.Constants.RichText.TEXT_STYLE_RESET
+import utils.Constants.TEN
 
 class Quiz constructor(numQuestions: Int) {
     private var numQuests: Int
@@ -90,7 +91,7 @@ class Quiz constructor(numQuestions: Int) {
     }
 
     private fun clearScreen() {
-        repeat(10){
+        repeat(TEN){
             println()
         }
     }

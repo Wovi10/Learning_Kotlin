@@ -1,16 +1,17 @@
 package algorithms.sorts
 
-import algorithms.utils.Utils
+import utils.Utils
 import arraySize
 import highestVal
 import lowestVal
 import skipSortList
 import sortList
 import sort_numRun
-import utils.Constants
 import utils.Constants.EMPTY_STRING
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
+
+private const val RUNNING_EACH_SORT = "Running each sort"
 
 object Sorts {
     fun runSorts(): String {
@@ -24,7 +25,7 @@ object Sorts {
     }
 
     private fun runAllSortsMultipleTimes(): String {
-        println("Running each sort $sort_numRun times.")
+        println("$RUNNING_EACH_SORT $sort_numRun times.")
         for (sortType in sortList) {
             if (skipSortList.contains(sortType)) continue
             sortType.sort(arraySize, lowestVal, highestVal, sort_numRun)
@@ -33,7 +34,7 @@ object Sorts {
     }
 
     private fun runAllSortsOnce(): String {
-        println("Running each sort once.")
+        println("$RUNNING_EACH_SORT once.")
         var resultInfo = "Ran sorts once: $NEWLINE"
         for (sortType in sortList) {
             if (skipSortList.contains(sortType)) continue

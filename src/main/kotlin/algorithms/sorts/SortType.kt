@@ -1,9 +1,7 @@
 package algorithms.sorts
 
 import algorithms.Algorithm
-import algorithms.utils.AlgorithmConstants.TEN
 import utils.Constants.NEWLINE
-import utils.Constants.ONE
 import utils.Constants.TAB
 import java.time.LocalDateTime
 

@@ -1,4 +1,4 @@
-package algorithms.utils
+package utils
 
 import utils.Constants.ONE
 import utils.Constants.ZERO

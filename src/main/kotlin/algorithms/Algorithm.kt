@@ -1,12 +1,9 @@
 package algorithms
 
-import algorithms.utils.AlgorithmConstants
-import algorithms.utils.AlgorithmConstants.ONE_MILLION
-import algorithms.utils.AlgorithmConstants.SIXTY
-import algorithms.utils.AlgorithmConstants.THOUSAND
+import utils.Constants.Algorithm.ONE_MILLION
+import utils.Constants.Algorithm.SIXTY
+import utils.Constants.Algorithm.THOUSAND
 import utils.Constants.EMPTY_STRING
-import utils.Constants.NEWLINE
-import utils.Constants.ONE
 import utils.Constants.TAB
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit

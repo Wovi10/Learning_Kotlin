@@ -1,10 +1,8 @@
-package console
+package consoleInteraction
 
-import console.utils.Constants.Ansi.RichText.FOREGROUND_BLUE
-import console.utils.Constants.Ansi.RichText.FOREGROUND_GREEN_BRIGHT
-import console.utils.Constants.Ansi.RichText.TEXT_STYLE_RESET
-import console.utils.Constants.ProgressBar.HASHTAG
-import console.utils.Constants.ProgressBar.REVERT
+import consoleInteraction.utils.Constants.Ansi.RichText.FOREGROUND_BLUE
+import consoleInteraction.utils.Constants.Ansi.RichText.FOREGROUND_GREEN_BRIGHT
+import consoleInteraction.utils.Constants.Ansi.RichText.TEXT_STYLE_RESET
 import utils.Constants.EMPTY_STRING
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
@@ -15,6 +13,8 @@ private const val MAX_NUM_HASHTAGS = 25
 private const val HUNDRED = 100
 
 private const val DONE_MESSAGE = "Done!"
+private const val HASHTAG = "#"
+private const val REVERT = "\r"
 
 object AsciiProgressBar {
     fun updateProgressBar(index: Int, total: Int, durationText_: String) {

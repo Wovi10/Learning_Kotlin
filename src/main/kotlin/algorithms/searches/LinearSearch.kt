@@ -3,7 +3,7 @@ package algorithms.searches
 import algorithms.searches.utils.Constants.LINEARSEARCH_TEXT
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import console.AsciiProgressBar.updateProgressBar
+import consoleInteraction.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO

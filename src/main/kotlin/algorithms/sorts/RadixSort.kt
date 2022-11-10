@@ -2,7 +2,7 @@ package algorithms.sorts
 
 import algorithms.sorts.utils.Constants.RADIXSORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
-import console.AsciiProgressBar.updateProgressBar
+import consoleInteraction.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO

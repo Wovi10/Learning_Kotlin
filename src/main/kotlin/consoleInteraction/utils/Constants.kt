@@ -1,12 +1,8 @@
-package console.utils
+package consoleInteraction.utils
 
-import console.utils.Constants.Ansi.CursorNavigation.ANSI_ESCAPE
+import consoleInteraction.utils.Constants.Ansi.CursorNavigation.ANSI_ESCAPE
 
 object Constants {
-    object ProgressBar{
-        const val HASHTAG = "#"
-        const val REVERT = "\r"
-    }
 
     object Ansi{
         object RichText {

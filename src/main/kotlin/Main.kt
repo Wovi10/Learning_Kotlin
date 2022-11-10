@@ -10,7 +10,7 @@ val sortList = listOf(QuickSort, RadixSort, SelectionSort, InsertionSort, Bubble
 val skipSortList = listOf(EmptySort)
 
 val searchList = listOf(BinarySearch, LinearSearch)
-val skipSearchList = listOf(EmptySearch)
+val skipSearchList = listOf(BinarySearch, LinearSearch, EmptySearch)
 
 const val arraySize = 10000
 const val lowestVal = 0

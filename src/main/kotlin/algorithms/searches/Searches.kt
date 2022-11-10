@@ -5,11 +5,13 @@ import lowestVal
 import searchList
 import search_numRun
 import skipSearchList
+import utils.Constants.EMPTY_STRING
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
 
 object Searches {
     fun runSearches(): String {
+        if (skipSearchList.size > searchList.size) return EMPTY_STRING
         var output = if (search_numRun == ONE) {
             println("Running each sort once.")
             "Ran searches once: $NEWLINE"

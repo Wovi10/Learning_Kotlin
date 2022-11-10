@@ -7,11 +7,13 @@ import lowestVal
 import skipSortList
 import sortList
 import sort_numRun
+import utils.Constants
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
 
 object Sorts {
     fun runSorts(): String {
+        if (skipSortList.size > sortList.size) return Constants.EMPTY_STRING
         val output = if (sort_numRun == ONE) {
             runAllSortsOnce()
         } else {

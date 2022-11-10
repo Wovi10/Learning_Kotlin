@@ -1,6 +1,8 @@
 package interactive_Projects
 
-import utils.Constants.ZERO
+import utils.Colours.FOREGROUND_GREEN
+import utils.Colours.FOREGROUND_RED
+import utils.Colours.RESET
 
 class Quiz constructor(numQuestions: Int) {
     private var numQuests: Int
@@ -38,20 +40,24 @@ class Quiz constructor(numQuestions: Int) {
     }
 
     private fun endQuiz(points_: Int) {
-        println("Quiz finished")
+        println()
+        println("Quiz finished.")
+        println("You scored $points_/${qAndA.size}")
     }
 
     private fun lookForStart(): Boolean {
-        var startQuiz = false
-        when (readln().lowercase()){
-            "start" -> startQuiz = true
-            "q" -> startQuiz = false
+        val answer = readln().lowercase()
+        println(answer)
+        when (answer){
+            "start" -> return true
+            "q" -> return false
             else -> {
+                println("else triggered")
                 println("Did you mean start? (q to stop)")
                 lookForStart()
             }
         }
-        return startQuiz
+        return true
     }
 
     private fun startQuiz(): Int {
@@ -67,16 +73,15 @@ class Quiz constructor(numQuestions: Int) {
     }
 
     private fun wrongAnswer(answer: String) {
-        println("Wrong...")
-        println("Answer was $answer.")
-        println()
+        println(FOREGROUND_RED + "Wrong... Answer was $answer.")
+        println(RESET)
     }
 
     private fun correctAnswer(points_: Int): Int {
         var points = points_
         points++
-        println("Right!!!")
-        println()
+        println(FOREGROUND_GREEN + "Right!!!")
+        println(RESET)
         return points
     }
 
@@ -85,7 +90,7 @@ class Quiz constructor(numQuestions: Int) {
     }
 
     private fun clearScreen() {
-        repeat(15){
+        repeat(10){
             println()
         }
     }

@@ -1,6 +1,6 @@
 package algorithms.searches.utils
 
-import algorithms.utils.AlgorithmConstants.ZERO
+import utils.Constants.ZERO
 
 class GuessOnTries {
     var onLowest: Int = ZERO

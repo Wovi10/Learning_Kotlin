@@ -1,6 +1,6 @@
 package algorithms.searches.utils
 
-import algorithms.utils.AlgorithmConstants.ZERO
+import utils.Constants.ZERO
 
 class NumOfTries {
     var highest: Int = ZERO

@@ -1,11 +1,11 @@
 package algorithms.sorts
 
-import algorithms.utils.Constants.SortTypes.INSERTIONSORT_TEXT
+import algorithms.sorts.utils.Constants.INSERTIONSORT_TEXT
+import algorithms.sorts.utils.Functions.createInputArray
 import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import utils.Utils
 import java.time.LocalDateTime
 
 object InsertionSort : SortType() {
@@ -23,7 +23,7 @@ object InsertionSort : SortType() {
     }
 
     private fun defaultInsertionSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
-        val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
+        val arrayToSort = createInputArray(arraySize_, lowestValue_, highestValue_)
         insertionSort(arrayToSort)
     }
 

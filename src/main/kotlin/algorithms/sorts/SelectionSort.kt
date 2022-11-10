@@ -1,12 +1,12 @@
 package algorithms.sorts
 
-import algorithms.utils.Constants.SortTypes.SELECTIONSORT_TEXT
+import algorithms.sorts.utils.Constants.SELECTIONSORT_TEXT
+import algorithms.sorts.utils.Functions.createInputArray
+import algorithms.sorts.utils.Functions.swapIndexes
 import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import utils.Utils
-import utils.Utils.swapIndexes
 import java.time.LocalDateTime
 
 object SelectionSort : SortType() {
@@ -24,7 +24,7 @@ object SelectionSort : SortType() {
     }
 
     private fun defaultSelectionSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
-        val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
+        val arrayToSort = createInputArray(arraySize_, lowestValue_, highestValue_)
         selectionSort(arrayToSort)
     }
 

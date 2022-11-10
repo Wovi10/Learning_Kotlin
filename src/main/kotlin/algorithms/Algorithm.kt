@@ -1,13 +1,13 @@
 package algorithms
 
-import algorithms.utils.Constants.ONE_MILLION
-import algorithms.utils.Constants.SIXTY
-import algorithms.utils.Constants.THOUSAND
 import utils.Constants.EMPTY_STRING
 import utils.Constants.TAB
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
+private const val SIXTY = 60
+private const val THOUSAND = 1000
+private const val ONE_MILLION = 1000000
 abstract class Algorithm {
     protected abstract var startTime: LocalDateTime
 

@@ -1,6 +1,5 @@
 package console
 
-import algorithms.utils.Constants.HUNDRED
 import console.utils.Constants.Ansi.RichText.FOREGROUND_BLUE
 import console.utils.Constants.Ansi.RichText.FOREGROUND_GREEN_BRIGHT
 import console.utils.Constants.Ansi.RichText.TEXT_STYLE_RESET
@@ -13,13 +12,14 @@ import utils.Constants.SPACE
 import utils.Constants.TAB
 
 private const val MAX_NUM_HASHTAGS = 25
+private const val HUNDRED = 100
 
 private const val DONE_MESSAGE = "Done!"
 
 object AsciiProgressBar {
     fun updateProgressBar(index: Int, total: Int, durationText_: String) {
         val contentToPrint: String
-        val percentage = (index*HUNDRED / total)
+        val percentage = (index * HUNDRED / total)
         if (index + ONE == total) {
             val durationText = TAB + durationText_
             val spaces = fillBarWithSpaces(durationText.length)

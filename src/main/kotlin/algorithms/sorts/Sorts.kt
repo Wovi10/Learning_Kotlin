@@ -1,6 +1,6 @@
 package algorithms.sorts
 
-import utils.Utils
+import algorithms.sorts.utils.Functions.createInputArray
 import arraySize
 import highestVal
 import lowestVal
@@ -38,7 +38,7 @@ object Sorts {
         var resultInfo = "Ran sorts once: $NEWLINE"
         for (sortType in sortList) {
             if (skipSortList.contains(sortType)) continue
-            val arrayToSort = Utils.createInputArray(arraySize, lowestVal, highestVal)
+            val arrayToSort = createInputArray(arraySize, lowestVal, highestVal)
             resultInfo += sortType.sort(arrayToSort)
         }
         return resultInfo

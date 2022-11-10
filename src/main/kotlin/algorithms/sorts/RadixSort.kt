@@ -1,13 +1,14 @@
 package algorithms.sorts
 
-import algorithms.utils.Constants.NUMBER_BASE
-import algorithms.utils.Constants.SortTypes.RADIXSORT_TEXT
+import algorithms.sorts.utils.Constants.RADIXSORT_TEXT
+import algorithms.sorts.utils.Functions.createInputArray
 import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import utils.Utils
 import java.time.LocalDateTime
+
+private const val NUMBER_BASE = 10
 
 object RadixSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
@@ -24,7 +25,7 @@ object RadixSort : SortType() {
     }
 
     private fun defaultRadixSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
-        val arrayToSort = Utils.createInputArray(arraySize_, lowestValue_, highestValue_)
+        val arrayToSort = createInputArray(arraySize_, lowestValue_, highestValue_)
         radixSort(arrayToSort)
     }
 

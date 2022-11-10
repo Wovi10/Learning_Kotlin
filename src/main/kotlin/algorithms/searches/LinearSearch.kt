@@ -1,8 +1,8 @@
 package algorithms.searches
 
+import algorithms.searches.utils.Constants.LINEARSEARCH_TEXT
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import algorithms.utils.Constants.SearchTypes.LINEARSEARCH_TEXT
 import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE

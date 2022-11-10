@@ -1,15 +1,15 @@
 package algorithms.searches
 
+import algorithms.searches.utils.Constants.BINARYSEARCH_TEXT
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import algorithms.utils.Constants.SearchTypes.BINARYSEARCH_TEXT
-import algorithms.utils.Constants.TWO
 import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
 import java.time.LocalDateTime
 
+private const val TWO = 2
 object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
     override val name = BINARYSEARCH_TEXT
     override var cumulativeTries = ZERO

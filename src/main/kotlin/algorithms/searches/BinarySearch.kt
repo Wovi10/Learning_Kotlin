@@ -37,13 +37,12 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
 
     override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int, numToTry: Int) {
         numTries += ONE
-        if (numToFind_ < numToTry) {
-            val middleNumber = getMiddleNum(lowerBound_, upperBound_)
-            return findNumber(lowerBound_, middleNumber, numToFind_, middleNumber)
+        val middleNumber = getMiddleNum(lowerBound_, upperBound_)
+        if (numToTry > numToFind_) {
+            return findNumber(lowerBound_, numToTry, numToFind_, middleNumber)
         }
-        if (numToFind_ > numToTry) {
-            val middleNumber = getMiddleNum(lowerBound_, upperBound_)
-            return findNumber(numToTry, upperBound_, numToFind_, numToTry)
+        if (numToTry < numToFind_) {
+            return findNumber(numToTry, upperBound_, numToFind_, middleNumber)
         }
     }
 

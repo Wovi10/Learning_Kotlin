@@ -16,7 +16,7 @@ object RichText {
     private const val DEFAULT = "m"
     private const val BRIGHT = ";1$DEFAULT"
 
-    const val RESET = ANSI_ESCAPE + "0$DEFAULT"
+    const val TEXT_STYLE_RESET = ANSI_ESCAPE + "0$DEFAULT"
     const val BOLD = ANSI_ESCAPE + "1$DEFAULT"
     const val UNDERLINE = ANSI_ESCAPE + "4$DEFAULT"
     const val REVERSED = ANSI_ESCAPE + "7$DEFAULT"

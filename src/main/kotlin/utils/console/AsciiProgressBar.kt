@@ -1,6 +1,5 @@
 package utils.console
 
-import algorithms.searches.BinarySearch.getDuration
 import algorithms.utils.AlgorithmConstants.HUNDRED
 import utils.Constants.EMPTY_STRING
 import utils.Constants.HASHTAG
@@ -11,7 +10,7 @@ import utils.Constants.SPACE
 import utils.Constants.TAB
 import utils.console.RichText.FOREGROUND_BLUE
 import utils.console.RichText.FOREGROUND_GREEN_BRIGHT
-import utils.console.RichText.RESET
+import utils.console.RichText.TEXT_STYLE_RESET
 
 private const val MAX_NUM_HASHTAGS = 25
 
@@ -25,7 +24,7 @@ object AsciiProgressBar {
             val durationText = TAB + durationText_
             val spaces = fillBarWithSpaces(durationText.length)
             contentToPrint =
-                FOREGROUND_GREEN_BRIGHT + DONE_MESSAGE + RESET + durationText + spaces + NEWLINE
+                FOREGROUND_GREEN_BRIGHT + DONE_MESSAGE + TEXT_STYLE_RESET + durationText + spaces + NEWLINE
         } else {
             val width = (percentage + ONE) / (HUNDRED / MAX_NUM_HASHTAGS)
             var hashtags = EMPTY_STRING
@@ -36,7 +35,7 @@ object AsciiProgressBar {
             repeat(MAX_NUM_HASHTAGS - width) {
                 spaces += SPACE
             }
-            contentToPrint = "$FOREGROUND_BLUE[$hashtags$spaces]$RESET"
+            contentToPrint = "$FOREGROUND_BLUE[$hashtags$spaces]$TEXT_STYLE_RESET"
         }
         print(REVERT + TAB + TAB + contentToPrint)
     }

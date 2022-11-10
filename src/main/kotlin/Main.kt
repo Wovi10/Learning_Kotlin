@@ -18,6 +18,10 @@ const val highestVal = 99
 const val numRun = 2
 
 fun main() {
+    searchAndSorts()
+}
+
+fun searchAndSorts() {
     val informationToShow = mutableListOf("Results of this run:")
 
     informationToShow.add(runSearchesMultipleTimes())

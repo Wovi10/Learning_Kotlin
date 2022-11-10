@@ -19,6 +19,11 @@ class Quiz constructor(numQuestions: Int) {
             qAndA.add(pairToAdd)
         }
         println("That were all the questions.")
-        println("Press")
+        clearScreen()
+        println("Type start and press enter to start the quiz.")
+    }
+
+    private fun clearScreen() {
+        print("\u001b[H\u001b[2J")
     }
 }

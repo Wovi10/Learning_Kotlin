@@ -16,7 +16,7 @@ abstract class Algorithm {
     abstract fun resetVariables()
 
     private fun printStartText(name_: String, arrayToPrint_: IntArray? = null) {
-        println(name_)
+        println(TAB + name_)
         if (arrayToPrint_ != null) printArray(arrayToPrint_)
     }
 

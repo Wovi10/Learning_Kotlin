@@ -3,6 +3,9 @@ package algorithms.sorts
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.Utils
 import algorithms.utils.Utils.swapIndexes
+import utils.Constants
+import utils.Constants.EMPTY_STRING
+import utils.Constants.ONE
 import utils.Constants.ZERO
 import utils.console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
@@ -15,7 +18,9 @@ object SelectionSort : SortType() {
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultSelectionSort(arraySize_, lowestValue_, highestValue_)
-            updateProgressBar(runNum, numRun_, getDuration())
+            val durationText: String = if (runNum + ONE == numRun_) getDuration()
+            else EMPTY_STRING
+            updateProgressBar(runNum, numRun_, durationText)
         }
     }
 

@@ -4,6 +4,8 @@ import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
 import algorithms.utils.AlgorithmConstants.TWO
+import utils.Constants
+import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
 import utils.console.AsciiProgressBar.updateProgressBar
@@ -19,7 +21,9 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
         startup(name, this)
         repeat(numRun_) {runNum ->
             runBinarySearch(lowerBound_, upperBound_, numRun_)
-            updateProgressBar(runNum, numRun_, getDuration())
+            val durationText: String = if (runNum + ONE == numRun_) getDuration()
+            else EMPTY_STRING
+            updateProgressBar(runNum, numRun_, durationText)
         }
         return getSearchInfo(numRun_, name)
     }

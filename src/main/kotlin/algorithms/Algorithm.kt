@@ -3,6 +3,7 @@ package algorithms
 import algorithms.utils.AlgorithmConstants
 import algorithms.utils.AlgorithmConstants.ONE_MILLION
 import algorithms.utils.AlgorithmConstants.SIXTY
+import algorithms.utils.AlgorithmConstants.THOUSAND
 import utils.Constants.EMPTY_STRING
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
@@ -36,35 +37,21 @@ abstract class Algorithm {
         println(stringToPrint)
     }
 
-    protected fun getCommonSection(name_: String, numRun_: Int): String {
-        var commonSection = "$name_ $NEWLINE"
-        commonSection += TAB
-        commonSection += if (numRun_ == ONE) {
-            "Ran once. $NEWLINE"
-        } else {
-            "Ran $numRun_ times. $NEWLINE"
-        }
-        commonSection += TAB + getDuration()
-        return commonSection
-    }
-
     fun getDuration(): String {
         val stopTime: LocalDateTime = LocalDateTime.now()
-        val time = (startTime.until(stopTime, ChronoUnit.NANOS) / AlgorithmConstants.THOUSAND).toDouble()
+        val time = (startTime.until(stopTime, ChronoUnit.NANOS) / THOUSAND).toDouble()
         return getTimeString(time)
     }
 
     private fun getTimeString(_time: Double): String {
         var time = _time
         time /= ONE_MILLION
-        if (time < SIXTY) {
-            return (time.toString() + "s")
-        }
+        if (time < SIXTY) return "$time seconds"
+
         time /= SIXTY
-        if (time < SIXTY) {
-            return (time.toString() + "m")
-        }
+        if (time < SIXTY) return "$time minutes"
+
         time /= SIXTY
-        return (time.toString() + "h")
+        return "$time hours"
     }
 }

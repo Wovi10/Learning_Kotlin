@@ -13,10 +13,10 @@ object Searches {
     fun runSearches(): String {
         if (skipSearchList.size > searchList.size) return EMPTY_STRING
         var output = if (search_numRun == ONE) {
-            println("Running each sort once.")
+            println("Running each search once.")
             "Ran searches once: $NEWLINE"
         } else {
-            println("Running each sort $search_numRun times.")
+            println("Running each search $search_numRun times.")
             "Ran searches multiple times: $NEWLINE"
         }
         for (searchType in searchList) {

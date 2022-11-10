@@ -15,7 +15,7 @@ val skipSearchList = listOf(EmptySearch)
 const val arraySize = 1000
 const val lowestVal = 0
 const val highestVal = 99
-const val sort_numRun = 100
+const val sort_numRun = 1000
 const val search_numRun = 100
 
 fun main() {

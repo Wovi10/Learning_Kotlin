@@ -27,12 +27,12 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
     abstract fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int)
 
     open fun getSearchInfo(numRun_: Int, name_: String): String {
-        var searchInfo: String = getCommonSection(name_, numRun_) + NEWLINE
+        var searchInfo = "$TAB$name_$NEWLINE"
         if (numRun_ == ONE) return searchInfo
         val averageTries = cumulativeTries / numRun_
-        searchInfo += TAB + "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}). $NEWLINE"
-        searchInfo += TAB + "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}). $NEWLINE"
-        searchInfo += TAB + "Average number of tries is $averageTries. $NEWLINE"
+        searchInfo += TAB + TAB + "Highest number of tries is ${numOfTries.highest} (Number was ${guessOnTries.onHighest}). $NEWLINE"
+        searchInfo += TAB + TAB + "Lowest number of tries is ${numOfTries.lowest} (Number was ${guessOnTries.onLowest}). $NEWLINE"
+        searchInfo += TAB + TAB + "Average number of tries is $averageTries. $NEWLINE"
 
         return searchInfo
     }

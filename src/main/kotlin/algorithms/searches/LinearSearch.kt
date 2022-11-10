@@ -22,20 +22,21 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
             runLinearSearch(lowerBound_, upperBound_, numRun_)
             val durationText: String = if (runNum + ONE == numRun_) getDuration()
             else EMPTY_STRING
-            updateProgressBar(runNum, numRun_, durationText)
+//            updateProgressBar(runNum, numRun_, durationText)
         }
         return getSearchInfo(numRun_, name)
     }
 
     private fun runLinearSearch(lowerBound: Int, upperBound: Int, numRun_: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
+        val thingy = 1
         numTries = ZERO
-        findNumber(lowerBound, upperBound, numToFind)
-        updateSearchData(numToFind, numRun_)
+        findNumber(lowerBound, upperBound, thingy)
+        updateSearchData(thingy, numRun_)
     }
 
     override fun findNumber(lowerBound_: Int, upperBound_: Int, numToFind_: Int) {
-        numTries++
+        numTries += ONE
         val numTried = getNumToTry(lowerBound_)
         if (numTried < numToFind_) {
             return findNumber(numTried, upperBound_, numToFind_)

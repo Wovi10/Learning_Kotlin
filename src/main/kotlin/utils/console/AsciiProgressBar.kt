@@ -25,7 +25,7 @@ object AsciiProgressBar {
             val durationText = TAB + durationText_
             val spaces = fillBarWithSpaces(durationText.length)
             contentToPrint =
-                TAB + FOREGROUND_GREEN_BRIGHT + DONE_MESSAGE + RESET + durationText + spaces + NEWLINE
+                FOREGROUND_GREEN_BRIGHT + DONE_MESSAGE + RESET + durationText + spaces + NEWLINE
         } else {
             val width = (percentage + ONE) / (HUNDRED / MAX_NUM_HASHTAGS)
             var hashtags = EMPTY_STRING
@@ -36,9 +36,9 @@ object AsciiProgressBar {
             repeat(MAX_NUM_HASHTAGS - width) {
                 spaces += SPACE
             }
-            contentToPrint = "$TAB$FOREGROUND_BLUE[$hashtags$spaces]$RESET"
+            contentToPrint = "$FOREGROUND_BLUE[$hashtags$spaces]$RESET"
         }
-        print(REVERT + TAB + contentToPrint)
+        print(REVERT + TAB + TAB + contentToPrint)
     }
 
     private fun fillBarWithSpaces(durationText_Length_: Int): String {

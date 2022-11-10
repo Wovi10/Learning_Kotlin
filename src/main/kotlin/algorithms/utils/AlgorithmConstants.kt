@@ -1,8 +1,6 @@
 package algorithms.utils
 
 object AlgorithmConstants {
-    const val ZERO = 0
-    const val ONE = 1
     const val TWO = 2
     const val TEN = 10
     const val SIXTY = 60
@@ -13,9 +11,6 @@ object AlgorithmConstants {
     const val NUMBER_BASE = 10
 
     const val LOADING_SYMBOL = "|"
-    const val NEWLINE = "\n"
-    const val TAB = "\t"
     const val SORT_TEXT = "sort"
     const val SEARCH_TEXT = "search"
-    const val EMPTY_STRING = ""
 }

@@ -5,6 +5,7 @@ import algorithms.searches.Searches.runSearchesOnce
 import algorithms.sorts.*
 import algorithms.sorts.Sorts.runAllSortsMultipleTimes
 import algorithms.sorts.Sorts.runAllSortsOnce
+import interactive_Projects.Quiz
 
 val sortList = listOf(QuickSort, RadixSort, SelectionSort, InsertionSort, BubbleSort)
 val skipSortList = listOf(QuickSort, RadixSort, SelectionSort, InsertionSort)
@@ -18,7 +19,17 @@ const val highestVal = 99
 const val numRun = 2
 
 fun main() {
-    searchAndSorts()
+//    searchAndSorts()
+    interActiveProjects()
+}
+
+fun interActiveProjects() {
+    quiz()
+}
+
+fun quiz() {
+    val quiz = Quiz(2)
+    quiz.runQuiz()
 }
 
 fun searchAndSorts() {

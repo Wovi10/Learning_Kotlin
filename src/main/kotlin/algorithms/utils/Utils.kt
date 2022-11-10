@@ -1,7 +1,7 @@
 package algorithms.utils
 
-import algorithms.utils.AlgorithmConstants.ONE
-import algorithms.utils.AlgorithmConstants.ZERO
+import utils.Constants.ONE
+import utils.Constants.ZERO
 import kotlin.random.Random
 
 object Utils {

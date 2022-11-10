@@ -1,12 +1,12 @@
 package algorithms
 
 import algorithms.utils.AlgorithmConstants
-import algorithms.utils.AlgorithmConstants.EMPTY_STRING
-import algorithms.utils.AlgorithmConstants.NEWLINE
-import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.ONE_MILLION
 import algorithms.utils.AlgorithmConstants.SIXTY
-import algorithms.utils.AlgorithmConstants.TAB
+import utils.Constants.EMPTY_STRING
+import utils.Constants.NEWLINE
+import utils.Constants.ONE
+import utils.Constants.TAB
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
@@ -15,7 +15,7 @@ abstract class Algorithm {
 
     abstract fun resetVariables()
 
-    private fun printStartText(name_: String, numRun_: Int = 1, arrayToPrint_: IntArray? = null) {
+    private fun printStartText(name_: String, numRun_: Int = ONE, arrayToPrint_: IntArray? = null) {
         var startText = EMPTY_STRING
         if (numRun_ != ONE) startText = "Started $numRun_ runs of "
         println(startText + name_)

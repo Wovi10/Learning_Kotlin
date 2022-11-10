@@ -1,10 +1,10 @@
 package algorithms.sorts
 
 import algorithms.Algorithm
-import algorithms.utils.AlgorithmConstants.NEWLINE
-import algorithms.utils.AlgorithmConstants.ONE
-import algorithms.utils.AlgorithmConstants.TAB
 import algorithms.utils.AlgorithmConstants.TEN
+import utils.Constants.NEWLINE
+import utils.Constants.ONE
+import utils.Constants.TAB
 import java.time.LocalDateTime
 
 abstract class SortType : Algorithm() {

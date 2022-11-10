@@ -1,6 +1,5 @@
 package algorithms.sorts
 
-import algorithms.utils.AlgorithmConstants.NEWLINE
 import algorithms.utils.AlgorithmConstants.THOUSAND
 import algorithms.utils.Utils
 import arraySize
@@ -9,6 +8,7 @@ import lowestVal
 import numRun
 import skipSortList
 import sortList
+import utils.Constants.NEWLINE
 
 object Sorts {
     fun runAllSortsOnce(): String {

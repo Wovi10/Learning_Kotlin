@@ -1,12 +1,12 @@
 package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.LOADING_SYMBOL
-import algorithms.utils.AlgorithmConstants.NEWLINE
-import algorithms.utils.AlgorithmConstants.ONE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
 import algorithms.utils.AlgorithmConstants.TEN
-import algorithms.utils.AlgorithmConstants.ZERO
 import algorithms.utils.Utils
+import utils.Constants.NEWLINE
+import utils.Constants.ONE
+import utils.Constants.ZERO
 import java.time.LocalDateTime
 
 object InsertionSort : SortType() {

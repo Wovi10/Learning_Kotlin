@@ -1,12 +1,12 @@
 package algorithms.searches
 
-import algorithms.utils.AlgorithmConstants.NEWLINE
-import algorithms.utils.AlgorithmConstants.ONE
 import highestVal
 import lowestVal
 import numRun
 import searchList
 import skipSearchList
+import utils.Constants.NEWLINE
+import utils.Constants.ONE
 
 object Searches {
     fun runSearchesMultipleTimes(): String {

@@ -3,10 +3,10 @@ package algorithms.searches
 import algorithms.Algorithm
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import algorithms.utils.AlgorithmConstants.NEWLINE
-import algorithms.utils.AlgorithmConstants.ONE
-import algorithms.utils.AlgorithmConstants.TAB
-import algorithms.utils.AlgorithmConstants.ZERO
+import utils.Constants.NEWLINE
+import utils.Constants.ONE
+import utils.Constants.TAB
+import utils.Constants.ZERO
 import java.time.LocalDateTime
 import kotlin.random.Random
 

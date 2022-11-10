@@ -1,8 +1,8 @@
 package interactive_Projects
 
-import console.utils.Constants.Ansi.RichText.FOREGROUND_GREEN
-import console.utils.Constants.Ansi.RichText.FOREGROUND_RED
-import console.utils.Constants.Ansi.RichText.TEXT_STYLE_RESET
+import consoleInteraction.utils.Constants.Ansi.RichText.FOREGROUND_GREEN
+import consoleInteraction.utils.Constants.Ansi.RichText.FOREGROUND_RED
+import consoleInteraction.utils.Constants.Ansi.RichText.TEXT_STYLE_RESET
 import interactive_Projects.utils.Constants.NUM_OF_REPEATS
 import utils.Constants.ZERO
 

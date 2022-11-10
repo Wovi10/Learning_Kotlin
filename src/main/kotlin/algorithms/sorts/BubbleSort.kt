@@ -3,7 +3,7 @@ package algorithms.sorts
 import algorithms.sorts.utils.Constants.BUBBLESORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
 import algorithms.sorts.utils.Functions.swapIndexes
-import console.AsciiProgressBar.updateProgressBar
+import consoleInteraction.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO

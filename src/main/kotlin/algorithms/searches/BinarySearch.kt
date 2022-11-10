@@ -2,12 +2,12 @@ package algorithms.searches
 
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import utils.Constants.Algorithm.SearchTypes.BINARYSEARCH_TEXT
-import utils.Constants.Algorithm.TWO
+import algorithms.utils.Constants.SearchTypes.BINARYSEARCH_TEXT
+import algorithms.utils.Constants.TWO
+import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
 
 object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {

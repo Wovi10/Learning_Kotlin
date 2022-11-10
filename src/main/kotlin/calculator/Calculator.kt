@@ -1,9 +1,9 @@
 package calculator
 
-import utils.Constants.Calculator.DIVISION_OPERAND
-import utils.Constants.Calculator.PRODUCT_OPERAND
-import utils.Constants.Calculator.SUBTRACTION_OPERAND
-import utils.Constants.Calculator.SUM_OPERAND
+import calculator.utils.Constants.DIVISION_OPERAND
+import calculator.utils.Constants.PRODUCT_OPERAND
+import calculator.utils.Constants.SUBTRACTION_OPERAND
+import calculator.utils.Constants.SUM_OPERAND
 import utils.Constants.SPACE
 
 object Calculator {

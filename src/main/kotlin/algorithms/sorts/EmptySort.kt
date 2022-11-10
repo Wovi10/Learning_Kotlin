@@ -1,6 +1,6 @@
 package algorithms.sorts
 
-import utils.Constants.Algorithm.SortTypes.EMPTYSORT_TEXT
+import algorithms.utils.Constants.SortTypes.EMPTYSORT_TEXT
 import java.time.LocalDateTime
 
 private const val EMPTY_SORT_TEXT = "This is an empty sort"

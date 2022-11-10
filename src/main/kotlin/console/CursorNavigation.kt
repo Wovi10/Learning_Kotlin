@@ -1,13 +1,12 @@
 package console
 
-import utils.Constants.AnsiDirections.DOWN
-import utils.Constants.AnsiDirections.LEFT
-import utils.Constants.AnsiDirections.RIGHT
-import utils.Constants.AnsiDirections.UP
-import utils.Constants.Console.ANSI_ESCAPE
+import console.utils.Constants.Ansi.AnsiDirections.DOWN
+import console.utils.Constants.Ansi.AnsiDirections.LEFT
+import console.utils.Constants.Ansi.AnsiDirections.RIGHT
+import console.utils.Constants.Ansi.AnsiDirections.UP
+import console.utils.Constants.Ansi.CursorNavigation.ANSI_ESCAPE
 
 object CursorNavigation {
-
     fun moveUp(numPlaces: Int) = movePlaces(numPlaces) + UP
 
     fun moveDown(numPlaces: Int) = movePlaces(numPlaces) + DOWN

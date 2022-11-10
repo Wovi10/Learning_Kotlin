@@ -1,12 +1,12 @@
 package algorithms.sorts
 
-import utils.Utils
-import utils.Constants.Algorithm.NUMBER_BASE
-import utils.Constants.Algorithm.SortTypes.RADIXSORT_TEXT
+import algorithms.utils.Constants.NUMBER_BASE
+import algorithms.utils.Constants.SortTypes.RADIXSORT_TEXT
+import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import console.AsciiProgressBar.updateProgressBar
+import utils.Utils
 import java.time.LocalDateTime
 
 object RadixSort : SortType() {

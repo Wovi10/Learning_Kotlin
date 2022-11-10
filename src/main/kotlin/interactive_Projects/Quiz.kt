@@ -1,9 +1,9 @@
 package interactive_Projects
 
-import utils.Constants.InteractiveProjects.TEN
-import utils.Constants.RichText.FOREGROUND_GREEN
-import utils.Constants.RichText.FOREGROUND_RED
-import utils.Constants.RichText.TEXT_STYLE_RESET
+import console.utils.Constants.Ansi.RichText.FOREGROUND_GREEN
+import console.utils.Constants.Ansi.RichText.FOREGROUND_RED
+import console.utils.Constants.Ansi.RichText.TEXT_STYLE_RESET
+import interactive_Projects.utils.Constants.NUM_OF_REPEATS
 import utils.Constants.ZERO
 
 class Quiz constructor(numQuestions: Int) {
@@ -13,7 +13,7 @@ class Quiz constructor(numQuestions: Int) {
 
     init {
         numQuests = numQuestions
-        qAndA = ArrayList<Pair<String, String>>()
+        qAndA = ArrayList()
     }
 
     fun runQuiz() {
@@ -92,7 +92,7 @@ class Quiz constructor(numQuestions: Int) {
     }
 
     private fun clearScreen() {
-        repeat(TEN){
+        repeat(NUM_OF_REPEATS){
             println()
         }
     }

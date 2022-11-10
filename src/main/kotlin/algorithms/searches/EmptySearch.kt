@@ -1,6 +1,6 @@
 package algorithms.searches
 
-import utils.Constants.Algorithm.SearchTypes.EMPTYSEARCH_TEXT
+import algorithms.utils.Constants.SearchTypes.EMPTYSEARCH_TEXT
 import utils.Constants.ZERO
 import java.time.LocalDateTime
 

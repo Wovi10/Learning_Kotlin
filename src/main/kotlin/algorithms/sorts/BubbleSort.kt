@@ -1,12 +1,12 @@
 package algorithms.sorts
 
-import utils.Utils
-import utils.Utils.swapIndexes
-import utils.Constants.Algorithm.SortTypes.BUBBLESORT_TEXT
+import algorithms.utils.Constants.SortTypes.BUBBLESORT_TEXT
+import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import console.AsciiProgressBar.updateProgressBar
+import utils.Utils
+import utils.Utils.swapIndexes
 import java.time.LocalDateTime
 
 object BubbleSort : SortType() {

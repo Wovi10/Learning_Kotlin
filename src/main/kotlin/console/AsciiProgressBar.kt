@@ -1,14 +1,14 @@
 package console
 
-import utils.Constants.Algorithm.HUNDRED
-import utils.Constants.Console.ProgressBar.HASHTAG
-import utils.Constants.Console.ProgressBar.REVERT
+import algorithms.utils.Constants.HUNDRED
+import console.utils.Constants.Ansi.RichText.FOREGROUND_BLUE
+import console.utils.Constants.Ansi.RichText.FOREGROUND_GREEN_BRIGHT
+import console.utils.Constants.Ansi.RichText.TEXT_STYLE_RESET
+import console.utils.Constants.ProgressBar.HASHTAG
+import console.utils.Constants.ProgressBar.REVERT
 import utils.Constants.EMPTY_STRING
 import utils.Constants.NEWLINE
 import utils.Constants.ONE
-import utils.Constants.RichText.FOREGROUND_BLUE
-import utils.Constants.RichText.FOREGROUND_GREEN_BRIGHT
-import utils.Constants.RichText.TEXT_STYLE_RESET
 import utils.Constants.SPACE
 import utils.Constants.TAB
 

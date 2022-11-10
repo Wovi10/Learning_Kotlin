@@ -1,8 +1,8 @@
 package algorithms
 
-import utils.Constants.Algorithm.ONE_MILLION
-import utils.Constants.Algorithm.SIXTY
-import utils.Constants.Algorithm.THOUSAND
+import algorithms.utils.Constants.ONE_MILLION
+import algorithms.utils.Constants.SIXTY
+import algorithms.utils.Constants.THOUSAND
 import utils.Constants.EMPTY_STRING
 import utils.Constants.TAB
 import java.time.LocalDateTime

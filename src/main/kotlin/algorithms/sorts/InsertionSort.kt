@@ -1,11 +1,11 @@
 package algorithms.sorts
 
-import utils.Utils
-import utils.Constants.Algorithm.SortTypes.INSERTIONSORT_TEXT
+import algorithms.utils.Constants.SortTypes.INSERTIONSORT_TEXT
+import console.AsciiProgressBar.updateProgressBar
 import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
-import console.AsciiProgressBar.updateProgressBar
+import utils.Utils
 import java.time.LocalDateTime
 
 object InsertionSort : SortType() {

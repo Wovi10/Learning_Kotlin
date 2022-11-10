@@ -5,6 +5,7 @@ import algorithms.searches.utils.NumOfTries
 import algorithms.utils.AlgorithmConstants.SEARCH_TEXT
 import utils.Constants.ONE
 import utils.Constants.ZERO
+import utils.console.AsciiProgressBar.updateProgressBar
 import java.time.LocalDateTime
 
 object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
@@ -15,8 +16,9 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
 
     override fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String {
         startup(numRun_, name, this)
-        repeat(numRun_) {
+        repeat(numRun_) {runNum ->
             runLinearSearch(lowerBound_, upperBound_, numRun_)
+            updateProgressBar(runNum, numRun_)
         }
         return getSearchInfo(numRun_, name)
     }

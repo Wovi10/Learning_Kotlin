@@ -14,8 +14,7 @@ abstract class SortType : Algorithm() {
         arraySize_: Int,
         lowestValue_: Int,
         highestValue_: Int,
-        numRun_: Int,
-        printFreq_: Int = TEN
+        numRun_: Int
     ): String
 
     abstract fun sort(arrayToSort_: IntArray): String

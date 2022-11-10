@@ -13,9 +13,7 @@ object BubbleSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = "Bubble $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
-        var printFreq = printFreq_
-        if (printFreq_ > numRun_) printFreq = TEN
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultBubbleSort(arraySize_, lowestValue_, highestValue_)

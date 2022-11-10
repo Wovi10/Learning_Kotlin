@@ -2,7 +2,6 @@ package algorithms.sorts
 
 import algorithms.utils.AlgorithmConstants.NUMBER_BASE
 import algorithms.utils.AlgorithmConstants.SORT_TEXT
-import algorithms.utils.AlgorithmConstants.TEN
 import algorithms.utils.Utils
 import utils.Constants.ONE
 import utils.Constants.ZERO
@@ -13,11 +12,7 @@ object RadixSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = "Radix $SORT_TEXT"
 
-    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int, printFreq_: Int): String {
-        var printFreq = printFreq_
-        if (printFreq_ > numRun_) {
-            printFreq = TEN
-        }
+    override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int): String {
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultRadixSort(arraySize_, lowestValue_, highestValue_)

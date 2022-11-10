@@ -1,6 +1,5 @@
 package algorithms.sorts
 
-import algorithms.utils.AlgorithmConstants.THOUSAND
 import algorithms.utils.Utils
 import arraySize
 import highestVal
@@ -26,7 +25,7 @@ object Sorts {
         var resultInfo = "Ran sorts multiple times: $NEWLINE"
         for (sortType in sortList) {
             if (skipSortList.contains(sortType)) continue
-            resultInfo += sortType.sort(arraySize, lowestVal, highestVal, sort_numRun, THOUSAND)
+            resultInfo += sortType.sort(arraySize, lowestVal, highestVal, sort_numRun)
         }
         return resultInfo
     }

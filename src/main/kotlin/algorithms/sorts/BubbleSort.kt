@@ -21,7 +21,7 @@ object BubbleSort : SortType() {
         startup(numRun_, name, this)
         repeat(numRun_) { runNum ->
             defaultBubbleSort(arraySize_, lowestValue_, highestValue_)
-            if (runNum % printFreq == ZERO) updateProgressBar(runNum / printFreq)
+            updateProgressBar(runNum, numRun_)
         }
         print(NEWLINE)
         return getSortInfo(numRun_)

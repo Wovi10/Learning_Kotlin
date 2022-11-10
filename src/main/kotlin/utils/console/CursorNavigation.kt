@@ -16,5 +16,5 @@ object CursorNavigation {
 
     fun moveRight(numPlaces: Int) = movePlaces(numPlaces) + RIGHT
 
-    private fun movePlaces(numPlaces: Int) = ANSI_ESCAPE + numPlaces
+    private fun movePlaces(numPlaces: Int) = "$ANSI_ESCAPE$numPlaces"
 }

@@ -2,7 +2,7 @@ package interactive_Projects
 
 import utils.Colours.FOREGROUND_GREEN
 import utils.Colours.FOREGROUND_RED
-import utils.Colours.RESET
+import utils.Colours.FOREGROUND_RESET
 
 class Quiz constructor(numQuestions: Int) {
     private var numQuests: Int
@@ -74,14 +74,14 @@ class Quiz constructor(numQuestions: Int) {
 
     private fun wrongAnswer(answer: String) {
         println(FOREGROUND_RED + "Wrong... Answer was $answer.")
-        println(RESET)
+        println(FOREGROUND_RESET)
     }
 
     private fun correctAnswer(points_: Int): Int {
         var points = points_
         points++
         println(FOREGROUND_GREEN + "Right!!!")
-        println(RESET)
+        println(FOREGROUND_RESET)
         return points
     }
 

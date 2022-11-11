@@ -3,6 +3,7 @@ package algorithms.sorts
 import algorithms.Algorithm
 import utils.Constants.NEWLINE
 import utils.Constants.TAB
+import utils.Constants.ZERO
 import java.time.LocalDateTime
 
 abstract class SortType : Algorithm() {
@@ -21,9 +22,10 @@ abstract class SortType : Algorithm() {
         startTime = LocalDateTime.now()
     }
 
-    protected fun getSortInfo(): String {
+    protected fun getSortInfo(numTries: Int? = ZERO): String {
         var sortInfo = name + NEWLINE
         sortInfo += TAB + getDuration() + NEWLINE
+        if (numTries != ZERO) sortInfo += TAB + "Took $numTries tries.$NEWLINE"
         return sortInfo
     }
 }

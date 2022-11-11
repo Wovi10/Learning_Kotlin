@@ -12,7 +12,7 @@ val skipSortList = listOf(EmptySort, BubbleSort, InsertionSort, QuickSort, Radix
 val searchList = listOf(BinarySearch, LinearSearch)
 val skipSearchList = listOf(EmptySearch, BinarySearch, LinearSearch)
 
-const val arraySize = 10
+const val arraySize = 11
 const val lowestVal = 0
 const val highestVal = 100
 const val sort_numRun = 1

@@ -3,6 +3,7 @@ package algorithms.sorts
 import algorithms.sorts.utils.Constants.BOGO_SORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
 import algorithms.sorts.utils.Functions.swapIndexes
+import utils.Constants.ZERO
 import java.time.LocalDateTime
 import java.util.*
 import java.util.Collections.shuffle
@@ -11,6 +12,7 @@ import kotlin.random.Random
 object BogoSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = BOGO_SORT_TEXT
+    private var numTries: Int = ZERO
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)
@@ -21,10 +23,9 @@ object BogoSort : SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        startup(name, this, arrayToSort_)
+        startup(name, this)
         bogoSort(arrayToSort_)
-        startup(name, this, arrayToSort_)
-        return getSortInfo()
+        return getSortInfo(numTries)
     }
 
     private fun defaultBogoSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
@@ -35,6 +36,7 @@ object BogoSort : SortType() {
     private fun bogoSort(arrayToSort_: IntArray) {
         while (!isSorted(arrayToSort_)){
             shuffleArray(arrayToSort_)
+            numTries++
         }
     }
 

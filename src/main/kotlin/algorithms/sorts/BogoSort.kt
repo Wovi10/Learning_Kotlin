@@ -20,6 +20,12 @@ object BogoSort : SortType() {
         }
     }
 
+    override fun sort(arrayToSort_: IntArray): String {
+        startup(name, this, arrayToSort_)
+        bogoSort(arrayToSort_)
+        return getSortInfo()
+    }
+
     private fun defaultBogoSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
         val arrayToSort = createInputArray(arraySize_, lowestValue_, highestValue_)
         bogoSort(arrayToSort)
@@ -44,11 +50,5 @@ object BogoSort : SortType() {
             if (arrayToSort_[i] < arrayToSort_[i -1]) return false
         }
         return true
-    }
-
-    override fun sort(arrayToSort_: IntArray): String {
-        startup(name, this, arrayToSort_)
-        bogoSort(arrayToSort_)
-        return getSortInfo()
     }
 }

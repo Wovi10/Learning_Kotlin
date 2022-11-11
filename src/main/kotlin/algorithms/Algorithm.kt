@@ -1,6 +1,8 @@
 package algorithms
 
+import consoleInteraction.AsciiProgressBar.drawProgressBar
 import utils.Constants.EMPTY_STRING
+import utils.Constants.ONE
 import utils.Constants.TAB
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
@@ -13,6 +15,12 @@ abstract class Algorithm {
     protected abstract var startTime: LocalDateTime
 
     abstract fun resetVariables()
+
+    open fun updateProgressBar(runNum: Int, numRun_: Int) {
+        val durationText: String = if (runNum + ONE == numRun_) getDuration()
+        else EMPTY_STRING
+        drawProgressBar(runNum, numRun_, durationText)
+    }
 
     private fun printStartText(name_: String, arrayToPrint_: IntArray? = null) {
         println(TAB + name_)

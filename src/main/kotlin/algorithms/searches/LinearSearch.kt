@@ -3,8 +3,6 @@ package algorithms.searches
 import algorithms.searches.utils.Constants.LINEAR_SEARCH_TEXT
 import algorithms.searches.utils.GuessOnTries
 import algorithms.searches.utils.NumOfTries
-import consoleInteraction.AsciiProgressBar.updateProgressBar
-import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
 import java.time.LocalDateTime
@@ -19,9 +17,7 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
         startup(name, this)
         repeat(numRun_) { runNum ->
             runLinearSearch(lowerBound_, upperBound_, numRun_)
-            val durationText: String = if (runNum + ONE == numRun_) getDuration()
-            else EMPTY_STRING
-            updateProgressBar(runNum, numRun_, durationText)
+            updateProgressBar(runNum, numRun_)
         }
         return getSearchInfo(numRun_, name)
     }

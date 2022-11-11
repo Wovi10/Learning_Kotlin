@@ -1,9 +1,6 @@
 package algorithms.sorts
 
 import algorithms.sorts.utils.Constants.BOGO_SORT_TEXT
-import consoleInteraction.AsciiProgressBar
-import consoleInteraction.AsciiProgressBar.updateProgressBar
-import utils.Constants
 import java.time.LocalDateTime
 
 object BogoSort : SortType() {
@@ -14,9 +11,7 @@ object BogoSort : SortType() {
         startup(name, this)
         repeat(numRun_){runNum ->
             defaultBogoSort(arraySize_, lowestValue_, highestValue_)
-            val durationText: String = if (runNum + Constants.ONE == numRun_) getDuration()
-            else Constants.EMPTY_STRING
-            updateProgressBar(runNum, numRun_, durationText)
+            updateProgressBar(runNum, numRun_)
         }
         TODO("Not yet implemented")
     }

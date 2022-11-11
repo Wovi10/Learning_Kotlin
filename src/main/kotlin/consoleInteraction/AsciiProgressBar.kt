@@ -17,7 +17,7 @@ private const val HASHTAG = "#"
 private const val REVERT = "\r"
 
 object AsciiProgressBar {
-    fun updateProgressBar(index: Int, total: Int, durationText_: String) {
+    fun drawProgressBar(index: Int, total: Int, durationText_: String) {
         val contentToPrint: String
         val percentage = (index * HUNDRED / total)
         if (index + ONE == total) {

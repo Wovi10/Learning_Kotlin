@@ -3,8 +3,6 @@ package algorithms.sorts
 import algorithms.sorts.utils.Constants.QUICK_SORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
 import algorithms.sorts.utils.Functions.swapIndexes
-import consoleInteraction.AsciiProgressBar.updateProgressBar
-import utils.Constants.EMPTY_STRING
 import utils.Constants.ONE
 import utils.Constants.ZERO
 import java.time.LocalDateTime
@@ -17,9 +15,7 @@ object QuickSort : SortType() {
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultQuickSort(arraySize_, lowestValue_, highestValue_)
-            val durationText: String = if (runNum + ONE == numRun_) getDuration()
-            else EMPTY_STRING
-            updateProgressBar(runNum, numRun_, durationText)
+            updateProgressBar(runNum, numRun_)
         }
     }
 

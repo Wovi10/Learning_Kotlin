@@ -4,7 +4,9 @@ import algorithms.sorts.utils.Constants.BOGO_SORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
 import algorithms.sorts.utils.Functions.swapIndexes
 import java.time.LocalDateTime
+import java.util.*
 import java.util.Collections.shuffle
+import kotlin.random.Random
 
 object BogoSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
@@ -30,7 +32,10 @@ object BogoSort : SortType() {
     }
 
     private fun shuffleArray(arrayToSort_: IntArray) {
-        TODO("Not yet implemented")
+        val arraySize = arrayToSort_.size
+        for (i in arrayToSort_.indices){
+            swapIndexes(arrayToSort_, i, (Random.nextInt(0, arraySize) * i))
+        }
     }
 
     private fun isSorted(arrayToSort_: IntArray): Boolean {
@@ -42,7 +47,7 @@ object BogoSort : SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        startup(name, this)
+        startup(name, this, arrayToSort_)
         bogoSort(arrayToSort_)
         return getSortInfo()
     }

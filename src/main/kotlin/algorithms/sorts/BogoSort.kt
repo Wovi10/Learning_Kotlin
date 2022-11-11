@@ -23,6 +23,7 @@ object BogoSort : SortType() {
     override fun sort(arrayToSort_: IntArray): String {
         startup(name, this, arrayToSort_)
         bogoSort(arrayToSort_)
+        startup(name, this, arrayToSort_)
         return getSortInfo()
     }
 
@@ -40,7 +41,7 @@ object BogoSort : SortType() {
     private fun shuffleArray(arrayToSort_: IntArray) {
         val arraySize = arrayToSort_.size
         for (i in arrayToSort_.indices){
-            swapIndexes(arrayToSort_, i, (Random.nextInt(0, arraySize) * i))
+            swapIndexes(arrayToSort_, i, Random.nextInt(0, arraySize))
         }
     }
 

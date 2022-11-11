@@ -6,13 +6,13 @@ import algorithms.sorts.*
 import algorithms.sorts.Sorts.runSorts
 import interactive_Projects.Quiz
 
-val sortList = listOf(BogoSort)
+val sortList = listOf(BogoSort, BubbleSort, InsertionSort, QuickSort, RadixSort, SelectionSort)
 val skipSortList = listOf(EmptySort, BubbleSort, InsertionSort, QuickSort, RadixSort, SelectionSort)
 
 val searchList = listOf(BinarySearch, LinearSearch)
 val skipSearchList = listOf(EmptySearch, BinarySearch, LinearSearch)
 
-const val arraySize = 20
+const val arraySize = 10
 const val lowestVal = 0
 const val highestVal = 100
 const val sort_numRun = 1

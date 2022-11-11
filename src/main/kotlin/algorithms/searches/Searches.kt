@@ -13,6 +13,7 @@ private const val RUNNING_EACH_SEARCH = "Running each search"
 
 object Searches {
     fun runSearches(): String {
+        if (skipSearchList.size > searchList.size) return EMPTY_STRING
         var output = "Ran searches"
 
         output += if (search_numRun == ONE) {

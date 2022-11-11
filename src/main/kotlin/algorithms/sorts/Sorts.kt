@@ -15,6 +15,7 @@ private const val RUNNING_EACH_SORT = "Running each sort"
 
 object Sorts {
     fun runSorts(): String {
+        if (skipSortList.size > sortList.size) return EMPTY_STRING
         val output = if (sort_numRun == ONE) {
             runAllSortsOnce()
         } else {

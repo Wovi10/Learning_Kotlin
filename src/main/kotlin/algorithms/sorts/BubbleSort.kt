@@ -34,9 +34,7 @@ object BubbleSort : SortType() {
         for (counter in arrayToSort_.indices) {
             for (i in ZERO until arrayToSort_.size - ONE) {
                 val iPlusOne = i + ONE
-                if (arrayToSort_[i] > arrayToSort_[iPlusOne]) {
-                    swapIndexes(arrayToSort_, i, (iPlusOne))
-                }
+                if (arrayToSort_[i] > arrayToSort_[iPlusOne]) swapIndexes(arrayToSort_, i, (iPlusOne))
             }
         }
     }

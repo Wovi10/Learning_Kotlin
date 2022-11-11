@@ -25,7 +25,7 @@ object Sorts {
     }
 
     private fun runAllSortsMultipleTimes(): String {
-        println("$RUNNING_EACH_SORT $sort_numRun times.")
+        println("$RUNNING_EACH_SORT $sort_numRun times. Array size is $arraySize")
         for (sortType in sortList) {
             if (skipSortList.contains(sortType)) continue
             sortType.sort(arraySize, lowestVal, highestVal, sort_numRun)
@@ -34,7 +34,7 @@ object Sorts {
     }
 
     private fun runAllSortsOnce(): String {
-        println("$RUNNING_EACH_SORT once.")
+        println("$RUNNING_EACH_SORT once. Array size is $arraySize")
         var resultInfo = "Ran sorts once: $NEWLINE"
         for (sortType in sortList) {
             if (skipSortList.contains(sortType)) continue

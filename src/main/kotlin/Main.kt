@@ -7,15 +7,15 @@ import algorithms.sorts.Sorts.runSorts
 import interactive_Projects.Quiz
 
 val sortList = listOf(BogoSort, BubbleSort, InsertionSort, QuickSort, RadixSort, SelectionSort)
-val skipSortList = listOf(EmptySort, BubbleSort, InsertionSort, QuickSort, RadixSort, SelectionSort)
+val skipSortList = listOf(EmptySort, BogoSort)
 
 val searchList = listOf(BinarySearch, LinearSearch)
 val skipSearchList = listOf(EmptySearch, BinarySearch, LinearSearch)
 
-const val arraySize = 11
+const val arraySize = 100000
 const val lowestVal = 0
 const val highestVal = 100
-const val sort_numRun = 1
+const val sort_numRun = 1000
 const val search_numRun = 100
 
 fun main() {
@@ -33,7 +33,7 @@ fun quiz() {
 }
 
 fun searchAndSorts() {
-    val informationToShow = mutableListOf("DONE")
+    val informationToShow = mutableListOf("")
 
     informationToShow.add(runSorts())
     informationToShow.add(runSearches())

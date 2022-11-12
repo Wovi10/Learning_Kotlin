@@ -44,7 +44,7 @@ object BogoSort : SortType() {
     private fun shuffleArray(arrayToSort_: IntArray) {
         val arraySize = arrayToSort_.size
         for (i in arrayToSort_.indices){
-            swapIndexes(arrayToSort_, i, Random.nextInt(0, arraySize))
+            swapIndexes(arrayToSort_, i, Random.nextInt(ZERO, arraySize))
         }
     }
 

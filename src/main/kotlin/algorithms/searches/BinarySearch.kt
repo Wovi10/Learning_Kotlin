@@ -36,7 +36,6 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
         numTries += ONE
         val middleNumber = getMiddleNum(lowerBound_, upperBound_)
         if (numToTry > numToFind_) return findNumber(lowerBound_, numToTry, numToFind_, middleNumber)
-
         if (numToTry < numToFind_) return findNumber(numToTry, upperBound_, numToFind_, middleNumber)
     }
 

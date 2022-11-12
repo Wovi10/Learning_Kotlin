@@ -50,7 +50,7 @@ object BogoSort : SortType() {
 
     private fun isSorted(arrayToSort_: IntArray): Boolean {
         val arraySize = arrayToSort_.size
-        for (i in 1 until arraySize){
+        for (i in ONE until arraySize){
             if (arrayToSort_[i] < arrayToSort_[i - ONE]) return false
         }
         return true

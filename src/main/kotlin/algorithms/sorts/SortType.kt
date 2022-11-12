@@ -20,6 +20,7 @@ abstract class SortType : Algorithm() {
 
     override fun resetVariables() {
         startTime = LocalDateTime.now()
+        numTries = ZERO
     }
 
     protected fun getSortInfo(numTries: Int? = ZERO): String {

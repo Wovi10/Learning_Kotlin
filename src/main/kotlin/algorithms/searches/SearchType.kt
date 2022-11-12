@@ -21,7 +21,6 @@ abstract class SearchType(private var guessOnTries: GuessOnTries, private var nu
 
     protected abstract val name: String
     protected abstract var cumulativeTries: Int
-    protected abstract var numTries: Int
     abstract override var startTime: LocalDateTime
 
     abstract fun search(lowerBound_: Int, upperBound_: Int, numRun_: Int): String

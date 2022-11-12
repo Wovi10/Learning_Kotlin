@@ -6,14 +6,12 @@ import algorithms.sorts.utils.Functions.swapIndexes
 import utils.Constants.ONE
 import utils.Constants.ZERO
 import java.time.LocalDateTime
-import java.util.*
-import java.util.Collections.shuffle
 import kotlin.random.Random
 
 object BogoSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = BOGO_SORT_TEXT
-    private var numTries: Int = ZERO
+    override var numTries: Int = ZERO
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)

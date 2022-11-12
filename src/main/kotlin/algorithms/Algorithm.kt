@@ -13,6 +13,7 @@ private const val ONE_MILLION = 1000000
 
 abstract class Algorithm {
     protected abstract var startTime: LocalDateTime
+    protected abstract var numTries: Int
 
     abstract fun resetVariables()
 

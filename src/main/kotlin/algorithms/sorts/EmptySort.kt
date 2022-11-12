@@ -5,7 +5,7 @@ import utils.Constants
 import utils.Constants.ZERO
 import java.time.LocalDateTime
 
-private const val EMPTY_SORT_TEXT = "This is an empty sort"
+private const val EMPTYSORT_TEXT = "This is an empty sort"
 
 object EmptySort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
@@ -13,11 +13,11 @@ object EmptySort : SortType() {
     override var numTries: Int = ZERO
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
-        System.err.println(EMPTY_SORT_TEXT)
+        System.err.println(EMPTYSORT_TEXT)
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        System.err.println(EMPTY_SORT_TEXT)
-        return EMPTY_SORT_TEXT
+        System.err.println(EMPTYSORT_TEXT)
+        return EMPTYSORT_TEXT
     }
 }

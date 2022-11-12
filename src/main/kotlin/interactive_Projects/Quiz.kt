@@ -67,7 +67,7 @@ class Quiz constructor(numQuestions: Int) {
         for (pair in qAndA) {
             println(pair.first)
             when (readln().lowercase()) {
-                pair.second -> points = correctAnswer(points)
+                pair.second -> points = correctAnswer()
                 else -> wrongAnswer(pair.second)
             }
         }
@@ -79,8 +79,7 @@ class Quiz constructor(numQuestions: Int) {
         println(TEXT_STYLE_RESET)
     }
 
-    private fun correctAnswer(points_: Int): Int {
-        var points = points_
+    private fun correctAnswer(): Int {
         points++
         println(FOREGROUND_GREEN + "Right!!!")
         println(TEXT_STYLE_RESET)

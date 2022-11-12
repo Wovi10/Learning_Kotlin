@@ -9,6 +9,7 @@ import java.time.LocalDateTime
 object InsertionSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = INSERTION_SORT_TEXT
+    override var numTries: Int = ZERO
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)

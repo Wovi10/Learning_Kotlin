@@ -11,6 +11,7 @@ private const val NUMBER_BASE = 10
 object RadixSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name = RADIX_SORT_TEXT
+    override var numTries: Int = ZERO
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
         startup(name, this)

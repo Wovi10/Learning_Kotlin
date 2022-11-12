@@ -26,7 +26,6 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
 
     private fun runBinarySearch(lowerBound: Int, upperBound: Int, numRun_: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
-        numTries = ZERO
         val middleNumber = getMiddleNum(lowerBound, upperBound)
         findNumber(lowerBound, upperBound, numToFind, middleNumber)
         updateSearchData(numToFind, numRun_)

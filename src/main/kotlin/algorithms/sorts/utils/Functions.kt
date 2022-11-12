@@ -1,13 +1,15 @@
 package algorithms.sorts.utils
 
 import utils.Constants
+import utils.Constants.ONE
+import utils.Constants.ZERO
 import kotlin.random.Random
 
 object Functions {
     fun createInputArray(size_: Int, lowerBound_: Int, upperBound_: Int): IntArray {
         val outputArray = IntArray(size_)
-        for (x in Constants.ZERO until size_) {
-            val randomNumber = Random.nextInt(lowerBound_, upperBound_ + Constants.ONE)
+        for (x in ZERO until size_) {
+            val randomNumber = Random.nextInt(lowerBound_, upperBound_ + ONE)
             outputArray[x] = randomNumber
         }
         return outputArray

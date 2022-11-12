@@ -3,6 +3,7 @@ package algorithms.sorts
 import algorithms.sorts.utils.Constants.BOGO_SORT_TEXT
 import algorithms.sorts.utils.Functions.createInputArray
 import algorithms.sorts.utils.Functions.swapIndexes
+import utils.Constants.ONE
 import utils.Constants.ZERO
 import java.time.LocalDateTime
 import java.util.*
@@ -50,7 +51,7 @@ object BogoSort : SortType() {
     private fun isSorted(arrayToSort_: IntArray): Boolean {
         val arraySize = arrayToSort_.size
         for (i in 1 until arraySize){
-            if (arrayToSort_[i] < arrayToSort_[i -1]) return false
+            if (arrayToSort_[i] < arrayToSort_[i - ONE]) return false
         }
         return true
     }

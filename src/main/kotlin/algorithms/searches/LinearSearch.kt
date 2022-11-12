@@ -24,7 +24,6 @@ object LinearSearch : SearchType(GuessOnTries(), NumOfTries()) {
 
     private fun runLinearSearch(lowerBound: Int, upperBound: Int, numRun_: Int) {
         val numToFind = createNumToFind(lowerBound, upperBound)
-        numTries = ZERO
         findNumber(lowerBound, upperBound, numToFind, ZERO)
         updateSearchData(numToFind, numRun_)
     }

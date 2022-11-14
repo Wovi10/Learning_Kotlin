@@ -23,9 +23,8 @@ object HeapSort : SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        startup(name, this, arrayToSort_)
+        startup(name, this)
         heapSort(arrayToSort_)
-        startup(name, this, arrayToSort_)
         return getSortInfo()
     }
 
@@ -37,7 +36,7 @@ object HeapSort : SortType() {
     private fun heapSort(arrayToSort_: IntArray) {
         val arraySize = arrayToSort_.size
         buildHeap(arrayToSort_, arraySize)
-        for (i in (arraySize - ONE) downTo 1) {
+        for (i in (arraySize - ONE) downTo ONE) {
             swapIndexes(arrayToSort_, ZERO, i)
             heapify(arrayToSort_, i, ZERO)
         }
@@ -49,23 +48,23 @@ object HeapSort : SortType() {
         }
     }
 
-    private fun heapify(arrayToSort_: IntArray, arraySize: Int, startNode: Int) {
-        var largest = startNode
-        val left = TWO * startNode + ONE
-        val right = TWO * startNode + TWO
+    private fun heapify(arrayToSort_: IntArray, arraySize: Int, startNodeIndex: Int) {
+        var largestNode = startNodeIndex
+        val leftNode = TWO * startNodeIndex + ONE
+        val rightNode = TWO * startNodeIndex + TWO
 
-        largest = assignLargest(left, arraySize, arrayToSort_, largest)
-        largest = assignLargest(right, arraySize, arrayToSort_, largest)
+        largestNode = assignLargestNode(leftNode, arraySize, arrayToSort_, largestNode)
+        largestNode = assignLargestNode(rightNode, arraySize, arrayToSort_, largestNode)
 
-        if (largest != startNode){
-            swapIndexes(arrayToSort_, startNode, largest)
-            heapify(arrayToSort_, arraySize, largest)
+        if (largestNode != startNodeIndex){
+            swapIndexes(arrayToSort_, startNodeIndex, largestNode)
+            heapify(arrayToSort_, arraySize, largestNode)
         }
     }
 
-    private fun assignLargest(potLargest: Int, arraySize: Int, arrayToSort_: IntArray, largest_: Int): Int {
-        var largest = largest_
-        if (potLargest < arraySize && arrayToSort_[potLargest] > arrayToSort_[largest]) largest = potLargest
-        return largest
+    private fun assignLargestNode(potLargest: Int, arraySize: Int, arrayToSort_: IntArray, largestNode_: Int): Int {
+        var largestNode = largestNode_
+        if (potLargest < arraySize && arrayToSort_[potLargest] > arrayToSort_[largestNode]) largestNode = potLargest
+        return largestNode
     }
 }

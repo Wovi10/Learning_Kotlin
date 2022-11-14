@@ -8,15 +8,15 @@ import interactive_Projects.Quiz
 import utils.Constants.EMPTY_STRING
 
 val sortList = listOf(BogoSort, BubbleSort, InsertionSort, QuickSort, RadixSort, SelectionSort, MergeSort, HeapSort)
-val skipSortList = listOf(EmptySort, BogoSort, BubbleSort, InsertionSort, QuickSort, RadixSort, SelectionSort, MergeSort)
+val skipSortList = listOf(EmptySort, BogoSort, QuickSort, RadixSort)
 
 val searchList = listOf(BinarySearch, LinearSearch)
 val skipSearchList = listOf(EmptySearch, BinarySearch, LinearSearch)
 
-const val arraySize = 20
+const val arraySize = 100000
 const val lowestVal = 0
 const val highestVal = 100
-const val sort_numRun = 1
+const val sort_numRun = 1000
 const val search_numRun = 100
 
 fun main() {

@@ -6,6 +6,7 @@ import utils.Constants.ONE
 import utils.Constants.ZERO
 import java.time.LocalDateTime
 
+
 object MergeSort : SortType() {
     override var startTime: LocalDateTime = LocalDateTime.now()
     override val name: String = MERGE_SORT_TEXT
@@ -31,8 +32,80 @@ object MergeSort : SortType() {
         mergeSort(arrayToSort, ZERO, arraySize_ - ONE)
     }
 
-    private fun mergeSort(arrayToSort_: IntArray, lowestIndex_: Int, highestIndex: Int) {
-        if (lowestIndex_ > highestIndex) return
+    private fun mergeSort(arrayToSort_: IntArray, lowestIndex: Int, highestIndex: Int) {
+        if (lowestIndex > highestIndex) return
+        val middlePoint = getMiddleNum(lowestIndex, highestIndex)
 
+        mergeSort(arrayToSort_, lowestIndex, middlePoint)
+        mergeSort(arrayToSort_, middlePoint + ONE, highestIndex)
+
+        merge(arrayToSort_, lowestIndex, middlePoint, highestIndex)
+    }
+
+    private fun merge(arrayToSort_: IntArray, lowestIndex: Int, middlePoint: Int, highestIndex: Int) {
+        val leftArrSize = middlePoint - lowestIndex + ONE
+        val rightArrSize = highestIndex - middlePoint
+
+        val leftArr = IntArray(leftArrSize)
+        val rightArr = IntArray(rightArrSize)
+
+        fillLeftArray(leftArrSize, leftArr, arrayToSort_, lowestIndex)
+        fillRightArray(rightArrSize, rightArr, arrayToSort_, middlePoint)
+
+        var i = ZERO;
+        var j = ZERO;
+        var k = lowestIndex
+        while (i < leftArrSize && j < rightArrSize) {
+            if (leftArr[i] <= rightArr[j]) {
+                arrayToSort_[k] = leftArr[i]
+                i++
+            } else {
+                arrayToSort_[k] = rightArr[j]
+                j++
+            }
+            k++
+        }
+
+        k = copyRestOfArr(i, leftArrSize, arrayToSort_, k, leftArr)
+        k = copyRestOfArr(j, rightArrSize, rightArr, k, arrayToSort_)
+    }
+
+    private fun copyRestOfArr(
+        indexSourceArr: Int,
+        sourceArrSize: Int,
+        sourceArr: IntArray,
+        indexDestArr: Int,
+        destinationArr: IntArray
+    ): Int {
+        var i1 = indexSourceArr
+        var k1 = indexDestArr
+        while (i1 < sourceArrSize) {
+            destinationArr[k1] = sourceArr[i1]
+            i1++
+            k1++
+        }
+        return k1
+    }
+
+    private fun fillRightArray(
+        rightArrSize: Int,
+        rightArr: IntArray,
+        arrayToSort_: IntArray,
+        middlePoint: Int
+    ) {
+        for (i in 0 until rightArrSize) {
+            rightArr[i] = arrayToSort_[middlePoint + ONE + i]
+        }
+    }
+
+    private fun fillLeftArray(
+        leftArrSize: Int,
+        leftArr: IntArray,
+        arrayToSort_: IntArray,
+        lowestIndex: Int
+    ) {
+        for (i in 0 until leftArrSize) {
+            leftArr[i] = arrayToSort_[lowestIndex + i]
+        }
     }
 }

@@ -61,4 +61,8 @@ abstract class Algorithm {
         time /= SIXTY
         return "$time hours"
     }
+
+    open fun getMiddleNum(lowerBound: Int, upperBound: Int): Int {
+        return lowerBound + ((upperBound - lowerBound) / 2)
+    }
 }

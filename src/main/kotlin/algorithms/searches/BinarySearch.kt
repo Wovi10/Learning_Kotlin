@@ -37,11 +37,4 @@ object BinarySearch : SearchType(GuessOnTries(), NumOfTries()) {
         if (numToTry > numToFind_) return findNumber(lowerBound_, numToTry, numToFind_, middleNumber)
         if (numToTry < numToFind_) return findNumber(numToTry, upperBound_, numToFind_, middleNumber)
     }
-
-    private fun getMiddleNum(lowerBound: Int, upperBound: Int): Int {
-        val difference = upperBound - lowerBound
-        val half = difference / TWO
-        return lowerBound + half
-    }
-
 }

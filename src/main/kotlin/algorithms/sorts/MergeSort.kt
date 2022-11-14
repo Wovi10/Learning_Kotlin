@@ -33,7 +33,7 @@ object MergeSort : SortType() {
     }
 
     private fun mergeSort(arrayToSort_: IntArray, lowestIndex: Int, highestIndex: Int) {
-        if (lowestIndex > highestIndex) return
+        if (lowestIndex >= highestIndex) return
         val middlePoint = getMiddleNum(lowestIndex, highestIndex)
 
         mergeSort(arrayToSort_, lowestIndex, middlePoint)

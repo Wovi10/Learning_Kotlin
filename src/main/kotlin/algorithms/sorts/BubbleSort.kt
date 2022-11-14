@@ -13,6 +13,7 @@ object BubbleSort : SortType() {
     override var numTries: Int = ZERO
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
+        if (lowestValue_ > highestValue_) return
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultBubbleSort(arraySize_, lowestValue_, highestValue_)

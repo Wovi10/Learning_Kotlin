@@ -1,6 +1,7 @@
 package algorithms.sorts
 
 import algorithms.sorts.utils.Constants.MERGE_SORT_TEXT
+import algorithms.sorts.utils.Functions.createInputArray
 import utils.Constants.ONE
 import utils.Constants.ZERO
 import java.time.LocalDateTime
@@ -11,6 +12,7 @@ object MergeSort : SortType() {
     override var numTries: Int = ZERO
 
     override fun sort(arraySize_: Int, lowestValue_: Int, highestValue_: Int, numRun_: Int) {
+        if (lowestValue_ > highestValue_) return
         startup(name, this)
         repeat(numRun_) { runNum ->
             defaultMergeSort(arraySize_, lowestValue_, highestValue_)
@@ -24,12 +26,13 @@ object MergeSort : SortType() {
         return getSortInfo()
     }
 
-    private fun mergeSort(arrayToSort_: IntArray, lowestIndex_: Int, highestIndex: Int) {
-        
+    private fun defaultMergeSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
+        val arrayToSort = createInputArray(arraySize_, lowestValue_, highestValue_)
+        mergeSort(arrayToSort, ZERO, arraySize_ - ONE)
     }
 
-    private fun defaultMergeSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
+    private fun mergeSort(arrayToSort_: IntArray, lowestIndex_: Int, highestIndex: Int) {
+        if (lowestIndex_ > highestIndex) return
 
-        TODO("Not yet implemented")
     }
 }

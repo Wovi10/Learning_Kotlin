@@ -22,7 +22,7 @@ object MergeSort : SortType() {
     }
 
     override fun sort(arrayToSort_: IntArray): String {
-        startup(name, this, arrayToSort_)
+        startup(name, this)
         mergeSort(arrayToSort_, ZERO, arrayToSort_.size - ONE)
         return getSortInfo()
     }
@@ -52,8 +52,8 @@ object MergeSort : SortType() {
         fillLeftArray(leftArrSize, leftArr, arrayToSort_, lowestIndex)
         fillRightArray(rightArrSize, rightArr, arrayToSort_, middlePoint)
 
-        var i = ZERO;
-        var j = ZERO;
+        var i = ZERO
+        var j = ZERO
         var k = lowestIndex
         while (i < leftArrSize && j < rightArrSize) {
             if (leftArr[i] <= rightArr[j]) {
@@ -66,7 +66,7 @@ object MergeSort : SortType() {
             k++
         }
 
-        k = copyRestOfArr(i, leftArrSize, arrayToSort_, k, leftArr)
+        k = copyRestOfArr(i, leftArrSize, leftArr, k, arrayToSort_)
         k = copyRestOfArr(j, rightArrSize, rightArr, k, arrayToSort_)
     }
 

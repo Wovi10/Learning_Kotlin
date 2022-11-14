@@ -13,10 +13,10 @@ val skipSortList = listOf(EmptySort, BogoSort, BubbleSort, InsertionSort, QuickS
 val searchList = listOf(BinarySearch, LinearSearch)
 val skipSearchList = listOf(EmptySearch, BinarySearch, LinearSearch)
 
-const val arraySize = 20
+const val arraySize = 1000000
 const val lowestVal = 0
 const val highestVal = 100
-const val sort_numRun = 1
+const val sort_numRun = 100
 const val search_numRun = 100
 
 fun main() {

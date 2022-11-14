@@ -10,5 +10,6 @@ object Constants {
     const val SELECTION_SORT_TEXT = "Selection $SORT_TEXT"
     const val BOGO_SORT_TEXT = "Bogo $SORT_TEXT"
     const val MERGE_SORT_TEXT = "Merge $SORT_TEXT"
+    const val HEAP_SORT_TEXT = "Heap $SORT_TEXT"
     const val EMPTY_SORT_TEXT = "Empty $SORT_TEXT"
 }

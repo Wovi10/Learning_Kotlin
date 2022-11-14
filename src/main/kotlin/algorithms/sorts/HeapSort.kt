@@ -49,7 +49,23 @@ object HeapSort : SortType() {
         }
     }
 
-    private fun heapify(arrayToSort_: IntArray, arraySize: Int, i: Int) {
-        TODO("Not yet implemented")
+    private fun heapify(arrayToSort_: IntArray, arraySize: Int, startNode: Int) {
+        var largest = startNode
+        val left = TWO * startNode + ONE
+        val right = TWO * startNode + TWO
+
+        largest = assignLargest(left, arraySize, arrayToSort_, largest)
+        largest = assignLargest(right, arraySize, arrayToSort_, largest)
+
+        if (largest != startNode){
+            swapIndexes(arrayToSort_, startNode, largest)
+            heapify(arrayToSort_, arraySize, largest)
+        }
+    }
+
+    private fun assignLargest(potLargest: Int, arraySize: Int, arrayToSort_: IntArray, largest_: Int): Int {
+        var largest = largest_
+        if (potLargest < arraySize && arrayToSort_[potLargest] > arrayToSort_[largest]) largest = potLargest
+        return largest
     }
 }

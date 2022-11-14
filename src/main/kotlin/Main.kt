@@ -5,6 +5,7 @@ import algorithms.searches.Searches.runSearches
 import algorithms.sorts.*
 import algorithms.sorts.Sorts.runSorts
 import interactive_Projects.Quiz
+import utils.Constants.EMPTY_STRING
 
 val sortList = listOf(BogoSort, BubbleSort, InsertionSort, QuickSort, RadixSort, SelectionSort)
 val skipSortList = listOf(EmptySort, BogoSort)
@@ -33,7 +34,7 @@ fun quiz() {
 }
 
 fun searchAndSorts() {
-    val informationToShow = mutableListOf("")
+    val informationToShow = mutableListOf(EMPTY_STRING)
 
     informationToShow.add(runSorts())
     informationToShow.add(runSearches())

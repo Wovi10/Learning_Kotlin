@@ -77,14 +77,14 @@ object MergeSort : SortType() {
         indexDestArr: Int,
         destinationArr: IntArray
     ): Int {
-        var i1 = indexSourceArr
-        var k1 = indexDestArr
-        while (i1 < sourceArrSize) {
-            destinationArr[k1] = sourceArr[i1]
-            i1++
-            k1++
+        var iSource = indexSourceArr
+        var iDest = indexDestArr
+        while (iSource < sourceArrSize) {
+            destinationArr[iDest] = sourceArr[iSource]
+            iSource++
+            iDest++
         }
-        return k1
+        return iDest
     }
 
     private fun fillRightArray(

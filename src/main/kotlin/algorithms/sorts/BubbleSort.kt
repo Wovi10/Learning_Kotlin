@@ -20,15 +20,15 @@ object BubbleSort : SortType() {
         }
     }
 
-    private fun defaultBubbleSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
-        val arrayToSort = createInputArray(arraySize_, lowestValue_, highestValue_)
-        bubbleSort(arrayToSort)
-    }
-
     override fun sort(arrayToSort_: IntArray): String {
         startup(name, this)
         bubbleSort(arrayToSort_)
         return getSortInfo()
+    }
+
+    private fun defaultBubbleSort(arraySize_: Int, lowestValue_: Int, highestValue_: Int) {
+        val arrayToSort = createInputArray(arraySize_, lowestValue_, highestValue_)
+        bubbleSort(arrayToSort)
     }
 
     private fun bubbleSort(arrayToSort_: IntArray) {

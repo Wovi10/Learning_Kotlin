@@ -9,5 +9,6 @@ object Constants {
     const val RADIX_SORT_TEXT = "Radix $SORT_TEXT"
     const val SELECTION_SORT_TEXT = "Selection $SORT_TEXT"
     const val BOGO_SORT_TEXT = "Bogo $SORT_TEXT"
+    const val MERGE_SORT_TEXT = "Merge $SORT_TEXT"
     const val EMPTY_SORT_TEXT = "Empty $SORT_TEXT"
 }

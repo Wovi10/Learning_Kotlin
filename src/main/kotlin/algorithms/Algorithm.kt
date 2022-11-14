@@ -17,10 +17,10 @@ abstract class Algorithm {
 
     abstract fun resetVariables()
 
-    open fun updateProgressBar(runNum: Int, numRun_: Int) {
-        val durationText: String = if (runNum + ONE == numRun_) getDuration()
+    open fun updateProgressBar(index: Int, total: Int) {
+        val durationText: String = if (index + ONE == total) getDuration()
         else EMPTY_STRING
-        drawProgressBar(runNum, numRun_, durationText)
+        drawProgressBar(index, total, durationText)
     }
 
     private fun printStartText(name_: String, arrayToPrint_: IntArray? = null) {

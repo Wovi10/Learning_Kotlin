@@ -41,17 +41,20 @@ fun calculate(firstNum_: Int, multiplier_: Int): Int {
     var firstNum = firstNum_
     var multiplier = multiplier_
     var sum = ZERO
-    if (firstNum % TWO != ZERO){
-        sum += multiplier
-    }
     while (firstNum >= ONE){
+        sum = addMultiplier(firstNum, sum, multiplier)
         firstNum /= TWO
         multiplier *= TWO
-        if (firstNum % TWO != ZERO){
-            sum += multiplier
-        }
     }
     return sum
+}
+
+private fun addMultiplier(firstNum: Int, sum: Int, multiplier: Int): Int {
+    var sum1 = sum
+    if (firstNum % TWO != ZERO) {
+        sum1 += multiplier
+    }
+    return sum1
 }
 
 fun interActiveProjects() {

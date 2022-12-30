@@ -23,7 +23,7 @@ const val sort_numRun = 1000
 const val search_numRun = 100
 
 fun main() {
-    russianPeasant(12,13)
+    russianPeasant(99,100)
 //    searchAndSorts()
 //    interActiveProjects()
 }

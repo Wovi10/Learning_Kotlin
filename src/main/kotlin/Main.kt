@@ -23,14 +23,7 @@ const val sort_numRun = 1000
 const val search_numRun = 100
 
 fun main() {
-    russianPeasant(98,98) //9604
-    russianPeasant(98,99) //9702
-    russianPeasant(99,98) //9702 false
-    russianPeasant(99,99) //9801 false
-    russianPeasant(99,6) //594
-    russianPeasant(6,99) //594
-    russianPeasant(97,5) // 485 false
-    russianPeasant(7,7) // 49 false
+    russianPeasant(99,99)
 //    searchAndSorts()
 //    interActiveProjects()
 }
@@ -48,10 +41,13 @@ fun calculate(firstNum_: Int, multiplier_: Int): Int {
     var firstNum = firstNum_
     var multiplier = multiplier_
     var sum = ZERO
+    if (firstNum % TWO != ZERO){
+        sum += multiplier
+    }
     while (firstNum >= ONE){
         firstNum /= TWO
         multiplier *= TWO
-        if (firstNum % 2 != 0){
+        if (firstNum % TWO != ZERO){
             sum += multiplier
         }
     }
